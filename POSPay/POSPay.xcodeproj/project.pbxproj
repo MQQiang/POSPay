@@ -19,6 +19,8 @@
 		0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC58DFA1A55EBBA00F2B391 /* Images.xcassets */; };
 		0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EC58DFC1A55EBBA00F2B391 /* LaunchScreen.xib */; };
 		0EC58E0A1A55EBBA00F2B391 /* POSPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58E091A55EBBA00F2B391 /* POSPayTests.m */; };
+		0ECCE76F1A599256001ECBD9 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE76E1A599256001ECBD9 /* Util.m */; };
+		0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE7711A599873001ECBD9 /* GTMBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		0EC58E031A55EBBA00F2B391 /* POSPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC58E081A55EBBA00F2B391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC58E091A55EBBA00F2B391 /* POSPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POSPayTests.m; sourceTree = "<group>"; };
+		0ECCE76D1A599256001ECBD9 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = "untitled folder/Util.h"; sourceTree = "<group>"; };
+		0ECCE76E1A599256001ECBD9 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = "untitled folder/Util.m"; sourceTree = "<group>"; };
+		0ECCE7701A599873001ECBD9 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMBase64.h; path = "untitled folder/GTMBase64.h"; sourceTree = "<group>"; };
+		0ECCE7711A599873001ECBD9 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = "untitled folder/GTMBase64.m"; sourceTree = "<group>"; };
+		0ECCE7731A599952001ECBD9 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		25735EE90FBB0B03B308AC42 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 		0EC58DE91A55EBBA00F2B391 /* POSPay */ = {
 			isa = PBXGroup;
 			children = (
+				0ECCE76C1A599220001ECBD9 /* Tools */,
 				0EB465981A58517A002B240E /* ViewController */,
 				0EB4658D1A584FFD002B240E /* SDK */,
 				0EC58DEE1A55EBBA00F2B391 /* AppDelegate.h */,
@@ -197,6 +205,18 @@
 				0EC58E081A55EBBA00F2B391 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0ECCE76C1A599220001ECBD9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0ECCE76D1A599256001ECBD9 /* Util.h */,
+				0ECCE76E1A599256001ECBD9 /* Util.m */,
+				0ECCE7701A599873001ECBD9 /* GTMBase64.h */,
+				0ECCE7711A599873001ECBD9 /* GTMBase64.m */,
+				0ECCE7731A599952001ECBD9 /* GTMDefines.h */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		6B66939FA4C93B2675D2D152 /* Pods */ = {
@@ -357,6 +377,8 @@
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				0EB465931A5850D2002B240E /* POSAccountViewController.m in Sources */,
+				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
+				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
