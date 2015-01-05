@@ -26,10 +26,10 @@
     CGFloat scrollViewH = 375;
     self.scrollView.contentSize = CGSizeMake(scrollViewW * 4, scrollViewH);
     self.scrollView.pagingEnabled = YES;
-    [self addFirstView];
-    [self addSecondView];
-    [self addThirdView];
-    [self addFourthView];
+//    [self addFirstView];
+//    [self addSecondView];
+//    [self addThirdView];
+//    [self addFourthView];
     
     
 }
@@ -38,59 +38,59 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma 添加应用格子View
-- (void)addFirstView
-{
-    CGFloat padding = 10;
-    UIView *view1= [[UIView alloc]init];
-    [self addAppCellToView:view1 withNumber:5];
-    view1.frame = CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    [self.scrollView addSubview:view1];
-    UIImageView *imageView = [[UIImageView alloc]init];
-    CGFloat imageX = padding;
-    CGFloat imageY = padding*2 + 90 *2;
-    CGFloat imageW = 300;
-    CGFloat imageH = 90;
-    imageView.frame = CGRectMake(imageX, imageY,imageW, imageH);
-    imageView.image = [UIImage imageNamed:@"ad_00"];
-    [view1 addSubview:imageView];
-}
-- (void)addSecondView
-{
-    UIView *view2= [[UIView alloc]init];
-    [self addAppCellToView:view2 withNumber:5];
-    view2.frame = CGRectMake(320, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    [self.scrollView addSubview:view2];
-}
-- (void)addThirdView
-{
-    UIView *view3 = [[UIView alloc]init];
-    [self addAppCellToView:view3 withNumber:9];
-    view3.frame = CGRectMake(640, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    [self.scrollView addSubview:view3];
-}
-- (void)addFourthView
-{
-    UIView *view4 = [[UIView alloc]init];
-    [self addAppCellToView:view4 withNumber:1];
-    view4.frame = CGRectMake(960, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    [self.scrollView addSubview:view4];
-}
-- (void)addAppCellToView:(UIView *)view withNumber:(NSInteger)number
-{
-    CGFloat padding = 10;
-    for (int i = 0; i<number; i++) {
-        UIView *appView = [[[NSBundle mainBundle] loadNibNamed:@"appCell" owner:nil options:nil] lastObject];
-        //计算位置
-        
-        CGFloat appW = 75;
-        CGFloat appH = 90;
-        CGFloat appX = padding + appW*(i%4);
-        CGFloat appY = padding +i/4 *appH;
-        appView.frame = CGRectMake(appX, appY, appW, appH);
-        [view addSubview:appView];
-    }
-}
+//#pragma 添加应用格子View
+//- (void)addFirstView
+//{
+//    CGFloat padding = 10;
+//    UIView *view1= [[UIView alloc]init];
+//    [self addAppCellToView:view1 withNumber:5];
+//    view1.frame = CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+//    [self.scrollView addSubview:view1];
+//    UIImageView *imageView = [[UIImageView alloc]init];
+//    CGFloat imageX = padding;
+//    CGFloat imageY = padding*2 + 90 *2;
+//    CGFloat imageW = 300;
+//    CGFloat imageH = 90;
+//    imageView.frame = CGRectMake(imageX, imageY,imageW, imageH);
+//    imageView.image = [UIImage imageNamed:@"ad_00"];
+//    [view1 addSubview:imageView];
+//}
+//- (void)addSecondView
+//{
+//    UIView *view2= [[UIView alloc]init];
+//    [self addAppCellToView:view2 withNumber:5];
+//    view2.frame = CGRectMake(320, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+//    [self.scrollView addSubview:view2];
+//}
+//- (void)addThirdView
+//{
+//    UIView *view3 = [[UIView alloc]init];
+//    [self addAppCellToView:view3 withNumber:9];
+//    view3.frame = CGRectMake(640, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+//    [self.scrollView addSubview:view3];
+//}
+//- (void)addFourthView
+//{
+//    UIView *view4 = [[UIView alloc]init];
+//    [self addAppCellToView:view4 withNumber:1];
+//    view4.frame = CGRectMake(960, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+//    [self.scrollView addSubview:view4];
+//}
+//- (void)addAppCellToView:(UIView *)view withNumber:(NSInteger)number
+//{
+//    CGFloat padding = 10;
+//    for (int i = 0; i<number; i++) {
+//        UIView *appView = [[[NSBundle mainBundle] loadNibNamed:@"appCell" owner:nil options:nil] lastObject];
+//        //计算位置
+//        
+//        CGFloat appW = 75;
+//        CGFloat appH = 90;
+//        CGFloat appX = padding + appW*(i%4);
+//        CGFloat appY = padding +i/4 *appH;
+//        appView.frame = CGRectMake(appX, appY, appW, appH);
+//        [view addSubview:appView];
+//    }
+//}
 
 #pragma 广告轮播器
     
