@@ -38,7 +38,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma 添加应用View
+#pragma 添加应用格子View
 - (void)addFirstView
 {
     CGFloat padding = 10;
@@ -52,7 +52,7 @@
     CGFloat imageW = 300;
     CGFloat imageH = 90;
     imageView.frame = CGRectMake(imageX, imageY,imageW, imageH);
-    imageView.backgroundColor = [UIColor redColor];
+    imageView.image = [UIImage imageNamed:@"ad_00"];
     [view1 addSubview:imageView];
 }
 - (void)addSecondView
@@ -96,11 +96,10 @@
     
 - (void)addAdView
 {
-    UIScrollView *adView = [[UIScrollView alloc]init];
-    int pictureNum = 5;
+    int pictureNum = 3;
     for (int i = 0; i<pictureNum;i++ ) {
         UIImageView *imageView = [[UIImageView alloc]init];
-        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"ad_0%d",i]];
+        imageView.image = [UIImage imageNamed:@"ad_00"];
         imageView.backgroundColor = [UIColor blackColor];
         CGFloat scrollViewW = self.adView.frame.size.width;
         CGFloat scrollViewH = self.adView.frame.size.height;
@@ -113,10 +112,12 @@
         self.adView.showsHorizontalScrollIndicator = NO;
         self.adView.pagingEnabled = YES;
         self.adView.delegate = self;
-        [self addTimer];
+        
         [self.adView addSubview:imageView];
     }
-    self.adView = adView;
+    [self addTimer];
+    
+    
     
 
 }
@@ -131,10 +132,10 @@
     _timer = nil;
 }
 - (void)nextImage{
-    // 默认的五张图片轮播
+    // 默认的三张图片轮播
     CGFloat x = self.adView.contentOffset.x;
     x+=320;
-    if (x == 320*5) {
+    if (x == 320*3) {
         x = 0;
     }
     //self.adView.contentOffset = CGPointMake(x, 0);
@@ -142,11 +143,16 @@
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [self deleteTimer];
+    if (scrollView == self.adView) {
+        [self deleteTimer];
+    }
+    
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    if (scrollView == self.adView) {
     [self addTimer];
+    }
 }
 
 @end
