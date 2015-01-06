@@ -13,5 +13,6 @@
 
 @property (strong,nonatomic) NSArray * cellInfo;
 
+- (IBAction)detailBarAction:(id)sender;
 
 @end

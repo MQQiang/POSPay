@@ -1,113 +1,66 @@
 //
-//  POSAccountViewControllerTableViewController.m
+//  POSAboutProductController.m
 //  POSPay
 //
-//  Created by LiuZhiqi on 15-1-5.
+//  Created by LiuZhiqi on 15-1-6.
 //  Copyright (c) 2015年 mqq.com. All rights reserved.
 //
+
 #import "POSAboutProductController.h"
-#import "POSAccountViewController.h"
-#import "POSAccountTopCell.h"
-@interface POSAccountViewController ()
+
+@interface POSAboutProductController ()
 
 @end
 
-@implementation POSAccountViewController
+@implementation POSAboutProductController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setCellInfo];
+    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+    self.tabBarController.hidesBottomBarWhenPushed=YES;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-#warning 这几个backgroundcolor 和tint？？ 
-    [self.navigationController.navigationBar setBarTintColor: [UIColor cyanColor]] ;
- 
-    [self.tableView registerNib:[UINib nibWithNibName:@"POSAccountTopCell" bundle:nil] forCellReuseIdentifier:@"POSAccountViewControllerTopCell"];
-//    [_infoTabelView registerNib:[UINib nibWithNibName:@"LRBPathTabelViewCell" bundle:nil] forCellReuseIdentifier:@"PathTableViewId"];
+//    [self.tabBarController sett]
+    [self setCellText];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)setCellText
+{
+    self.cellTitle=@[@"客服电话",@"关于我们",@"版本信息",@"联系我们",@"留下宝贵意见",@"分享产品"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
--(void)setCellInfo
-{
-    self.cellInfo=@[@[@"name",@"可提款余额",@"不可用余额"],@[@"绑定银行卡",@"提款到我的银行卡"],@[@"交易记录"],@[@"我的刷卡器",@"充值冻结刷卡器保证金"],@[@"我的订单"],@[@"完善账号信息",@"实名认证",@"高级认证",@"修改密码",@"安全退出"]];
-
-}
-
-- (IBAction)detailBarAction:(id)sender {
-    POSAboutProductController *pushView=[[POSAboutProductController alloc] init];
-    pushView.hidesBottomBarWhenPushed=YES;
-  //  [pushView.tabBarController setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:pushView animated:YES];
-}
-
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return self.cellInfo.count;
+    return self.cellTitle.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [[self.cellInfo objectAtIndex:section] count];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
-    
-    //cell.
-    if(indexPath.section==0&&indexPath.row==0)
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POSAboutProductTableCell" ];
+    if(cell==nil)
     {
-        
-        POSAccountTopCell * cell=[self.tableView dequeueReusableCellWithIdentifier:@"POSAccountViewControllerTopCell"];
-        cell.nameLabel.text=@"name";
-        cell.phoneLabel.text=@"123456789";
-        cell.balanceLabel.text=@"30000";
-        return cell;
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"POSAboutProductTableCell"];
     }
-#warning 只能初始化设置style？
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POSAccountViewControllerCell" ];
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"POSAccountViewControllerTableViewControllerId"];
-    }
-    
-    
-    
-    cell.textLabel.text=[[self.cellInfo objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    // Configure the cell...
-    if(indexPath.section==0)
-    {
-        if(indexPath.row==1){
-            cell.detailTextLabel.text=@"20000";
-        }
-        if(indexPath.row==2){
-            cell.detailTextLabel.text=@"10000";
-            
-        }
-    }
-    
+    cell.textLabel.text=[self.cellTitle objectAtIndex:indexPath.section];
     
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0&&indexPath.row==0) {
-        return 85;
-    }
-    return 44;
-}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
