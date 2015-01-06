@@ -28,18 +28,57 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6d6-YD-ud7" userLabel="logo View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kn6-Ep-wrW" userLabel="LOGO image">
-                                        <rect key="frame" x="132" y="20" width="56" height="44"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="便利宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-3m-b1P">
+                                        <rect key="frame" x="132" y="35" width="57" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26666666666666666" green="0.70980392156862748" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSC-iG-8zo" userLabel="advertise View">
                                 <rect key="frame" x="0.0" y="64" width="320" height="100"/>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZF-cH-dnx">
-                                <rect key="frame" x="0.0" y="193" width="320" height="375"/>
-                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSZ-zT-S0g" userLabel="button View">
+                                <rect key="frame" x="0.0" y="192" width="320" height="327"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWF-zA-xhf">
+                                        <rect key="frame" x="8" y="33" width="150" height="100"/>
+                                        <state key="normal" image="按钮1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vi1-xI-6AA">
+                                        <rect key="frame" x="158" y="33" width="150" height="100"/>
+                                        <state key="normal" title="Button" image="按钮2">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNQ-6A-iLY">
+                                        <rect key="frame" x="8" y="141" width="100" height="100"/>
+                                        <state key="normal" title="Button" image="按钮8">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yp-pq-XDW">
+                                        <rect key="frame" x="212" y="141" width="100" height="100"/>
+                                        <state key="normal" title="Button" image="按钮10">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="主页按钮" translatesAutoresizingMaskIntoConstraints="NO" id="gLJ-em-FnZ">
+                                        <rect key="frame" x="8" y="249" width="300" height="70"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vn2-dU-TTb">
+                                        <rect key="frame" x="110" y="141" width="100" height="100"/>
+                                        <state key="normal" title="Button" image="按钮9">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -47,7 +86,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="adView" destination="sSC-iG-8zo" id="tIW-Jp-kKu"/>
-                        <outlet property="scrollView" destination="LZF-cH-dnx" id="5xc-lU-v2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -141,6 +179,12 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="主页按钮" width="1080" height="200"/>
+        <image name="按钮1" width="510" height="340"/>
+        <image name="按钮10" width="340" height="340"/>
+        <image name="按钮2" width="510" height="340"/>
+        <image name="按钮8" width="340" height="340"/>
+        <image name="按钮9" width="340" height="340"/>
         <image name="选项卡（小）1" width="180" height="88"/>
         <image name="选项卡（小）2" width="192" height="88"/>
         <image name="选项卡（小）3" width="192" height="88"/>
