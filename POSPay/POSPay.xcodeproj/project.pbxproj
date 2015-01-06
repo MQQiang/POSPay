@@ -19,10 +19,10 @@
 		0EC58E0A1A55EBBA00F2B391 /* POSPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58E091A55EBBA00F2B391 /* POSPayTests.m */; };
 		0ECCE76F1A599256001ECBD9 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE76E1A599256001ECBD9 /* Util.m */; };
 		0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE7711A599873001ECBD9 /* GTMBase64.m */; };
-		F2C3C8E51A5AFCED0021236C /* POSAccountViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8E31A5AFCED0021236C /* POSAccountViewControllerTableViewController.m */; };
-		F2C3C8E61A5AFCED0021236C /* POSAccountViewControllerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C3C8E41A5AFCED0021236C /* POSAccountViewControllerTableViewController.xib */; };
-		F2C3C8EB1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8E91A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.m */; };
-		F2C3C8EC1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C3C8EA1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.xib */; };
+		F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */; };
+		F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282FFFC1A5C54CC00074ADA /* POSAccountTopCell.xib */; };
+		F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */; };
+		F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C3C8E41A5AFCED0021236C /* POSAccountViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +60,12 @@
 		25735EE90FBB0B03B308AC42 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F2C3C8E21A5AFCED0021236C /* POSAccountViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAccountViewControllerTableViewController.h; sourceTree = "<group>"; };
-		F2C3C8E31A5AFCED0021236C /* POSAccountViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAccountViewControllerTableViewController.m; sourceTree = "<group>"; };
-		F2C3C8E41A5AFCED0021236C /* POSAccountViewControllerTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAccountViewControllerTableViewController.xib; sourceTree = "<group>"; };
-		F2C3C8E81A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAccountHeadCellCollectionViewCell.h; sourceTree = "<group>"; };
-		F2C3C8E91A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAccountHeadCellCollectionViewCell.m; sourceTree = "<group>"; };
-		F2C3C8EA1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAccountHeadCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		F282FFFA1A5C54CC00074ADA /* POSAccountTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAccountTopCell.h; sourceTree = "<group>"; };
+		F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAccountTopCell.m; sourceTree = "<group>"; };
+		F282FFFC1A5C54CC00074ADA /* POSAccountTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAccountTopCell.xib; sourceTree = "<group>"; };
+		F2C3C8E21A5AFCED0021236C /* POSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAccountViewController.h; sourceTree = "<group>"; };
+		F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAccountViewController.m; sourceTree = "<group>"; };
+		F2C3C8E41A5AFCED0021236C /* POSAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAccountViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +171,7 @@
 		0EC58DE91A55EBBA00F2B391 /* POSPay */ = {
 			isa = PBXGroup;
 			children = (
+				F282FFFF1A5C571600074ADA /* Models */,
 				0ECCE76C1A599220001ECBD9 /* Tools */,
 				0EB465981A58517A002B240E /* ViewController */,
 				0EB4658D1A584FFD002B240E /* SDK */,
@@ -239,13 +240,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F282FFFF1A5C571600074ADA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F2C3C8E11A5AFB4D0021236C /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				F2C3C8E71A5AFDFA0021236C /* cell */,
-				F2C3C8E21A5AFCED0021236C /* POSAccountViewControllerTableViewController.h */,
-				F2C3C8E31A5AFCED0021236C /* POSAccountViewControllerTableViewController.m */,
-				F2C3C8E41A5AFCED0021236C /* POSAccountViewControllerTableViewController.xib */,
+				F2C3C8E21A5AFCED0021236C /* POSAccountViewController.h */,
+				F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */,
+				F2C3C8E41A5AFCED0021236C /* POSAccountViewController.xib */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -253,9 +261,9 @@
 		F2C3C8E71A5AFDFA0021236C /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				F2C3C8E81A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.h */,
-				F2C3C8E91A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.m */,
-				F2C3C8EA1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.xib */,
+				F282FFFA1A5C54CC00074ADA /* POSAccountTopCell.h */,
+				F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */,
+				F282FFFC1A5C54CC00074ADA /* POSAccountTopCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -342,10 +350,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C3C8EC1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
-				F2C3C8E61A5AFCED0021236C /* POSAccountViewControllerTableViewController.xib in Resources */,
+				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
 				0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */,
+				F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,14 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
-				F2C3C8EB1A5B01DE0021236C /* POSAccountHeadCellCollectionViewCell.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
-				F2C3C8E51A5AFCED0021236C /* POSAccountViewControllerTableViewController.m in Sources */,
+				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

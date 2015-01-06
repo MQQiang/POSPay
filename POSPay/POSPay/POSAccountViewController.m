@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 mqq.com. All rights reserved.
 //
 
-#import "POSAccountViewControllerTableViewController.h"
-
-@interface POSAccountViewControllerTableViewController ()
+#import "POSAccountViewController.h"
+#import "POSAccountTopCell.h"
+@interface POSAccountViewController ()
 
 @end
 
-@implementation POSAccountViewControllerTableViewController
+@implementation POSAccountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,13 +53,31 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    
+    //cell.
+    if(indexPath.section==0&&indexPath.row==0)
+    {
+        
+        POSAccountTopCell * cell=[[POSAccountTopCell  alloc] init];
+    
+        return cell;
+    }
+   
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POSAccountViewControllerTableViewControllerId" ];
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"POSAccountViewControllerTableViewControllerId"];
     }
+    
+    
+    
+    cell.accessoryType=UITableViewCellStyleValue1;
+    
+    
     cell.textLabel.text=[[self.cellInfo objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     // Configure the cell...
-    
+ 
     return cell;
 }
 
