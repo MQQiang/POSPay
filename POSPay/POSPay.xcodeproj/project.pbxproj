@@ -19,6 +19,11 @@
 		0EC58E0A1A55EBBA00F2B391 /* POSPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58E091A55EBBA00F2B391 /* POSPayTests.m */; };
 		0ECCE76F1A599256001ECBD9 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE76E1A599256001ECBD9 /* Util.m */; };
 		0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE7711A599873001ECBD9 /* GTMBase64.m */; };
+		357030BA1A64222A003287BD /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B51A64222A003287BD /* messageCell.m */; };
+		357030BB1A64222A003287BD /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B61A64222A003287BD /* messageCell.xib */; };
+		357030BC1A64222A003287BD /* messageFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B81A64222A003287BD /* messageFooterView.m */; };
+		357030BD1A64222A003287BD /* messageFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B91A64222A003287BD /* messageFooterView.xib */; };
+		357030C01A642D85003287BD /* POSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030BF1A642D85003287BD /* POSMessage.m */; };
 		F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200011A5C71F400074ADA /* POSAboutProductController.m */; };
 		F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200021A5C71F400074ADA /* POSAboutProductController.xib */; };
 		F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */; };
@@ -60,6 +65,14 @@
 		0ECCE7711A599873001ECBD9 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = "untitled folder/GTMBase64.m"; sourceTree = "<group>"; };
 		0ECCE7731A599952001ECBD9 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		25735EE90FBB0B03B308AC42 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		357030B41A64222A003287BD /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
+		357030B51A64222A003287BD /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
+		357030B61A64222A003287BD /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
+		357030B71A64222A003287BD /* messageFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageFooterView.h; sourceTree = "<group>"; };
+		357030B81A64222A003287BD /* messageFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageFooterView.m; sourceTree = "<group>"; };
+		357030B91A64222A003287BD /* messageFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageFooterView.xib; sourceTree = "<group>"; };
+		357030BE1A642D85003287BD /* POSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSMessage.h; sourceTree = "<group>"; };
+		357030BF1A642D85003287BD /* POSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSMessage.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F28200001A5C71F400074ADA /* POSAboutProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAboutProductController.h; sourceTree = "<group>"; };
@@ -130,6 +143,12 @@
 		0EB465961A58515C002B240E /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				357030B41A64222A003287BD /* messageCell.h */,
+				357030B51A64222A003287BD /* messageCell.m */,
+				357030B61A64222A003287BD /* messageCell.xib */,
+				357030B71A64222A003287BD /* messageFooterView.h */,
+				357030B81A64222A003287BD /* messageFooterView.m */,
+				357030B91A64222A003287BD /* messageFooterView.xib */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -251,6 +270,8 @@
 		F282FFFF1A5C571600074ADA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				357030BE1A642D85003287BD /* POSMessage.h */,
+				357030BF1A642D85003287BD /* POSMessage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -363,7 +384,9 @@
 				F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */,
 				0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */,
 				F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */,
+				357030BD1A64222A003287BD /* messageFooterView.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
+				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,13 +439,16 @@
 			files = (
 				F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
+				357030C01A642D85003287BD /* POSMessage.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
+				357030BA1A64222A003287BD /* messageCell.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
+				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
