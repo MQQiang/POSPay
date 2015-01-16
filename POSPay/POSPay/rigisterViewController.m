@@ -24,6 +24,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)registerUser{
+    
+    // 手机号
+    // 登入密码
+    // 提现密码
+    // 手机验证码
+    // 签名
+    
+    //
+    //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //
+    //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    //
+    //    NSDictionary *parameters = @{@"type":@"shortIntro",@"id":[NSNumber numberWithUnsignedInteger:_journeyId ]};
+    //    [manager GET:[kHTTPServerAddress stringByAppendingString:@"php/api/UserApi.php"] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //
+    //
+    //
+    //
+    //
+    //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //
+    //        NSLog(@"Error: %@", error);
+    //        
+    //    }];
+    
+}
+
+
 /*
 #pragma mark - Navigation
 

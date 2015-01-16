@@ -24,6 +24,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)alterPasswordWithType:(NSInteger)type;{
+    
+    // 手机号
+    // 密码类型
+    // 旧密码
+    // 新密码
+    // 签名
+    
+    
+}
+
 /*
 #pragma mark - Navigation
 
