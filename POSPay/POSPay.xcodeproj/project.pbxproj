@@ -24,6 +24,10 @@
 		357030BC1A64222A003287BD /* messageFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B81A64222A003287BD /* messageFooterView.m */; };
 		357030BD1A64222A003287BD /* messageFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B91A64222A003287BD /* messageFooterView.xib */; };
 		357030C01A642D85003287BD /* POSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030BF1A642D85003287BD /* POSMessage.m */; };
+		357030C81A68EF71003287BD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030C71A68EF71003287BD /* LoginViewController.m */; };
+		357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030CA1A68EFA9003287BD /* rigisterViewController.m */; };
+		357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030CD1A68EFE9003287BD /* findPwdViewController.m */; };
+		357030D11A68F016003287BD /* newPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030D01A68F016003287BD /* newPwdViewController.m */; };
 		F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200011A5C71F400074ADA /* POSAboutProductController.m */; };
 		F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200021A5C71F400074ADA /* POSAboutProductController.xib */; };
 		F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */; };
@@ -73,6 +77,14 @@
 		357030B91A64222A003287BD /* messageFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageFooterView.xib; sourceTree = "<group>"; };
 		357030BE1A642D85003287BD /* POSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSMessage.h; sourceTree = "<group>"; };
 		357030BF1A642D85003287BD /* POSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSMessage.m; sourceTree = "<group>"; };
+		357030C61A68EF71003287BD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		357030C71A68EF71003287BD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		357030C91A68EFA9003287BD /* rigisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rigisterViewController.h; sourceTree = "<group>"; };
+		357030CA1A68EFA9003287BD /* rigisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rigisterViewController.m; sourceTree = "<group>"; };
+		357030CC1A68EFE9003287BD /* findPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findPwdViewController.h; sourceTree = "<group>"; };
+		357030CD1A68EFE9003287BD /* findPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = findPwdViewController.m; sourceTree = "<group>"; };
+		357030CF1A68F016003287BD /* newPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newPwdViewController.h; sourceTree = "<group>"; };
+		357030D01A68F016003287BD /* newPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newPwdViewController.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F28200001A5C71F400074ADA /* POSAboutProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAboutProductController.h; sourceTree = "<group>"; };
@@ -109,6 +121,14 @@
 		0EB4658B1A584EA9002B240E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				357030C61A68EF71003287BD /* LoginViewController.h */,
+				357030C71A68EF71003287BD /* LoginViewController.m */,
+				357030C91A68EFA9003287BD /* rigisterViewController.h */,
+				357030CA1A68EFA9003287BD /* rigisterViewController.m */,
+				357030CC1A68EFE9003287BD /* findPwdViewController.h */,
+				357030CD1A68EFE9003287BD /* findPwdViewController.m */,
+				357030CF1A68F016003287BD /* newPwdViewController.h */,
+				357030D01A68F016003287BD /* newPwdViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -439,12 +459,16 @@
 			files = (
 				F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
+				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
+				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
+				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
+				357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */,
 				357030BA1A64222A003287BD /* messageCell.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
