@@ -9,7 +9,11 @@
 #import "findPwdViewController.h"
 
 @interface findPwdViewController ()
-
+- (IBAction)sendIdentifyingCode;
+@property (weak, nonatomic) IBOutlet UILabel *timeCountDownLable;
+@property (weak, nonatomic) IBOutlet UIButton *sendIdentifyingCodeBtn;
+@property (strong, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) int secondsCountDown;
 @end
 
 @implementation findPwdViewController
@@ -31,6 +35,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)sendIdentifyingCode {
+    self.secondsCountDown = 60;
+    NSTimer *countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES];
+    self.timer = countDownTimer;
+    self.sendIdentifyingCodeBtn.enabled = NO;
+    self.timeCountDownLable.hidden = NO;
+    
+}
+- (void)timeFireMethod{
+    self.secondsCountDown--;
+    self.timeCountDownLable.text = [NSString stringWithFormat:@"%ds",self.secondsCountDown];
+    if (self.secondsCountDown == 0 ) {
+        [self.timer invalidate];
+        self.sendIdentifyingCodeBtn.enabled = YES;
+        self.timeCountDownLable.hidden = YES;
+    }
+}
 /*
 #pragma mark - Navigation
 
