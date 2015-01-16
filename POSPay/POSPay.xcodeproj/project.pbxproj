@@ -10,6 +10,7 @@
 		0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25735EE90FBB0B03B308AC42 /* libPods.a */; };
 		0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DB1A695C60007F6D6E /* AppConstants.m */; };
 		0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */; };
+		0E7512E21A696657007F6D6E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512E11A696657007F6D6E /* UserInfo.m */; };
 		0EB4658F1A58500A002B240E /* MESDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB4658E1A58500A002B240E /* MESDK.framework */; };
 		0EC58DED1A55EBBA00F2B391 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58DEC1A55EBBA00F2B391 /* main.m */; };
 		0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58DEF1A55EBBA00F2B391 /* AppDelegate.m */; };
@@ -53,6 +54,8 @@
 		0E7512DB1A695C60007F6D6E /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConstants.m; path = "untitled folder/AppConstants.m"; sourceTree = "<group>"; };
 		0E7512DC1A695C60007F6D6E /* NetRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestInterface.h; path = "untitled folder/NetRequestInterface.h"; sourceTree = "<group>"; };
 		0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetRequestInterface.m; path = "untitled folder/NetRequestInterface.m"; sourceTree = "<group>"; };
+		0E7512E01A696657007F6D6E /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		0E7512E11A696657007F6D6E /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		0EB4658E1A58500A002B240E /* MESDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MESDK.framework; sourceTree = "<group>"; };
 		0EC58DE71A55EBBA00F2B391 /* POSPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC58DEB1A55EBBA00F2B391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 			children = (
 				357030BE1A642D85003287BD /* POSMessage.h */,
 				357030BF1A642D85003287BD /* POSMessage.m */,
+				0E7512E01A696657007F6D6E /* UserInfo.h */,
+				0E7512E11A696657007F6D6E /* UserInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
+				0E7512E21A696657007F6D6E /* UserInfo.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
