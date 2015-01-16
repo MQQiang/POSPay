@@ -10,6 +10,7 @@
 
 @interface POSIndexViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *tabBar;
 
 @end
 

@@ -29,6 +29,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    
+    CGRect rect = CGRectMake(_tabBar.frame.origin.x, _tabBar.frame.origin.y+5.0f, _tabBar.frame.size.width, 40);
+    
+    [_tabBar setFrame:rect];
+    [self.view bringSubviewToFront:_tabBar];
+}
 
 #pragma 广告轮播器
     
