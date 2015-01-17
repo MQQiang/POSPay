@@ -8,8 +8,16 @@
 
 #import "rigisterViewController.h"
 
-@interface rigisterViewController ()
+@interface rigisterViewController ()<UIAlertViewDelegate>
 - (IBAction)sendIdentifyingCode;
+- (IBAction)rigister;
+//textField控件
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *passwordAgain;
+@property (weak, nonatomic) IBOutlet UITextField *identifingCode;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *timeCountDownLable;
 @property (weak, nonatomic) IBOutlet UIButton *sendIdentifyingCodeBtn;
 @property (strong, nonatomic) NSTimer *timer;
@@ -77,6 +85,13 @@
     self.timeCountDownLable.hidden = NO;
     
 }
+
+- (IBAction)rigister {
+    //[self registerUser];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"注册成功" delegate:self cancelButtonTitle:nil otherButtonTitles:@"立即登录", nil];
+    [alertView show];
+    
+}
 - (void)timeFireMethod{
     self.secondsCountDown--;
     self.timeCountDownLable.text = [NSString stringWithFormat:@"%ds",self.secondsCountDown];
@@ -84,6 +99,13 @@
         [self.timer invalidate];
         self.sendIdentifyingCodeBtn.enabled = YES;
         self.timeCountDownLable.hidden = YES;
+    }
+}
+#pragma UIalertViewDelegate Method
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -107,13 +107,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="登录密码" minimumFontSize="17" id="1Gu-g2-Vy5">
-                                <rect key="frame" x="45" y="141" width="230" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户姓名" minimumFontSize="17" id="1Gu-g2-Vy5">
+                                <rect key="frame" x="47" y="141" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再次输入密码" minimumFontSize="17" id="zdz-GK-74B">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身份证号码" minimumFontSize="17" id="zdz-GK-74B">
                                 <rect key="frame" x="45" y="186" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -157,14 +157,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="找回密码" id="k8i-xl-Xoc"/>
                     <connections>
+                        <outlet property="IDnumber" destination="zdz-GK-74B" id="UFM-tm-9D4"/>
+                        <outlet property="identifyingCode" destination="QwX-As-xZ0" id="VW0-Ej-zRy"/>
+                        <outlet property="nextBtn" destination="W8g-EZ-4JV" id="H6T-bm-bbJ"/>
+                        <outlet property="phoneNumber" destination="FbQ-gg-Z2b" id="j7y-ea-AQZ"/>
                         <outlet property="sendIdentifyingCodeBtn" destination="PGt-yS-cFv" id="WgW-PX-sX9"/>
                         <outlet property="timeCountDownLable" destination="WPL-Jc-KWM" id="RTF-B4-03N"/>
+                        <outlet property="userName" destination="1Gu-g2-Vy5" id="QXV-67-fEq"/>
                         <segue destination="89l-cE-yaT" kind="push" identifier="toNewPwdViewController" id="GWR-tZ-0Fh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y53-rC-jQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="-1799.8499999999999"/>
+            <point key="canvasLocation" x="65" y="-1800"/>
         </scene>
         <!--找回密码-->
         <scene sceneID="AED-u9-Cta">
@@ -223,12 +228,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再次输入密码" minimumFontSize="17" id="Dev-gz-4TM">
-                                <rect key="frame" x="47" y="185" width="230" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机验证码" minimumFontSize="17" id="Yg4-IV-Of9">
                                 <rect key="frame" x="47" y="229" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -271,6 +270,9 @@
                                 <state key="normal" title="确认">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rigister" destination="nrn-e2-3Hf" eventType="touchUpInside" id="P9B-2j-qF1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ocd-9W-CxF">
                                 <rect key="frame" x="202" y="229" width="75" height="30"/>
@@ -282,19 +284,29 @@
                                     <action selector="sendIdentifyingCode" destination="nrn-e2-3Hf" eventType="touchUpInside" id="Aug-MU-rFm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再次输入密码" minimumFontSize="17" id="Dev-gz-4TM">
+                                <rect key="frame" x="47" y="185" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="DXi-TX-pnu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="identifingCode" destination="Yg4-IV-Of9" id="di9-xo-lCN"/>
+                        <outlet property="password" destination="NZK-dz-SR1" id="sjW-0b-K0D"/>
+                        <outlet property="passwordAgain" destination="Dev-gz-4TM" id="AYB-Lw-8m8"/>
+                        <outlet property="phoneNumber" destination="xqC-8A-p1A" id="pOG-r4-cXn"/>
                         <outlet property="sendIdentifyingCodeBtn" destination="Ocd-9W-CxF" id="lqL-A4-5NK"/>
                         <outlet property="timeCountDownLable" destination="Yk9-2o-G6Y" id="wBG-Rp-DZZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVm-xW-Jmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-2623.4499999999998"/>
+            <point key="canvasLocation" x="65" y="-2624"/>
         </scene>
         <!--应用-->
         <scene sceneID="hNz-n2-bh7">

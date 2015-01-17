@@ -10,31 +10,42 @@
 
 @interface findPwdViewController ()
 - (IBAction)sendIdentifyingCode;
+- (IBAction)next;
+
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *IDnumber;
+@property (weak, nonatomic) IBOutlet UITextField *identifyingCode;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeCountDownLable;
 @property (weak, nonatomic) IBOutlet UIButton *sendIdentifyingCodeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int secondsCountDown;
 @end
 
 @implementation findPwdViewController
-- (IBAction)next {
-    
-    //加判断
-    [self performSegueWithIdentifier:@"toNewPwdViewController" sender:nil];
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.phoneNumber];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userName];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.IDnumber];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifyingCode];
+    self.sendIdentifyingCodeBtn.enabled = NO;
+    self.nextBtn.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)next {
+    
+    //加判断
+    [self performSegueWithIdentifier:@"toNewPwdViewController" sender:nil];
+}
 
 - (IBAction)sendIdentifyingCode {
     self.secondsCountDown = 60;
@@ -52,6 +63,13 @@
         self.sendIdentifyingCodeBtn.enabled = YES;
         self.timeCountDownLable.hidden = YES;
     }
+}
+- (void)textChange{
+    if (self.phoneNumber.text.length == 11) {
+        self.sendIdentifyingCodeBtn.enabled = YES;
+    }
+    else self.sendIdentifyingCodeBtn.enabled = NO;
+    self.nextBtn.enabled = (self.phoneNumber.text.length && self.userName.text.length && self.IDnumber.text.length && self.identifyingCode.text.length);
 }
 /*
 #pragma mark - Navigation
