@@ -11,6 +11,9 @@
 @interface rigisterViewController ()<UIAlertViewDelegate>
 - (IBAction)sendIdentifyingCode;
 - (IBAction)rigister;
+- (IBAction)loadServiceContract;
+- (IBAction)agreeServiceContract;
+
 //textField控件
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -20,8 +23,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeCountDownLable;
 @property (weak, nonatomic) IBOutlet UIButton *sendIdentifyingCodeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *downBtn;
+@property (weak, nonatomic) IBOutlet UIButton *agreeToContractBtn;
+
+
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int secondsCountDown;
+@property (assign, nonatomic,getter=isAgree) BOOL agreeToContract;//标志是否同意服务协议
 
 @end
 
@@ -30,7 +38,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.timeCountDownLable.hidden = YES;
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.phoneNumber];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.password];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordAgain];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifingCode];
+    self.sendIdentifyingCodeBtn.enabled = NO;
+    self.downBtn.enabled = NO;
+    self.agreeToContract = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,6 +106,17 @@
     [alertView show];
     
 }
+
+- (IBAction)loadServiceContract {
+    
+}
+
+- (IBAction)agreeServiceContract {
+    self.agreeToContract = !self.isAgree;
+    if(self.isAgree == YES)
+        [self.agreeToContractBtn setImage:[UIImage imageNamed:@"确定图标.png"] forState:UIControlStateNormal];
+    else [self.agreeToContractBtn setImage:nil forState:UIControlStateNormal];
+}
 - (void)timeFireMethod{
     self.secondsCountDown--;
     self.timeCountDownLable.text = [NSString stringWithFormat:@"%ds",self.secondsCountDown];
@@ -100,6 +125,13 @@
         self.sendIdentifyingCodeBtn.enabled = YES;
         self.timeCountDownLable.hidden = YES;
     }
+}
+- (void)textChange{
+    if (self.phoneNumber.text.length == 11) {
+        self.sendIdentifyingCodeBtn.enabled = YES;
+    }
+    else self.sendIdentifyingCodeBtn.enabled = NO;
+    self.downBtn.enabled = (self.phoneNumber.text.length && self.password.text.length && self.passwordAgain.text.length && self.identifingCode.text.length);
 }
 #pragma UIalertViewDelegate Method
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
