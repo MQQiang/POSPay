@@ -8,6 +8,7 @@
 
 #import "Util.h"
 #import "GTMBase64.h"
+#import "AFNetworking.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 @implementation Util
@@ -107,4 +108,18 @@
     
     return result;
     
-}@end
+}
+
++(NSString *)baseServerUrl{
+    
+    return @"http://stronglion2010.gicp.net:8088/yhk_cust_sys/scl_pos";
+}
++(NSString *)appKey{
+    return @"01010101";
+}
++(NSString *)appVersion{
+    
+    return @"1.0.1";
+}
+
+@end

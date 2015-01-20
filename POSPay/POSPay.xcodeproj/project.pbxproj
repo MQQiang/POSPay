@@ -56,6 +56,7 @@
 		0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetRequestInterface.m; path = "untitled folder/NetRequestInterface.m"; sourceTree = "<group>"; };
 		0E7512E01A696657007F6D6E /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		0E7512E11A696657007F6D6E /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		0E7512E31A6E961F007F6D6E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0EB4658E1A58500A002B240E /* MESDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MESDK.framework; sourceTree = "<group>"; };
 		0EC58DE71A55EBBA00F2B391 /* POSPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC58DEB1A55EBBA00F2B391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 				0ECCE7701A599873001ECBD9 /* GTMBase64.h */,
 				0ECCE7711A599873001ECBD9 /* GTMBase64.m */,
 				0ECCE7731A599952001ECBD9 /* GTMDefines.h */,
+				0E7512E31A6E961F007F6D6E /* PrefixHeader.pch */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -617,6 +619,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,6 +637,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

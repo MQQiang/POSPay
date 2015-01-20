@@ -11,5 +11,7 @@
 @interface Util : NSObject
 
 +(NSString *)encodeStringWithMD5:(NSString *)string;
-
++(NSString *)baseServerUrl;
++(NSString *)appKey;
++(NSString *)appVersion;
 @end
