@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
+
+#import <Security/Security.h>
+
 @interface Util : NSObject
 
 +(NSString *)encodeStringWithMD5:(NSString *)string;
 +(NSString *)baseServerUrl;
 +(NSString *)appKey;
 +(NSString *)appVersion;
++(NSString*)TripleDES:(NSString*)plainText encryptOrDecrypt:(CCOperation)encryptOrDecrypt;
 @end

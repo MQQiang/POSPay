@@ -45,6 +45,8 @@
     self.sendIdentifyingCodeBtn.enabled = NO;
     self.downBtn.enabled = NO;
     self.agreeToContract = NO;
+    
+    [self registerUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,14 +61,16 @@
     // 提现密码
     // 手机验证码
     // 签名
+    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
+    NSString *stPw = [Util encodeStringWithMD5:@"mobile123456"];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.reg",@"mobile":@"1234567890",@"login_pwd":@"123456",@"settle_pwd":@"123456",@"sign":@"",@"phone_check_code":@"123456"};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.reg",@"mobile":@"13656678405",@"login_pwd":pw,@"settle_pwd":stPw,@"sign":@"",@"phone_check_code":@"123456"};
     
-    [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"%@",responseObject);
         
