@@ -10,4 +10,11 @@
 
 @interface UserInfo : NSObject
 
++(UserInfo *)sharedUserinfo;
+@property(nonatomic,strong)NSString *randomCode;
+@property(nonatomic,strong)NSString *phoneNum;
+@property(nonatomic,strong)NSString *password;
+@property(nonatomic,strong)NSString *settlePassword;
+-(void)setUserInfoWithDic:(NSDictionary *)dic;
+
 @end

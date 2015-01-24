@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "UserInfo.h"
 @interface LoginViewController ()
 
 @end
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loginUser];
     // Do any additional setup after loading the view.
 }
 
@@ -29,22 +30,42 @@
 //    登入密码
 //     签名
     
+    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
+
     
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-        NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.login",@"mobile":@"1234567890",@"login_pwd":@"",@"sign":@""};
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.login" ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:[Util signSuffix]] ];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.login",@"mobile":@"13656678405",@"login_pwd":pw,@"sign":checkCode};
+    
         [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
             NSLog(@"%@",responseObject);
-    
+            NSDictionary *dic = (NSDictionary *)responseObject;
+            if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+                
+                [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+                
+            }
+            else{
+                
+                
+                [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+                
+                
+            }
     
     
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
             NSLog(@"Error: %@", error);
     
+            [Util alertNetworkError:self.view];
         }];
     
     

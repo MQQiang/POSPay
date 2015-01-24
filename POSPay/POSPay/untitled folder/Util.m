@@ -115,7 +115,8 @@
 
 +(NSString *)baseServerUrl{
     
-    return @"http://stronglion2010.gicp.net:8088/yhk_cust_sys/scl_pos";
+//    return @"http://stronglion2010.gicp.net:8088/yhk_cust_sys/scl_pos";
+    return @"http://183.14.162.254:8088/yhk_cust_sys/scl_pos";
     
    
 }
@@ -196,6 +197,18 @@
     
     return result;
 }
++(NSString *)signSuffix{
+    
+    return @"3F53BC47C0165EF589586E475452A227";
+}
 
++(void)alertNetworkError:(UIView *)view{
+    
+    [MBProgressHUD hideAllHUDsForView:view animated:YES];
+    
+    
+    [[[UIAlertView  alloc] initWithTitle:@"网络错误" message:@"请检查网络" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+    
+}
 
 @end

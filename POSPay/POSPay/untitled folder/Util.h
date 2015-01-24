@@ -10,7 +10,7 @@
 
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
-
+#import <UIKit/UIKit.h>
 #import <Security/Security.h>
 
 @interface Util : NSObject
@@ -20,4 +20,7 @@
 +(NSString *)appKey;
 +(NSString *)appVersion;
 +(NSString*)TripleDES:(NSString*)plainText encryptOrDecrypt:(CCOperation)encryptOrDecrypt;
++(NSString *)signSuffix;
+
++(void)alertNetworkError:(UIView *)view;
 @end
