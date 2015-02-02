@@ -15,6 +15,9 @@
 @property(nonatomic,strong)NSString *phoneNum;
 @property(nonatomic,strong)NSString *password;
 @property(nonatomic,strong)NSString *settlePassword;
+@property(nonatomic,strong)NSString *name;
+@property(nonatomic,strong)NSString *cardNumber;
+@property(nonatomic,strong)NSString *checkUrl;
 -(void)setUserInfoWithDic:(NSDictionary *)dic;
-
+-(void)setDetailUserInfo:(NSDictionary *)dic;
 @end

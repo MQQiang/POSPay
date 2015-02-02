@@ -29,5 +29,11 @@
     _randomCode = dic[@"random_key"];
     
 }
-
+-(void)setDetailUserInfo:(NSDictionary *)dic{
+    
+    _cardNumber = dic[@"cred_no"];
+    _name = dic[@"real_name"];
+    _checkUrl = dic[@"bank_union_qry_url"];
+    
+}
 @end

@@ -116,7 +116,7 @@
 +(NSString *)baseServerUrl{
     
 //    return @"http://stronglion2010.gicp.net:8088/yhk_cust_sys/scl_pos";
-    return @"http://183.14.162.254:8088/yhk_cust_sys/scl_pos";
+    return @"http://183.14.162.254:8099/yhk_cust_sys/scl_pos";
     
    
 }
@@ -217,6 +217,11 @@
     
     
     return  [Util encodeStringWithMD5:mPw];
+    
+}
++(BOOL)inputIsNull:(UITextField *)textField{
+    
+    return  [textField.text isEqualToString:@""];
     
 }
 

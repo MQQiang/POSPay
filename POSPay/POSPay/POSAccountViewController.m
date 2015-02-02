@@ -8,6 +8,8 @@
 #import "POSAboutProductController.h"
 #import "POSAccountViewController.h"
 #import "POSAccountTopCell.h"
+#import "UserInfo.h"
+
 @interface POSAccountViewController ()
 
 @end
@@ -108,6 +110,80 @@
     }
     return 44;
 }
+
+
+-(void)requestUserInfo{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.qry" ] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum]];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"sign":checkCode};
+    
+    [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+}
+-(void)refreshAccountViewWithDic:(NSDictionary *)dic{
+    
+    NSString *checkString  =dic[@"verify_status"];
+    if([checkString isEqualToString:@"0"]){
+        
+        
+        
+        
+    }
+    else if([checkString isEqualToString:@"1"]) {
+        
+        
+        
+    }
+    else{
+        
+        [[UserInfo sharedUserinfo] setDetailUserInfo:dic];
+        
+        
+        
+    }
+    
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

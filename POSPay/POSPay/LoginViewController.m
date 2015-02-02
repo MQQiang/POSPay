@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self loginUser];
+    [self changePasswordWithType:0];
     // Do any additional setup after loading the view.
 }
 
@@ -88,6 +89,7 @@
 
 -(void)changePasswordWithType:(NSInteger)type{
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
     NSString *new_pw = [Util encodeStringWithMD5:@"mobile12345"];
@@ -110,13 +112,15 @@
             
             [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
             
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
         }
         else{
             
             
             [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
-            
+              [MBProgressHUD hideHUDForView:self.view animated:YES];
         }
         
         
@@ -125,6 +129,8 @@
         NSLog(@"Error: %@", error);
         
         [Util alertNetworkError:self.view];
+        
+          [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 
     
