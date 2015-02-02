@@ -31,6 +31,10 @@
 		357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030CA1A68EFA9003287BD /* rigisterViewController.m */; };
 		357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030CD1A68EFE9003287BD /* findPwdViewController.m */; };
 		357030D11A68F016003287BD /* newPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030D01A68F016003287BD /* newPwdViewController.m */; };
+		35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817891A7FB7010066C52B /* nameAndIDController.m */; };
+		35C8178D1A7FB7150066C52B /* passwordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178C1A7FB7150066C52B /* passwordController.m */; };
+		35C817901A7FB7290066C52B /* pictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178F1A7FB7290066C52B /* pictureController.m */; };
+		35C817931A7FB7630066C52B /* confirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817921A7FB7630066C52B /* confirmController.m */; };
 		F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200011A5C71F400074ADA /* POSAboutProductController.m */; };
 		F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200021A5C71F400074ADA /* POSAboutProductController.xib */; };
 		F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */; };
@@ -95,6 +99,14 @@
 		357030CD1A68EFE9003287BD /* findPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = findPwdViewController.m; sourceTree = "<group>"; };
 		357030CF1A68F016003287BD /* newPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newPwdViewController.h; sourceTree = "<group>"; };
 		357030D01A68F016003287BD /* newPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newPwdViewController.m; sourceTree = "<group>"; };
+		35C817881A7FB7010066C52B /* nameAndIDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nameAndIDController.h; sourceTree = "<group>"; };
+		35C817891A7FB7010066C52B /* nameAndIDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nameAndIDController.m; sourceTree = "<group>"; };
+		35C8178B1A7FB7150066C52B /* passwordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwordController.h; sourceTree = "<group>"; };
+		35C8178C1A7FB7150066C52B /* passwordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = passwordController.m; sourceTree = "<group>"; };
+		35C8178E1A7FB7290066C52B /* pictureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pictureController.h; sourceTree = "<group>"; };
+		35C8178F1A7FB7290066C52B /* pictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureController.m; sourceTree = "<group>"; };
+		35C817911A7FB7630066C52B /* confirmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmController.h; sourceTree = "<group>"; };
+		35C817921A7FB7630066C52B /* confirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmController.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F28200001A5C71F400074ADA /* POSAboutProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAboutProductController.h; sourceTree = "<group>"; };
@@ -186,6 +198,7 @@
 		0EB465971A585169002B240E /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				35C8177B1A7FB5D90066C52B /* Authentication */,
 				F28200001A5C71F400074ADA /* POSAboutProductController.h */,
 				F28200011A5C71F400074ADA /* POSAboutProductController.m */,
 				F28200021A5C71F400074ADA /* POSAboutProductController.xib */,
@@ -283,6 +296,21 @@
 				0E7512E31A6E961F007F6D6E /* PrefixHeader.pch */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		35C8177B1A7FB5D90066C52B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				35C817881A7FB7010066C52B /* nameAndIDController.h */,
+				35C817891A7FB7010066C52B /* nameAndIDController.m */,
+				35C8178B1A7FB7150066C52B /* passwordController.h */,
+				35C8178C1A7FB7150066C52B /* passwordController.m */,
+				35C8178E1A7FB7290066C52B /* pictureController.h */,
+				35C8178F1A7FB7290066C52B /* pictureController.m */,
+				35C817911A7FB7630066C52B /* confirmController.h */,
+				35C817921A7FB7630066C52B /* confirmController.m */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		6B66939FA4C93B2675D2D152 /* Pods */ = {
@@ -476,6 +504,8 @@
 			files = (
 				F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */,
 				0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */,
+				35C8178D1A7FB7150066C52B /* passwordController.m in Sources */,
+				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
@@ -483,6 +513,7 @@
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
+				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
@@ -490,6 +521,7 @@
 				357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */,
 				0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */,
 				357030BA1A64222A003287BD /* messageCell.m in Sources */,
+				35C817901A7FB7290066C52B /* pictureController.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
 				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,

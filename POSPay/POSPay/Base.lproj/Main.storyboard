@@ -491,17 +491,11 @@
         <!--实名认证-->
         <scene sceneID="ui4-uh-DPD">
             <objects>
-                <viewController id="DCM-9C-vQG" sceneMemberID="viewController">
+                <viewController id="DCM-9C-vQG" customClass="nameAndIDController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpu-FX-V5K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="真实姓名" minimumFontSize="17" id="ir1-Hl-7II">
-                                <rect key="frame" x="41" y="87" width="253" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身份证号码" minimumFontSize="17" id="ZQu-br-d4o">
                                 <rect key="frame" x="41" y="138" width="253" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -515,13 +509,24 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextBtnClick" destination="DCM-9C-vQG" eventType="touchUpInside" id="LO6-qm-qOB"/>
                                     <segue destination="tAA-do-OWs" kind="push" id="vTz-qQ-ny0"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="真实姓名" minimumFontSize="17" id="ir1-Hl-7II">
+                                <rect key="frame" x="41" y="87" width="253" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="zVS-Hb-xcS"/>
+                    <connections>
+                        <outlet property="identifyingCodeField" destination="ZQu-br-d4o" id="KvZ-Kw-mgB"/>
+                        <outlet property="nameField" destination="ir1-Hl-7II" id="4bd-8G-c7P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfN-Ob-37r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,7 +536,7 @@
         <scene sceneID="1s3-w6-hkK">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAl-Nb-d5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="tAA-do-OWs" sceneMemberID="viewController">
+                <viewController id="tAA-do-OWs" customClass="passwordController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oVh-Xy-SC7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,6 +561,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextBtnClick" destination="tAA-do-OWs" eventType="touchUpInside" id="DsS-tk-Gu5"/>
                                     <segue destination="sd2-22-ccS" kind="push" id="xsJ-u0-Ttr"/>
                                 </connections>
                             </button>
@@ -563,6 +569,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="MEa-rP-yD5"/>
+                    <connections>
+                        <outlet property="withdrawMoneyPasswordField" destination="nwH-Ed-KqY" id="Jyv-0v-HBS"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1046" y="808"/>
@@ -571,7 +580,7 @@
         <scene sceneID="wQQ-Qo-IHX">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-07-QOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="sd2-22-ccS" sceneMemberID="viewController">
+                <viewController id="sd2-22-ccS" customClass="pictureController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-Ip-jOs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -582,6 +591,9 @@
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addMainPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="bCS-oX-Xx2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加本人手持身份证照" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QCc-N1-eVV">
                                 <rect key="frame" x="112" y="217" width="103" height="21"/>
@@ -596,14 +608,17 @@
                                 <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addFrontPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="UTn-xZ-hg5"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VaJ-vt-K4P">
-                                <rect key="frame" x="191" y="246" width="97" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加身份认证正面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uEQ-Uf-2oA">
+                                <rect key="frame" x="32" y="354" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加身份证背面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EvX-jG-1sa">
                                 <rect key="frame" x="200" y="354" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -618,20 +633,29 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="upload" destination="sd2-22-ccS" eventType="touchUpInside" id="pwJ-bL-qHG"/>
                                     <segue destination="095-aT-PKg" kind="push" id="VCI-GH-s4K"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加身份认证正面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uEQ-Uf-2oA">
-                                <rect key="frame" x="32" y="354" width="84" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VaJ-vt-K4P">
+                                <rect key="frame" x="191" y="246" width="97" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBackPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="cb0-rf-LwJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="psx-sH-80j"/>
+                    <connections>
+                        <outlet property="backPicture" destination="VaJ-vt-K4P" id="Acu-tg-M4f"/>
+                        <outlet property="frontPicture" destination="eQi-66-hvc" id="mjO-gf-OUP"/>
+                        <outlet property="mainPicture" destination="pVR-JJ-AX5" id="1ZH-nX-vWD"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1427" y="808"/>
@@ -639,7 +663,7 @@
         <!--实名认证-->
         <scene sceneID="E25-YW-WGb">
             <objects>
-                <viewController id="095-aT-PKg" sceneMemberID="viewController">
+                <viewController id="095-aT-PKg" customClass="confirmController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2KV-eo-mOa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,15 +710,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBn-op-90g">
-                                <rect key="frame" x="139" y="146" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I94-2e-sx4">
+                                <rect key="frame" x="139" y="175" width="165" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I94-2e-sx4">
-                                <rect key="frame" x="139" y="175" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBn-op-90g">
+                                <rect key="frame" x="139" y="146" width="165" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -704,6 +728,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="r8E-hY-d31"/>
+                    <connections>
+                        <outlet property="IDNumberLable" destination="PBn-op-90g" id="Ldp-Yg-F5m"/>
+                        <outlet property="nameLable" destination="QUD-qt-kQV" id="X45-ld-5v5"/>
+                        <outlet property="stateLable" destination="I94-2e-sx4" id="ZHH-Si-Ts2"/>
+                        <outlet property="typeLable" destination="3rb-5s-nvn" id="tPx-7n-02v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIc-f3-uXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
