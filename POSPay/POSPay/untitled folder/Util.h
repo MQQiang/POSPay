@@ -23,4 +23,6 @@
 +(NSString *)signSuffix;
 
 +(void)alertNetworkError:(UIView *)view;
++(NSString *)passwordStringInMD5:(NSString *)pw;
++(BOOL)inputIsNull:(UITextField *)textField;
 @end

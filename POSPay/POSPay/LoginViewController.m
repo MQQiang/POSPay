@@ -10,13 +10,14 @@
 #import "UserInfo.h"
 @interface LoginViewController ()
 
+
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loginUser];
+//    [self loginUser];
     // Do any additional setup after loading the view.
 }
 
@@ -29,15 +30,21 @@
 //     手机号
 //    登入密码
 //     签名
+    if ([_phoneNumber.text isEqualToString:@""]||[_password.text isEqualToString:@""]) {
+        
+         [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+        
+    }
     
-    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
+    NSString *phoneNumber = _phoneNumber.text;
+    NSString *pw = [Util passwordStringInMD5:_password.text];
 
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.login" ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:[Util signSuffix]] ];
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.login" ] stringByAppendingString:phoneNumber] stringByAppendingString:pw]  stringByAppendingString:[Util signSuffix]] ];
     
     
     
@@ -79,7 +86,49 @@
     
 }
 
+-(void)changePasswordWithType:(NSInteger)type{
+    
+    
+    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
+    NSString *new_pw = [Util encodeStringWithMD5:@"mobile12345"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue] ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:new_pw ]];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.mdy.pwd",@"mobile":@"13656678405",@"pwd_type":[[NSNumber numberWithInteger:type]stringValue],@"old_pwd":pw,@"new_pwd":new_pw,@"sign":checkCode};
+    
+    [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        [Util alertNetworkError:self.view];
+    }];
 
+    
+}
 
 
 /*

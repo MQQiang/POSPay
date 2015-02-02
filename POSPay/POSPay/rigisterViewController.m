@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordAgain;
 @property (weak, nonatomic) IBOutlet UITextField *identifingCode;
 
+@property (weak, nonatomic) IBOutlet UITextField *setPassword;
+@property (weak, nonatomic) IBOutlet UITextField *setPasswordAgain;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *timeCountDownLable;
 @property (weak, nonatomic) IBOutlet UIButton *sendIdentifyingCodeBtn;
@@ -61,17 +64,17 @@
     // 提现密码
     // 手机验证码
     // 签名
-    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
-    NSString *stPw = [Util encodeStringWithMD5:@"mobile123456"];
+    NSString *pw = [Util passwordStringInMD5:_password.text];
+    NSString *stPw = [Util encodeStringWithMD5:_setPassword.text];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.reg" ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw] stringByAppendingString:stPw]stringByAppendingString:@"1234"] stringByAppendingString:[Util signSuffix]] ];
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.reg" ] stringByAppendingString:_phoneNumber.text] stringByAppendingString:pw] stringByAppendingString:stPw]stringByAppendingString:@"1234"] stringByAppendingString:[Util signSuffix]] ];
 //    NSString *sign = [checkCode stringByAppendingString:[Util signSuffix]];
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.reg",@"mobile":@"13656678405",@"login_pwd":pw,@"settle_pwd":stPw,@"sign":checkCode,@"phone_check_code":@"1234"};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.reg",@"mobile":_phoneNumber,@"login_pwd":pw,@"settle_pwd":stPw,@"sign":checkCode,@"phone_check_code":@"1234"};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

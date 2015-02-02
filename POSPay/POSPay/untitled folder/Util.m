@@ -211,4 +211,13 @@
     
 }
 
++(NSString *)passwordStringInMD5:(NSString *)pw{
+    
+    NSString *mPw = [@"mobile" stringByAppendingString:pw];
+    
+    
+    return  [Util encodeStringWithMD5:mPw];
+    
+}
+
 @end

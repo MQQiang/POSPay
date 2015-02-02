@@ -36,6 +36,45 @@
 //        NSLog(@"Error: %@", error);
 //        
 //    }];
+    NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
+    NSString *stPw = [Util encodeStringWithMD5:@"mobile123456"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.reg" ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw] stringByAppendingString:stPw]stringByAppendingString:@"1234"] stringByAppendingString:[Util signSuffix]] ];
+    //    NSString *sign = [checkCode stringByAppendingString:[Util signSuffix]];
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.reg",@"mobile":@"13656678405",@"login_pwd":pw,@"settle_pwd":stPw,@"sign":checkCode,@"phone_check_code":@"1234"};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"注册成功" delegate:self cancelButtonTitle:nil otherButtonTitles:@"立即登录", nil];
+            [alertView show];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"注册失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        NSLog(@"%@",operation.responseObject);
+    }];
+    
 
 }
 -(void)loginUser{
