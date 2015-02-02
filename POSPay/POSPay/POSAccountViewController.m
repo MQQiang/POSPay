@@ -182,7 +182,59 @@
     }
     
 }
-
+-(void)requestRateWithType:(NSInteger)type{
+    //"费率类型分为：01:刷卡支付;
+    // 02：快捷支付；03:转账汇款;04:系统转账;05:用户及时提现"
+    
+    // 手机号
+    // 费率类型
+    //签名
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.settle.qryrate" ] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]]];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"rate_type":[[NSNumber numberWithInteger:type] stringValue],@"sign":checkCode};
+    
+    [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"查询费率失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
