@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25735EE90FBB0B03B308AC42 /* libPods.a */; };
+		0E60DB651A7FDA9C000CB750 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E60DB641A7FDA9C000CB750 /* CoreBluetooth.framework */; };
+		0E60DB671A7FDAE0000CB750 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E60DB661A7FDAE0000CB750 /* CoreGraphics.framework */; };
+		0E60DB691A7FDAE7000CB750 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E60DB681A7FDAE7000CB750 /* Foundation.framework */; };
 		0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DB1A695C60007F6D6E /* AppConstants.m */; };
 		0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */; };
 		0E7512E21A696657007F6D6E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512E11A696657007F6D6E /* UserInfo.m */; };
@@ -54,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E60DB641A7FDA9C000CB750 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		0E60DB661A7FDAE0000CB750 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0E60DB681A7FDAE7000CB750 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E7512DA1A695C60007F6D6E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = "untitled folder/AppConstants.h"; sourceTree = "<group>"; };
 		0E7512DB1A695C60007F6D6E /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConstants.m; path = "untitled folder/AppConstants.m"; sourceTree = "<group>"; };
 		0E7512DC1A695C60007F6D6E /* NetRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestInterface.h; path = "untitled folder/NetRequestInterface.h"; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E60DB691A7FDAE7000CB750 /* Foundation.framework in Frameworks */,
+				0E60DB671A7FDAE0000CB750 /* CoreGraphics.framework in Frameworks */,
+				0E60DB651A7FDA9C000CB750 /* CoreBluetooth.framework in Frameworks */,
 				0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */,
 				0EB4658F1A58500A002B240E /* MESDK.framework in Frameworks */,
 			);
@@ -325,6 +334,9 @@
 		C8CC537A5174372640A0F819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E60DB681A7FDAE7000CB750 /* Foundation.framework */,
+				0E60DB661A7FDAE0000CB750 /* CoreGraphics.framework */,
+				0E60DB641A7FDA9C000CB750 /* CoreBluetooth.framework */,
 				25735EE90FBB0B03B308AC42 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -656,7 +668,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
+				"VALID_ARCHS[sdk=*]" = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -674,7 +689,9 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
