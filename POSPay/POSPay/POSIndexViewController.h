@@ -10,7 +10,12 @@
 
 @interface POSIndexViewController : UIViewController
 
+
 @property (strong, nonatomic) IBOutlet UISegmentedControl *tabBar;
+
+- (IBAction)pushCardPayment:(id)sender;
+- (IBAction)pushNoCardPayment:(id)sender;
+
 
 @end
 

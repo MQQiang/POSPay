@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "UserInfo.h"
 @interface LoginViewController ()
+- (IBAction)cancel:(id)sender;
 
 @end
 
@@ -92,4 +93,9 @@
 }
 */
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    
+}
 @end

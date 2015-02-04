@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) int secondsCountDown;
+
 @end
 
 @implementation findPwdViewController
@@ -80,5 +81,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
