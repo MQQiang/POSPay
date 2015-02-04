@@ -35,8 +35,20 @@
 		35C8178D1A7FB7150066C52B /* passwordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178C1A7FB7150066C52B /* passwordController.m */; };
 		35C817901A7FB7290066C52B /* pictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178F1A7FB7290066C52B /* pictureController.m */; };
 		35C817931A7FB7630066C52B /* confirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817921A7FB7630066C52B /* confirmController.m */; };
+		F243AFE01A75562600324F95 /* POSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFDF1A75562600324F95 /* POSPickerView.m */; };
+		F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F243AFE11A75563C00324F95 /* POSPickerView.xib */; };
+		F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */; };
+		F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F243AFE51A75668300324F95 /* POSCardPaymentOrderViewController.xib */; };
 		F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200011A5C71F400074ADA /* POSAboutProductController.m */; };
 		F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200021A5C71F400074ADA /* POSAboutProductController.xib */; };
+		F28200091A5D82E500074ADA /* POSCardPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200071A5D82E500074ADA /* POSCardPaymentController.m */; };
+		F282000A1A5D82E500074ADA /* POSCardPaymentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200081A5D82E500074ADA /* POSCardPaymentController.xib */; };
+		F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F282000C1A5DABB700074ADA /* POSNoCardPaymentController.m */; };
+		F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282000D1A5DABB700074ADA /* POSNoCardPaymentController.xib */; };
+		F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28200131A5DB4D900074ADA /* POSPaymentResultController.m */; };
+		F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28200141A5DB4D900074ADA /* POSPaymentResultController.xib */; };
+		F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282001A1A5DB8CD00074ADA /* POSAlertView.xib */; };
+		F282001F1A5DBE9300074ADA /* POSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F282001E1A5DBE9300074ADA /* POSAlertView.m */; };
 		F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */; };
 		F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F282FFFC1A5C54CC00074ADA /* POSAccountTopCell.xib */; };
 		F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */; };
@@ -109,9 +121,27 @@
 		35C817921A7FB7630066C52B /* confirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmController.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F243AFDE1A75562600324F95 /* POSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPickerView.h; sourceTree = "<group>"; };
+		F243AFDF1A75562600324F95 /* POSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPickerView.m; sourceTree = "<group>"; };
+		F243AFE11A75563C00324F95 /* POSPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPickerView.xib; sourceTree = "<group>"; };
+		F243AFE31A75668300324F95 /* POSCardPaymentOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSCardPaymentOrderViewController.h; sourceTree = "<group>"; };
+		F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSCardPaymentOrderViewController.m; sourceTree = "<group>"; };
+		F243AFE51A75668300324F95 /* POSCardPaymentOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSCardPaymentOrderViewController.xib; sourceTree = "<group>"; };
 		F28200001A5C71F400074ADA /* POSAboutProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAboutProductController.h; sourceTree = "<group>"; };
 		F28200011A5C71F400074ADA /* POSAboutProductController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAboutProductController.m; sourceTree = "<group>"; };
 		F28200021A5C71F400074ADA /* POSAboutProductController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAboutProductController.xib; sourceTree = "<group>"; };
+		F28200061A5D82E500074ADA /* POSCardPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSCardPaymentController.h; sourceTree = "<group>"; };
+		F28200071A5D82E500074ADA /* POSCardPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSCardPaymentController.m; sourceTree = "<group>"; };
+		F28200081A5D82E500074ADA /* POSCardPaymentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSCardPaymentController.xib; sourceTree = "<group>"; };
+		F282000B1A5DABB700074ADA /* POSNoCardPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSNoCardPaymentController.h; sourceTree = "<group>"; };
+		F282000C1A5DABB700074ADA /* POSNoCardPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSNoCardPaymentController.m; sourceTree = "<group>"; };
+		F282000D1A5DABB700074ADA /* POSNoCardPaymentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSNoCardPaymentController.xib; sourceTree = "<group>"; };
+		F28200121A5DB4D900074ADA /* POSPaymentResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPaymentResultController.h; sourceTree = "<group>"; };
+		F28200131A5DB4D900074ADA /* POSPaymentResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPaymentResultController.m; sourceTree = "<group>"; };
+		F28200141A5DB4D900074ADA /* POSPaymentResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPaymentResultController.xib; sourceTree = "<group>"; };
+		F282001A1A5DB8CD00074ADA /* POSAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAlertView.xib; sourceTree = "<group>"; };
+		F282001D1A5DBE9300074ADA /* POSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAlertView.h; sourceTree = "<group>"; };
+		F282001E1A5DBE9300074ADA /* POSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAlertView.m; sourceTree = "<group>"; };
 		F282FFFA1A5C54CC00074ADA /* POSAccountTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSAccountTopCell.h; sourceTree = "<group>"; };
 		F282FFFB1A5C54CC00074ADA /* POSAccountTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSAccountTopCell.m; sourceTree = "<group>"; };
 		F282FFFC1A5C54CC00074ADA /* POSAccountTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSAccountTopCell.xib; sourceTree = "<group>"; };
@@ -209,6 +239,7 @@
 		0EB465981A58517A002B240E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F28200051A5D81EF00074ADA /* Payment */,
 				0EB4658C1A584EB7002B240E /* Index */,
 				0EB4658B1A584EA9002B240E /* Login */,
 				0EB465951A58514D002B240E /* Application */,
@@ -330,6 +361,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F243AFDD1A75560700324F95 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F243AFDE1A75562600324F95 /* POSPickerView.h */,
+				F243AFDF1A75562600324F95 /* POSPickerView.m */,
+				F243AFE11A75563C00324F95 /* POSPickerView.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		F28200051A5D81EF00074ADA /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				F243AFDD1A75560700324F95 /* view */,
+				F28200111A5DB49500074ADA /* NoCardPayment */,
+				F28200101A5DB41600074ADA /* CardPayment */,
+				F28200121A5DB4D900074ADA /* POSPaymentResultController.h */,
+				F28200131A5DB4D900074ADA /* POSPaymentResultController.m */,
+				F28200141A5DB4D900074ADA /* POSPaymentResultController.xib */,
+				F282001D1A5DBE9300074ADA /* POSAlertView.h */,
+				F282001E1A5DBE9300074ADA /* POSAlertView.m */,
+				F282001A1A5DB8CD00074ADA /* POSAlertView.xib */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		F28200101A5DB41600074ADA /* CardPayment */ = {
+			isa = PBXGroup;
+			children = (
+				F28200061A5D82E500074ADA /* POSCardPaymentController.h */,
+				F28200071A5D82E500074ADA /* POSCardPaymentController.m */,
+				F28200081A5D82E500074ADA /* POSCardPaymentController.xib */,
+				F243AFE31A75668300324F95 /* POSCardPaymentOrderViewController.h */,
+				F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */,
+				F243AFE51A75668300324F95 /* POSCardPaymentOrderViewController.xib */,
+			);
+			name = CardPayment;
+			sourceTree = "<group>";
+		};
+		F28200111A5DB49500074ADA /* NoCardPayment */ = {
+			isa = PBXGroup;
+			children = (
+				F282000B1A5DABB700074ADA /* POSNoCardPaymentController.h */,
+				F282000C1A5DABB700074ADA /* POSNoCardPaymentController.m */,
+				F282000D1A5DABB700074ADA /* POSNoCardPaymentController.xib */,
+			);
+			name = NoCardPayment;
+			sourceTree = "<group>";
+		};
 		F282FFFF1A5C571600074ADA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,12 +524,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F282000A1A5D82E500074ADA /* POSCardPaymentController.xib in Resources */,
+				F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */,
+				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
+				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
+				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
 				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
 				F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */,
 				0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */,
 				F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */,
 				357030BD1A64222A003287BD /* messageFooterView.xib in Resources */,
+				F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
 			);
@@ -506,9 +592,12 @@
 				0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */,
 				35C8178D1A7FB7150066C52B /* passwordController.m in Sources */,
 				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
+				F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
+				F243AFE01A75562600324F95 /* POSPickerView.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
+				F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */,
 				0E7512E21A696657007F6D6E /* UserInfo.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
@@ -516,6 +605,7 @@
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
+				F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
 				357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */,
@@ -525,6 +615,8 @@
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
 				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,
+				F282001F1A5DBE9300074ADA /* POSAlertView.m in Sources */,
+				F28200091A5D82E500074ADA /* POSCardPaymentController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

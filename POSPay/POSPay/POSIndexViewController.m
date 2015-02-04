@@ -8,7 +8,8 @@
 
 #import "POSIndexViewController.h"
 #import "appCell.h"
-
+#import "POSCardPaymentController.h"
+#import "POSNoCardPaymentController.h"
 @interface POSIndexViewController ()<UIScrollViewDelegate>
 //图片轮播器
 @property (weak, nonatomic) IBOutlet UIScrollView *adView;
@@ -100,6 +101,21 @@
     }
 }
 
+- (IBAction)pushCardPayment:(id)sender {
+    POSCardPaymentController* pushedView=[[POSCardPaymentController alloc] init];
+    pushedView.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:pushedView animated:YES];
+    
+    
+}
+
+- (IBAction)pushNoCardPayment:(id)sender {
+    POSNoCardPaymentController* pushedView=[[POSNoCardPaymentController alloc] init];
+    pushedView.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:pushedView animated:YES];
+    
+    
+}
 @end
 
 
