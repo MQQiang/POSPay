@@ -11,6 +11,8 @@
 @interface nameAndIDController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *identifyingCodeField;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
 - (IBAction)nextBtnClick;
 
 @end
@@ -19,7 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.nameField];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifyingCodeField];
+    self.nextBtn.enabled = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +41,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)textChange{
+    if (self.nameField.text.length && self.identifyingCodeField.text.length) {
+        self.nextBtn.enabled = YES;
+    }
+    else self.nextBtn.enabled = NO;
+}
 
 - (IBAction)nextBtnClick {
 }

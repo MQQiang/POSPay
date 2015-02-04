@@ -526,6 +526,7 @@
                     <connections>
                         <outlet property="identifyingCodeField" destination="ZQu-br-d4o" id="KvZ-Kw-mgB"/>
                         <outlet property="nameField" destination="ir1-Hl-7II" id="4bd-8G-c7P"/>
+                        <outlet property="nextBtn" destination="aNz-Bw-Dt1" id="Qt2-Kd-K4W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfN-Ob-37r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,7 +536,6 @@
         <!--实名认证-->
         <scene sceneID="1s3-w6-hkK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BAl-Nb-d5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="tAA-do-OWs" customClass="passwordController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oVh-Xy-SC7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -573,13 +573,13 @@
                         <outlet property="withdrawMoneyPasswordField" destination="nwH-Ed-KqY" id="Jyv-0v-HBS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAl-Nb-d5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="808"/>
         </scene>
         <!--实名认证-->
         <scene sceneID="wQQ-Qo-IHX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-07-QOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sd2-22-ccS" customClass="pictureController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-Ip-jOs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -657,6 +657,7 @@
                         <outlet property="mainPicture" destination="pVR-JJ-AX5" id="1ZH-nX-vWD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-07-QOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1427" y="808"/>
         </scene>

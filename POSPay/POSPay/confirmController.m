@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addBackBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,5 +37,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+//添加返回按钮
+- (void)addBackBtn{
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+    [leftBtn setBackgroundImage:[UIImage imageNamed:@"箭头（白）左.png"] forState:UIControlStateNormal];
+    [leftBtn addTarget:self action:@selector(backward) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+}
+- (void)backward{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
