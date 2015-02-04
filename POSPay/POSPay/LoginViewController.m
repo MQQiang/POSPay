@@ -96,15 +96,18 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue] ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:new_pw ]];
+//    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+   manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue] ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:new_pw ] stringByAppendingString:[Util signSuffix]]];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.mdy.pwd",@"mobile":@"13656678405",@"pwd_type":[[NSNumber numberWithInteger:type]stringValue],@"old_pwd":pw,@"new_pwd":new_pw,@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.mdy.pwd",@"mobile":@"13656678405",@"pwd_type":@"0",@"old_pwd":pw,@"new_pwd":new_pw,@"sign":checkCode};
     
-    [manager GET:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"%@",responseObject);
         NSDictionary *dic = (NSDictionary *)responseObject;
@@ -127,6 +130,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString); 
         
         [Util alertNetworkError:self.view];
         
