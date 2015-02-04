@@ -11,7 +11,6 @@
 @interface LoginViewController ()
 - (IBAction)cancel:(id)sender;
 
-
 @end
 
 @implementation LoginViewController
