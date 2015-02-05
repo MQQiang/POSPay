@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -9,7 +9,6 @@
             <objects>
                 <navigationController id="kNS-Mn-WRM" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="puK-gT-GBY"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fQw-RM-ICd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +27,7 @@
             <objects>
                 <viewController id="v8I-HF-KY9" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzE-Q9-624">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mI3-h5-1gk">
@@ -111,7 +110,7 @@
             <objects>
                 <viewController id="cFO-hw-cDo" customClass="findPwdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gvt-lg-Gkc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" id="FbQ-gg-Z2b">
@@ -189,7 +188,7 @@
             <objects>
                 <viewController id="89l-cE-yaT" customClass="newPwdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9R-uo-DIY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入新密码" minimumFontSize="17" id="uhW-kU-2bt">
@@ -215,7 +214,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="找回密码" id="NP0-uU-B5U"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgb-NG-DGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,7 +224,7 @@
             <objects>
                 <viewController id="nrn-e2-3Hf" customClass="rigisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aen-sM-1fh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" id="xqC-8A-p1A">
@@ -307,7 +305,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="DXi-TX-pnu"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="identifingCode" destination="Yg4-IV-Of9" id="di9-xo-lCN"/>
                         <outlet property="password" destination="NZK-dz-SR1" id="sjW-0b-K0D"/>
@@ -345,7 +342,7 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="POSIndexViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sSC-iG-8zo" userLabel="advertise View">
@@ -449,7 +446,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="adView" destination="sSC-iG-8zo" id="tIW-Jp-kKu"/>
                         <outlet property="tabBar" destination="j1o-Yc-2dt" id="Ay9-G3-DcH"/>
@@ -514,6 +510,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="gq6-iW-bzk" kind="modal" identifier="myAcountToAuthentication" id="D6g-2i-Hv7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOC-3B-KsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,7 +540,7 @@
             <objects>
                 <viewController id="DCM-9C-vQG" customClass="nameAndIDController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpu-FX-V5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身份证号码" minimumFontSize="17" id="ZQu-br-d4o">
@@ -586,7 +585,7 @@
             <objects>
                 <viewController id="tAA-do-OWs" customClass="passwordController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oVh-Xy-SC7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*设置提现密码，提现密码用于银行卡提现功能" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JrF-Sj-TUu">
@@ -630,7 +629,7 @@
             <objects>
                 <viewController id="sd2-22-ccS" customClass="pictureController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-Ip-jOs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pVR-JJ-AX5">
@@ -714,7 +713,7 @@
             <objects>
                 <viewController id="095-aT-PKg" customClass="confirmController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2KV-eo-mOa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vqx-Hn-us6">
@@ -793,7 +792,7 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="POSMessageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="nVa-md-ACs" userLabel="logo View">
@@ -832,7 +831,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="信息" image="second" id="cPa-gy-q4n"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="messageTableView" destination="bGy-8f-hcL" id="Qk4-se-YSU"/>
                         <outlet property="searchDisplayController" destination="VbQ-u3-eGf" id="ySF-c9-4pT"/>

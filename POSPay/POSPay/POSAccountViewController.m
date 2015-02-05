@@ -10,7 +10,7 @@
 #import "POSAccountTopCell.h"
 #import "UserInfo.h"
 
-@interface POSAccountViewController ()
+@interface POSAccountViewController ()<UITableViewDelegate>
 
 @end
 
@@ -49,7 +49,12 @@
     [self.navigationController pushViewController:pushView animated:YES];
 }
 
-
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 5 && indexPath.row == 1) {//实名认证
+        [self performSegueWithIdentifier:@"myAcountToAuthentication" sender:nil];
+    }
+}
 
 #pragma mark - Table view data source
 
