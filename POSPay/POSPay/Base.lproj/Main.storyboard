@@ -633,14 +633,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pVR-JJ-AX5">
-                                <rect key="frame" x="112" y="109" width="97" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pVR-JJ-AX5">
+                                <rect key="frame" x="110" y="117" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+">
+                                <state key="normal" image="添加照片">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addMainPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="bCS-oX-Xx2"/>
+                                    <action selector="addPicture:" destination="sd2-22-ccS" eventType="touchUpInside" id="TFI-bW-5k1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加本人手持身份证照" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QCc-N1-eVV">
@@ -650,14 +650,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eQi-66-hvc">
-                                <rect key="frame" x="26" y="246" width="97" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eQi-66-hvc">
+                                <rect key="frame" x="24" y="255" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+">
+                                <state key="normal" image="添加照片">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addFrontPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="UTn-xZ-hg5"/>
+                                    <action selector="addPicture:" destination="sd2-22-ccS" eventType="touchUpInside" id="8mK-Qn-FBK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加身份认证正面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uEQ-Uf-2oA">
@@ -668,14 +668,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加身份证背面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EvX-jG-1sa">
-                                <rect key="frame" x="200" y="354" width="79" height="21"/>
+                                <rect key="frame" x="205" y="354" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VaJ-vt-K4P">
+                                <rect key="frame" x="194" y="255" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="添加照片">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPicture:" destination="sd2-22-ccS" eventType="touchUpInside" id="OHW-mX-njg"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eNY-li-6ib">
-                                <rect key="frame" x="92" y="406" width="137" height="30"/>
+                                <rect key="frame" x="95" y="406" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="立即上传">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -683,16 +693,6 @@
                                 <connections>
                                     <action selector="upload" destination="sd2-22-ccS" eventType="touchUpInside" id="pwJ-bL-qHG"/>
                                     <segue destination="095-aT-PKg" kind="push" id="VCI-GH-s4K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VaJ-vt-K4P">
-                                <rect key="frame" x="191" y="246" width="97" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="+">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addBackPicture" destination="sd2-22-ccS" eventType="touchUpInside" id="cb0-rf-LwJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -883,6 +883,7 @@
         <image name="按钮8" width="340" height="340"/>
         <image name="按钮9" width="340" height="340"/>
         <image name="更多" width="64" height="64"/>
+        <image name="添加照片" width="272" height="272"/>
         <image name="选项卡（小）1" width="180" height="88"/>
         <image name="选项卡（小）2" width="192" height="88"/>
         <image name="选项卡（小）3" width="192" height="88"/>
