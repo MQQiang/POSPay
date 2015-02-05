@@ -8,7 +8,9 @@
 
 #import "POSCardPaymentOrderViewController.h"
 #import "POSAlertView.h"
-@interface POSCardPaymentOrderViewController ()
+#import "POSPasswordView.h"
+#import "POSPaymentResultController.h"
+@interface POSCardPaymentOrderViewController ()<passwordViewDelegate>
 - (IBAction)confirm:(id)sender;
 
 @end
@@ -45,13 +47,44 @@
     
     
     [self.view addSubview:alertView];
-    self.view.userInteractionEnabled=NO;
+//    self.view.userInteractionEnabled=NO;
+
+    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(swipeSuccess:) object:alertView];
+    [thread start];
 //
-//    sleep(2);
+
 //    alertView.lableTextDetail.text=@"刷卡成功";
 //    
 //    sleep(2);
 //    [alertView removeFromSuperview];
 //    
 }
+-(void )swipeSuccess:(POSAlertView * )alertView
+{
+    sleep(2);
+    alertView.lableTextDetail.text=@"刷卡成功";
+
+    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(enterPassword:) object:alertView];
+    [thread start];
+    
+}
+-(void )enterPassword:(POSAlertView * )alertView
+{
+    sleep(2);
+    [alertView removeFromSuperview];
+    POSPasswordView * passwordView=[POSPasswordView instanceTextView];
+    passwordView.delegate=self;
+    [self.view addSubview:passwordView];
+    //self.view.userInteractionEnabled=NO;
+
+    
+    
+}
+-(void)passwordViewRightPassword{
+    POSCardPaymentOrderViewController* pushView=[[POSPaymentResultController alloc] init];
+    [self.navigationController pushViewController:pushView animated:YES];
+
+
+}
+
 @end

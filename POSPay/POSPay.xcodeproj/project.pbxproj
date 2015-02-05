@@ -35,6 +35,8 @@
 		35C8178D1A7FB7150066C52B /* passwordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178C1A7FB7150066C52B /* passwordController.m */; };
 		35C817901A7FB7290066C52B /* pictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178F1A7FB7290066C52B /* pictureController.m */; };
 		35C817931A7FB7630066C52B /* confirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817921A7FB7630066C52B /* confirmController.m */; };
+		E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */; };
+		E24DD7CE1A82E62900E75206 /* POSPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */; };
 		F243AFE01A75562600324F95 /* POSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFDF1A75562600324F95 /* POSPickerView.m */; };
 		F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F243AFE11A75563C00324F95 /* POSPickerView.xib */; };
 		F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */; };
@@ -121,6 +123,9 @@
 		35C817921A7FB7630066C52B /* confirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmController.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E24DD7CA1A82E61A00E75206 /* POSPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPasswordView.h; sourceTree = "<group>"; };
+		E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPasswordView.m; sourceTree = "<group>"; };
+		E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPasswordView.xib; sourceTree = "<group>"; };
 		F243AFDE1A75562600324F95 /* POSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPickerView.h; sourceTree = "<group>"; };
 		F243AFDF1A75562600324F95 /* POSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPickerView.m; sourceTree = "<group>"; };
 		F243AFE11A75563C00324F95 /* POSPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPickerView.xib; sourceTree = "<group>"; };
@@ -364,9 +369,15 @@
 		F243AFDD1A75560700324F95 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F282001D1A5DBE9300074ADA /* POSAlertView.h */,
+				F282001E1A5DBE9300074ADA /* POSAlertView.m */,
+				F282001A1A5DB8CD00074ADA /* POSAlertView.xib */,
 				F243AFDE1A75562600324F95 /* POSPickerView.h */,
 				F243AFDF1A75562600324F95 /* POSPickerView.m */,
 				F243AFE11A75563C00324F95 /* POSPickerView.xib */,
+				E24DD7CA1A82E61A00E75206 /* POSPasswordView.h */,
+				E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */,
+				E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -380,9 +391,6 @@
 				F28200121A5DB4D900074ADA /* POSPaymentResultController.h */,
 				F28200131A5DB4D900074ADA /* POSPaymentResultController.m */,
 				F28200141A5DB4D900074ADA /* POSPaymentResultController.xib */,
-				F282001D1A5DBE9300074ADA /* POSAlertView.h */,
-				F282001E1A5DBE9300074ADA /* POSAlertView.m */,
-				F282001A1A5DB8CD00074ADA /* POSAlertView.xib */,
 			);
 			name = Payment;
 			sourceTree = "<group>";
@@ -532,6 +540,7 @@
 				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
 				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
 				F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */,
+				E24DD7CE1A82E62900E75206 /* POSPasswordView.xib in Resources */,
 				0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */,
 				F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */,
 				357030BD1A64222A003287BD /* messageFooterView.xib in Resources */,
@@ -592,6 +601,7 @@
 				0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */,
 				35C8178D1A7FB7150066C52B /* passwordController.m in Sources */,
 				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
+				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
 				F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
