@@ -79,15 +79,20 @@
 - (IBAction)upload {
 }
 - (void)addRightBtn{
-    UIButton *exampleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [exampleBtn setTitle:@" 示例" forState:UIControlStateNormal];
-    exampleBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
-    [exampleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    //[exampleBtn addTarget:self action:<#(SEL)#> forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *exampleItem = [[UIBarButtonItem alloc]initWithCustomView:exampleBtn];
-    self.navigationItem.rightBarButtonItem = exampleItem;
-    
+//    UIButton *exampleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    [exampleBtn setTitle:@"示例" forState:UIControlStateNormal];
+//    exampleBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
+//    [exampleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [exampleBtn addTarget:self action:@selector(presentExample) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *exampleItem = [[UIBarButtonItem alloc]initWithCustomView:exampleBtn];
+//    self.navigationItem.rightBarButtonItem = exampleItem;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"示例" style:UIBarButtonItemStyleDone target:self action:@selector(presentExample)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
+- (void)presentExample{
+    [self performSegueWithIdentifier:@"picture2example" sender:nil];
+}
+
 //添加返回按钮
 - (void)addBackBtn{
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
