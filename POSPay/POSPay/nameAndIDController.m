@@ -7,15 +7,20 @@
 //
 
 #import "nameAndIDController.h"
+#import "authenticationInfo.h"
+#import "passwordController.h"
 
 @interface nameAndIDController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *identifyingCodeField;
 @property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+@property (strong, nonatomic) authenticationInfo *userInfo;
+
 
 - (IBAction)nextBtnClick;
 
 @end
+
 
 @implementation nameAndIDController
 
@@ -24,7 +29,7 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.nameField];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifyingCodeField];
     self.nextBtn.enabled = NO;
-    
+    [self.nameField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,4 +56,13 @@
 
 - (IBAction)nextBtnClick {
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    authenticationInfo *userInfo = [[authenticationInfo alloc]init];
+    self.userInfo = userInfo;
+    userInfo.name = self.nameField.text;
+    userInfo.IDnumber = self.identifyingCodeField.text;
+    passwordController *passwordController = segue.destinationViewController;
+    passwordController.userInfo = userInfo;
+}
+
 @end

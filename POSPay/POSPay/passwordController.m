@@ -7,6 +7,8 @@
 //
 
 #import "passwordController.h"
+#import "authenticationInfo.h"
+#import "pictureController.h"
 
 @interface passwordController ()
 @property (weak, nonatomic) IBOutlet UITextField *withdrawMoneyPasswordField;
@@ -20,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addBackBtn];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,5 +53,10 @@
 }
 - (void)backward{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    self.userInfo.password = self.withdrawMoneyPasswordField.text;
+    pictureController *pictureController = segue.destinationViewController;
+    pictureController.userInfo = self.userInfo;
 }
 @end

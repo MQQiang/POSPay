@@ -485,7 +485,7 @@
             <objects>
                 <tableViewController id="Mbs-X6-KVi" customClass="POSAccountViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wt1-FW-xPt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -540,7 +540,7 @@
             <objects>
                 <viewController id="DCM-9C-vQG" customClass="nameAndIDController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpu-FX-V5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="身份证号码" minimumFontSize="17" id="ZQu-br-d4o">
@@ -585,7 +585,7 @@
             <objects>
                 <viewController id="tAA-do-OWs" customClass="passwordController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oVh-Xy-SC7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*设置提现密码，提现密码用于银行卡提现功能" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JrF-Sj-TUu">
@@ -629,7 +629,7 @@
             <objects>
                 <viewController id="sd2-22-ccS" customClass="pictureController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-Ip-jOs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pVR-JJ-AX5">
@@ -713,7 +713,7 @@
             <objects>
                 <viewController id="095-aT-PKg" customClass="confirmController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2KV-eo-mOa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vqx-Hn-us6">
@@ -745,28 +745,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QUD-qt-kQV">
-                                <rect key="frame" x="139" y="91" width="165" height="21"/>
+                                <rect key="frame" x="103" y="91" width="201" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3rb-5s-nvn">
-                                <rect key="frame" x="139" y="117" width="165" height="21"/>
+                                <rect key="frame" x="103" y="117" width="201" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I94-2e-sx4">
-                                <rect key="frame" x="139" y="175" width="165" height="21"/>
+                                <rect key="frame" x="103" y="175" width="201" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PBn-op-90g">
-                                <rect key="frame" x="139" y="146" width="165" height="21"/>
+                                <rect key="frame" x="103" y="146" width="201" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -781,11 +781,12 @@
                         <outlet property="nameLable" destination="QUD-qt-kQV" id="X45-ld-5v5"/>
                         <outlet property="stateLable" destination="I94-2e-sx4" id="ZHH-Si-Ts2"/>
                         <outlet property="typeLable" destination="3rb-5s-nvn" id="tPx-7n-02v"/>
+                        <segue destination="Mbs-X6-KVi" kind="push" identifier="authentication2account" id="E44-ew-RpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIc-f3-uXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792" y="808"/>
+            <point key="canvasLocation" x="1830" y="808"/>
         </scene>
         <!--信息-->
         <scene sceneID="wg7-f3-ORb">
@@ -894,5 +895,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="gXJ-gZ-aCG"/>
+        <segue reference="E44-ew-RpF"/>
     </inferredMetricsTieBreakers>
 </document>

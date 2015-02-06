@@ -7,7 +7,8 @@
 //
 
 #import "pictureController.h"
-
+#import "authenticationInfo.h"
+#import "confirmController.h"
 @interface pictureController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *mainPicture;
 @property (weak, nonatomic) IBOutlet UIButton *frontPicture;
@@ -28,6 +29,7 @@
     [self addBackBtn];
     //示例按钮
     [self addRightBtn];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,6 +98,13 @@
 }
 - (void)backward{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    self.userInfo.mainImage = [self.mainPicture backgroundImageForState:UIControlStateNormal];
+    self.userInfo.frontImage = [self.frontPicture backgroundImageForState:UIControlStateNormal];
+    self.userInfo.backImage = [self.backPicture backgroundImageForState:UIControlStateNormal];
+    confirmController *confirmController = segue.destinationViewController;
+    confirmController.userInfo = self.userInfo;
 }
 #pragma -mark actionsheet delegate
 -(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

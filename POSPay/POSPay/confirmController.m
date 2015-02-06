@@ -7,7 +7,7 @@
 //
 
 #import "confirmController.h"
-
+#import "authenticationInfo.h"
 @interface confirmController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
 @property (weak, nonatomic) IBOutlet UILabel *typeLable;
@@ -21,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addBackBtn];
+    [self addCompleteBtn];
+    self.nameLable.text = self.userInfo.name;
+    self.typeLable.text = @"身份证";
+    self.IDNumberLable.text = self.userInfo.IDnumber;
+    self.stateLable.text = @"待审核";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,8 +50,18 @@
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBarItem;
 }
+- (void)addCompleteBtn{
+    UIButton *completeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 32)];
+    [completeBtn setTitle:@"完成" forState:UIControlStateNormal];
+    [completeBtn addTarget:self action:@selector(completeBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *completeBtnItem = [[UIBarButtonItem alloc]initWithCustomView:completeBtn];
+    self.navigationItem.rightBarButtonItem = completeBtnItem;
+}
 - (void)backward{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)completeBtnClick{
+    [self performSegueWithIdentifier:@"authentication2account" sender:nil];
 }
 
 @end

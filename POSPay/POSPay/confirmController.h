@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "authenticationInfo.h"
 @interface confirmController : UIViewController
-
+@property (strong, nonatomic) authenticationInfo *userInfo;
 @end
