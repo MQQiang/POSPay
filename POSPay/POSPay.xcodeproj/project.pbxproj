@@ -36,6 +36,9 @@
 		35C8178D1A7FB7150066C52B /* passwordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178C1A7FB7150066C52B /* passwordController.m */; };
 		35C817901A7FB7290066C52B /* pictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178F1A7FB7290066C52B /* pictureController.m */; };
 		35C817931A7FB7630066C52B /* confirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817921A7FB7630066C52B /* confirmController.m */; };
+		35F063BD1A86083800964E78 /* changePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F063BC1A86083800964E78 /* changePasswordController.m */; };
+		35F063C01A86140D00964E78 /* chageLoginPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F063BF1A86140D00964E78 /* chageLoginPasswordViewController.m */; };
+		35F063C31A86143B00964E78 /* changeTixianPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F063C21A86143B00964E78 /* changeTixianPasswordViewController.m */; };
 		E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */; };
 		E24DD7CE1A82E62900E75206 /* POSPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */; };
 		F243AFE01A75562600324F95 /* POSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFDF1A75562600324F95 /* POSPickerView.m */; };
@@ -124,6 +127,12 @@
 		35C8178F1A7FB7290066C52B /* pictureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureController.m; sourceTree = "<group>"; };
 		35C817911A7FB7630066C52B /* confirmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmController.h; sourceTree = "<group>"; };
 		35C817921A7FB7630066C52B /* confirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmController.m; sourceTree = "<group>"; };
+		35F063BB1A86083800964E78 /* changePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = changePasswordController.h; sourceTree = "<group>"; };
+		35F063BC1A86083800964E78 /* changePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = changePasswordController.m; sourceTree = "<group>"; };
+		35F063BE1A86140D00964E78 /* chageLoginPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chageLoginPasswordViewController.h; sourceTree = "<group>"; };
+		35F063BF1A86140D00964E78 /* chageLoginPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chageLoginPasswordViewController.m; sourceTree = "<group>"; };
+		35F063C11A86143B00964E78 /* changeTixianPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = changeTixianPasswordViewController.h; sourceTree = "<group>"; };
+		35F063C21A86143B00964E78 /* changeTixianPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = changeTixianPasswordViewController.m; sourceTree = "<group>"; };
 		763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E24DD7CA1A82E61A00E75206 /* POSPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPasswordView.h; sourceTree = "<group>"; };
@@ -196,11 +205,6 @@
 		0EB4658C1A584EB7002B240E /* Index */ = {
 			isa = PBXGroup;
 			children = (
-				F2C3C8E11A5AFB4D0021236C /* Account */,
-				0EC58DF11A55EBBA00F2B391 /* POSIndexViewController.h */,
-				0EC58DF21A55EBBA00F2B391 /* POSIndexViewController.m */,
-				0EC58DF41A55EBBA00F2B391 /* POSMessageViewController.h */,
-				0EC58DF51A55EBBA00F2B391 /* POSMessageViewController.m */,
 			);
 			name = Index;
 			sourceTree = "<group>";
@@ -216,6 +220,8 @@
 		0EB465951A58514D002B240E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0EC58DF11A55EBBA00F2B391 /* POSIndexViewController.h */,
+				0EC58DF21A55EBBA00F2B391 /* POSIndexViewController.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 		0EB465961A58515C002B240E /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				0EC58DF41A55EBBA00F2B391 /* POSMessageViewController.h */,
+				0EC58DF51A55EBBA00F2B391 /* POSMessageViewController.m */,
 				357030B41A64222A003287BD /* messageCell.h */,
 				357030B51A64222A003287BD /* messageCell.m */,
 				357030B61A64222A003287BD /* messageCell.xib */,
@@ -236,7 +244,12 @@
 		0EB465971A585169002B240E /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				F2C3C8E71A5AFDFA0021236C /* cell */,
 				35C8177B1A7FB5D90066C52B /* Authentication */,
+				35F063BA1A8607B100964E78 /* ChangePassword */,
+				F2C3C8E21A5AFCED0021236C /* POSAccountViewController.h */,
+				F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */,
+				F2C3C8E41A5AFCED0021236C /* POSAccountViewController.xib */,
 				F28200001A5C71F400074ADA /* POSAboutProductController.h */,
 				F28200011A5C71F400074ADA /* POSAboutProductController.m */,
 				F28200021A5C71F400074ADA /* POSAboutProductController.xib */,
@@ -352,6 +365,19 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
+		35F063BA1A8607B100964E78 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				35F063BB1A86083800964E78 /* changePasswordController.h */,
+				35F063BC1A86083800964E78 /* changePasswordController.m */,
+				35F063BE1A86140D00964E78 /* chageLoginPasswordViewController.h */,
+				35F063BF1A86140D00964E78 /* chageLoginPasswordViewController.m */,
+				35F063C11A86143B00964E78 /* changeTixianPasswordViewController.h */,
+				35F063C21A86143B00964E78 /* changeTixianPasswordViewController.m */,
+			);
+			name = ChangePassword;
+			sourceTree = "<group>";
+		};
 		6B66939FA4C93B2675D2D152 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,17 +458,6 @@
 				35B03E021A84E203001752A1 /* authenticationInfo.m */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		F2C3C8E11A5AFB4D0021236C /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				F2C3C8E71A5AFDFA0021236C /* cell */,
-				F2C3C8E21A5AFCED0021236C /* POSAccountViewController.h */,
-				F2C3C8E31A5AFCED0021236C /* POSAccountViewController.m */,
-				F2C3C8E41A5AFCED0021236C /* POSAccountViewController.xib */,
-			);
-			name = Account;
 			sourceTree = "<group>";
 		};
 		F2C3C8E71A5AFDFA0021236C /* cell */ = {
@@ -606,9 +621,11 @@
 				0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */,
 				35C8178D1A7FB7150066C52B /* passwordController.m in Sources */,
 				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
+				35F063C01A86140D00964E78 /* chageLoginPasswordViewController.m in Sources */,
 				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
 				F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
+				35F063C31A86143B00964E78 /* changeTixianPasswordViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				F243AFE01A75562600324F95 /* POSPickerView.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
@@ -620,6 +637,7 @@
 				35B03E031A84E203001752A1 /* authenticationInfo.m in Sources */,
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
+				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
 				F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,

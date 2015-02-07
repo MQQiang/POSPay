@@ -54,6 +54,9 @@
     if (indexPath.section == 5 && indexPath.row == 1) {//实名认证
         [self performSegueWithIdentifier:@"myAcountToAuthentication" sender:nil];
     }
+    if(indexPath.section == 5 && indexPath.row == 3){
+        [self performSegueWithIdentifier:@"account2changePassword" sender:nil];
+    }
 }
 
 #pragma mark - Table view data source
