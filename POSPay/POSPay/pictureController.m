@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *frontPicture;
 @property (weak, nonatomic) IBOutlet UIButton *backPicture;
 @property (weak, nonatomic) UIButton *currentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
 
 - (IBAction)addPicture:(id)sender;
 
@@ -29,7 +30,10 @@
     [self addBackBtn];
     //示例按钮
     [self addRightBtn];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pictureAdded) name:@"pictureAddedNotification" object:self.mainPicture];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pictureAdded) name:@"pictureAddedNotification" object:self.frontPicture];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pictureAdded) name:@"pictureAddedNotification" object:self.backPicture];
+    self.uploadBtn.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +77,12 @@
     [sheet showInView:self.view];
 
 }
-
+- (void)pictureAdded{
+    if ([self.backPicture backgroundImageForState:UIControlStateNormal] != nil && [self.frontPicture backgroundImageForState:UIControlStateNormal] != nil && [self.backPicture backgroundImageForState:UIControlStateNormal] != nil) {
+        self.uploadBtn.enabled = YES;
+    }
+    else self.uploadBtn.enabled = NO;
+}
 
 - (IBAction)upload {
 }
@@ -87,6 +96,7 @@
 //    self.navigationItem.rightBarButtonItem = exampleItem;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"示例" style:UIBarButtonItemStyleDone target:self action:@selector(presentExample)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
     
 }
 - (void)presentExample{
@@ -179,6 +189,8 @@
     
     [self.currentBtn setImage:nil forState:UIControlStateNormal];
     [self.currentBtn setBackgroundImage:image forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter]postNotification:[[NSNotification alloc]initWithName:@"pictureAddedNotification" object:self.currentBtn userInfo:nil]];
     
     self.currentBtn.tag = 100;
     

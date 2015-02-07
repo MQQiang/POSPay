@@ -702,6 +702,7 @@
                         <outlet property="backPicture" destination="VaJ-vt-K4P" id="Acu-tg-M4f"/>
                         <outlet property="frontPicture" destination="eQi-66-hvc" id="mjO-gf-OUP"/>
                         <outlet property="mainPicture" destination="pVR-JJ-AX5" id="1ZH-nX-vWD"/>
+                        <outlet property="uploadBtn" destination="eNY-li-6ib" id="sU5-qM-hx5"/>
                         <segue destination="9A8-KQ-T8S" kind="push" identifier="picture2example" id="0yh-b6-Eep"/>
                     </connections>
                 </viewController>
