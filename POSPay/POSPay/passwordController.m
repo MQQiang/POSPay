@@ -9,9 +9,11 @@
 #import "passwordController.h"
 #import "authenticationInfo.h"
 #import "pictureController.h"
+#import "sixNumberPasswordView.h"
 
 @interface passwordController ()
 @property (weak, nonatomic) IBOutlet UITextField *withdrawMoneyPasswordField;
+
 - (IBAction)nextBtnClick;
 
 
@@ -22,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addBackBtn];
+    sixNumberPasswordView *passwordView = [sixNumberPasswordView sixNumberPasswordView];
+    passwordView.frame = CGRectMake(0, 300, 320, 60);
+    [self.view addSubview:passwordView];
     
 }
 
