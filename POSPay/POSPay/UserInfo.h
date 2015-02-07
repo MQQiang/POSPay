@@ -18,6 +18,7 @@
 @property(nonatomic,strong)NSString *name;
 @property(nonatomic,strong)NSString *cardNumber;
 @property(nonatomic,strong)NSString *checkUrl;
+@property(nonatomic,assign)BOOL isUserLogin;
 -(void)setUserInfoWithDic:(NSDictionary *)dic;
 -(void)setDetailUserInfo:(NSDictionary *)dic;
 @end

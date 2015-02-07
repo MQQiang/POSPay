@@ -19,12 +19,15 @@
         sharedAccountManagerInstance = [[self alloc] init];
     });
     
+    sharedAccountManagerInstance.isUserLogin = false;
+    
     return sharedAccountManagerInstance;
     
 }
 
 -(void)setUserInfoWithDic:(NSDictionary *)dic{
     
+    _isUserLogin = YES;
     _phoneNum = dic[@"mobile"];
     _randomCode = dic[@"random_key"];
     

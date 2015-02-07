@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self loginUser];
-    [self changePasswordWithType:0];
+    [self changePasswordWithType:1];
     // Do any additional setup after loading the view.
 }
 
@@ -31,15 +31,19 @@
 //     手机号
 //    登入密码
 //     签名
-    if ([_phoneNumber.text isEqualToString:@""]||[_password.text isEqualToString:@""]) {
-        
-         [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
-        
-    }
+//    if ([_phoneNumber.text isEqualToString:@""]||[_password.text isEqualToString:@""]) {
+//        
+//         [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+//        
+//    }
+//    
+//    NSString *phoneNumber = _phoneNumber.text;
+//    NSString *pw = [Util passwordStringInMD5:_password.text];
+    NSString *phoneNumber = @"13656678405";
+    NSString *pw = @"123456";
+    pw = [Util passwordStringInMD5:pw];
     
-    NSString *phoneNumber = _phoneNumber.text;
-    NSString *pw = [Util passwordStringInMD5:_password.text];
-
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -58,8 +62,14 @@
             if([dic[@"rsp_code"] isEqualToString:@"0000"]){
                 
                 [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+                  [self cancel:nil];
+                
+            }else if([dic[@"rsp_code"] isEqualToString:@"6010"]){
+                
+                  [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"密码错误次数超限" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
                 
             }
+            
             else{
                 
                 
@@ -67,10 +77,11 @@
                 
                 
             }
-    
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
     
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"Error: %@", error);
     
             [Util alertNetworkError:self.view];
@@ -96,16 +107,16 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
 //    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-   manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//   manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue] ] stringByAppendingString:@"13656678405"] stringByAppendingString:pw]  stringByAppendingString:new_pw ] stringByAppendingString:[Util signSuffix]]];
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:@"13656678405" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]] stringByAppendingString:pw]  stringByAppendingString:new_pw ] stringByAppendingString:@"13656678405"] stringByAppendingString:[Util signSuffix]]];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.mdy.pwd",@"mobile":@"13656678405",@"pwd_type":@"0",@"old_pwd":pw,@"new_pwd":new_pw,@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.mdy.pwd",@"mobile":@"13656678405",@"pwd_type":@"1",@"old_pwd":pw,@"new_pwd":new_pw,@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -113,9 +124,10 @@
         NSDictionary *dic = (NSDictionary *)responseObject;
         if([dic[@"rsp_code"] isEqualToString:@"0000"]){
             
-            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+//            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
             
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+             [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
         }
         else{
@@ -123,8 +135,9 @@
             
             [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
-              [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
         }
+          [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
