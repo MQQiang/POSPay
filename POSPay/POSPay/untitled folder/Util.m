@@ -12,7 +12,7 @@
 
 #define kChosenDigestLength		CC_SHA1_DIGEST_LENGTH
 
-#define DESKEY @"D6D2402F1C98E208FF2E863AA29334BD65AE1932A821502D9E5673CDE3C713ACFE53E2103CD40ED6BEBB101B484CAE83D537806C6CB611AEE86ED2CA8C97BBE95CF8476066D419E8E833376B850172107844D394016715B2E47E0A6EECB3E83A361FA75FA44693F90D38C6F62029FCD8EA395ED868F9D718293E9C0E63194E87"
+#define DESKEY @"3F53BC47C0165EF589586E475452A227"
 
 @implementation Util
 
@@ -131,7 +131,7 @@
 +(NSString*)TripleDES:(NSString*)plainText encryptOrDecrypt:(CCOperation)encryptOrDecrypt
 {
     
-    const void *vplainText;
+    const void *vplainText ;
     size_t plainTextBufferSize;
     
     if (encryptOrDecrypt == kCCDecrypt)//解密
@@ -172,7 +172,7 @@
                        (void *)bufferPtr,
                        bufferPtrSize,
                        &movedBytes);
-    //if (ccStatus == kCCSuccess) NSLog(@"SUCCESS");
+    if (ccStatus == kCCSuccess) NSLog(@"SUCCESS");
     /*else if (ccStatus == kCC ParamError) return @"PARAM ERROR";
      else if (ccStatus == kCCBufferTooSmall) return @"BUFFER TOO SMALL";
      else if (ccStatus == kCCMemoryFailure) return @"MEMORY FAILURE";

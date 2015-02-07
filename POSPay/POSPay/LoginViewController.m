@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loginUser];
-    [self changePasswordWithType:1];
+    [self loginUser];
     // Do any additional setup after loading the view.
 }
 
@@ -62,7 +61,9 @@
             if([dic[@"rsp_code"] isEqualToString:@"0000"]){
                 
                 [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
-                  [self cancel:nil];
+//                  [self cancel:nil];
+//                [self changePasswordWithType:1];
+                [self requestUserInfo];
                 
             }else if([dic[@"rsp_code"] isEqualToString:@"6010"]){
                 
@@ -95,6 +96,57 @@
     // 手机号
     // 签名
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    //    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    //   manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.qry"] stringByAppendingString:@"13656678405" ]   stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.qry",@"mobile":@"13656678405",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"查询用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+
+    
+    
     
 }
 
@@ -103,7 +155,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *pw = [Util encodeStringWithMD5:@"mobile123456"];
-    NSString *new_pw = [Util encodeStringWithMD5:@"mobile12345"];
+    NSString *new_pw = [Util encodeStringWithMD5:@"mobile123456"];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -112,7 +164,7 @@
 //    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
 //   manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:@"13656678405" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]] stringByAppendingString:pw]  stringByAppendingString:new_pw ] stringByAppendingString:@"13656678405"] stringByAppendingString:[Util signSuffix]]];
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:@"13656678405" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]] stringByAppendingString:pw]  stringByAppendingString:new_pw ]  stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
     
     
     
@@ -133,7 +185,7 @@
         else{
             
             
-            [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            [[[UIAlertView  alloc] initWithTitle:@"修改密码失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
             
         }
@@ -154,6 +206,59 @@
     
 }
 
+-(void)requesPayFeiWithType:(NSInteger)type{
+    
+    // 手机号
+    // 签名
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.settle.qryrate"] stringByAppendingString:@"13656678405" ]   stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]]stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678405",@"rate_type":[[NSNumber numberWithInteger:type] stringValue],@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"查询用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation

@@ -29,7 +29,11 @@
     
     _isUserLogin = YES;
     _phoneNum = dic[@"mobile"];
-    _randomCode = dic[@"random_key"];
+    
+    NSString *code = dic[@"random_key"];
+    
+    
+    _randomCode = [Util TripleDES:code encryptOrDecrypt:kCCDecrypt];
     
 }
 -(void)setDetailUserInfo:(NSDictionary *)dic{
