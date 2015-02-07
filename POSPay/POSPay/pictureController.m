@@ -75,7 +75,6 @@
 }
 
 
-
 - (IBAction)upload {
 }
 - (void)addRightBtn{
@@ -88,6 +87,7 @@
 //    self.navigationItem.rightBarButtonItem = exampleItem;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"示例" style:UIBarButtonItemStyleDone target:self action:@selector(presentExample)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
 }
 - (void)presentExample{
     [self performSegueWithIdentifier:@"picture2example" sender:nil];
@@ -105,11 +105,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    self.userInfo.mainImage = [self.mainPicture backgroundImageForState:UIControlStateNormal];
-    self.userInfo.frontImage = [self.frontPicture backgroundImageForState:UIControlStateNormal];
-    self.userInfo.backImage = [self.backPicture backgroundImageForState:UIControlStateNormal];
-    confirmController *confirmController = segue.destinationViewController;
-    confirmController.userInfo = self.userInfo;
+    if ([segue.identifier isEqualToString:@"picture2confirm"]) {
+        self.userInfo.mainImage = [self.mainPicture backgroundImageForState:UIControlStateNormal];
+        self.userInfo.frontImage = [self.frontPicture backgroundImageForState:UIControlStateNormal];
+        self.userInfo.backImage = [self.backPicture backgroundImageForState:UIControlStateNormal];
+        confirmController *confirmController = segue.destinationViewController;
+        confirmController.userInfo = self.userInfo;
+    }
+    
 }
 #pragma -mark actionsheet delegate
 -(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
