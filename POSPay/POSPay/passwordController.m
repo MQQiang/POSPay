@@ -9,9 +9,11 @@
 #import "passwordController.h"
 #import "authenticationInfo.h"
 #import "pictureController.h"
-
+#import "sixNumberPasswordView.h"
 @interface passwordController ()
-@property (weak, nonatomic) IBOutlet UITextField *withdrawMoneyPasswordField;
+@property (strong, nonatomic) sixNumberPasswordView *passwordView;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
 - (IBAction)nextBtnClick;
 
 
@@ -22,6 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addBackBtn];
+    sixNumberPasswordView *passwordView = [sixNumberPasswordView sixNumberPasswordView];
+    self.passwordView = passwordView;
+    passwordView.frame = CGRectMake(0, 90, 320, 60);
+    [self.view addSubview:passwordView];
+    self.passwordView = passwordView;
+    self.nextBtn.enabled = NO;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordView.passwordField];
     
 }
 
@@ -40,7 +49,12 @@
 }
 */
 
-
+- (void)textChange{
+    if (self.passwordView.passwordField.text.length >= 6) {
+        self.nextBtn.enabled = YES;
+    }
+    else self.nextBtn.enabled = NO;
+}
 - (IBAction)nextBtnClick {
 }
 //添加返回按钮
@@ -55,7 +69,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    self.userInfo.password = self.withdrawMoneyPasswordField.text;
+    self.userInfo.password = self.passwordView.passwordField.text;
     pictureController *pictureController = segue.destinationViewController;
     pictureController.userInfo = self.userInfo;
 }

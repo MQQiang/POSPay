@@ -731,12 +731,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="提现密码" minimumFontSize="17" id="nwH-Ed-KqY">
-                                <rect key="frame" x="16" y="103" width="273" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u6F-Ag-pex">
                                 <rect key="frame" x="16" y="163" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -753,7 +747,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="实名认证" id="MEa-rP-yD5"/>
                     <connections>
-                        <outlet property="withdrawMoneyPasswordField" destination="nwH-Ed-KqY" id="Jyv-0v-HBS"/>
+                        <outlet property="nextBtn" destination="u6F-Ag-pex" id="TTR-pm-Ph1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAl-Nb-d5N" userLabel="First Responder" sceneMemberID="firstResponder"/>

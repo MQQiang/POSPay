@@ -22,6 +22,8 @@
 		0EC58E0A1A55EBBA00F2B391 /* POSPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC58E091A55EBBA00F2B391 /* POSPayTests.m */; };
 		0ECCE76F1A599256001ECBD9 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE76E1A599256001ECBD9 /* Util.m */; };
 		0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE7711A599873001ECBD9 /* GTMBase64.m */; };
+		351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */; };
+		351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */; };
 		357030BA1A64222A003287BD /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B51A64222A003287BD /* messageCell.m */; };
 		357030BB1A64222A003287BD /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B61A64222A003287BD /* messageCell.xib */; };
 		357030BC1A64222A003287BD /* messageFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B81A64222A003287BD /* messageFooterView.m */; };
@@ -101,6 +103,9 @@
 		0ECCE7711A599873001ECBD9 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = "untitled folder/GTMBase64.m"; sourceTree = "<group>"; };
 		0ECCE7731A599952001ECBD9 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		25735EE90FBB0B03B308AC42 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixNumberPasswordView.m; sourceTree = "<group>"; };
+		351FC0C71A867138000C52C1 /* sixNumberPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixNumberPasswordView.h; sourceTree = "<group>"; };
+		351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixNumberPasswordView.xib; sourceTree = "<group>"; };
 		357030B41A64222A003287BD /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
 		357030B51A64222A003287BD /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
 		357030B61A64222A003287BD /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
@@ -361,6 +366,9 @@
 				35C8178F1A7FB7290066C52B /* pictureController.m */,
 				35C817911A7FB7630066C52B /* confirmController.h */,
 				35C817921A7FB7630066C52B /* confirmController.m */,
+				351FC0C71A867138000C52C1 /* sixNumberPasswordView.h */,
+				351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */,
+				351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -557,6 +565,7 @@
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
 				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
+				351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */,
 				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
 				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
 				F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */,
@@ -638,6 +647,7 @@
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
+				351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
 				F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
