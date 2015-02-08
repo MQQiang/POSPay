@@ -1,18 +1,19 @@
 //
-//  POSPaymentResultController.m
+//  POSEnterCardInfoViewController.m
 //  POSPay
 //
-//  Created by LiuZhiqi on 15-1-7.
+//  Created by Macintosh on 15-2-9.
 //  Copyright (c) 2015年 mqq.com. All rights reserved.
 //
 
+#import "POSEnterCardInfoViewController.h"
 #import "POSPaymentResultController.h"
-
-@interface POSPaymentResultController ()
+@interface POSEnterCardInfoViewController ()
+- (IBAction)next:(id)sender;
 
 @end
 
-@implementation POSPaymentResultController
+@implementation POSEnterCardInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,9 +23,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)finish:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
@@ -37,4 +35,10 @@
 }
 */
 
+- (IBAction)next:(id)sender {
+    POSPaymentResultController *pushView =[[POSPaymentResultController alloc]init];
+    [self.navigationController pushViewController:pushView animated:YES];
+    
+    
+}
 @end

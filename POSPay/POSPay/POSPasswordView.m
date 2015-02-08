@@ -26,8 +26,12 @@
 
 -(void)didMoveToWindow{
     self.textField_hideField.delegate=self;
-    self.password=[[NSMutableString alloc] init];
+    if (self.password==nil) {
+        self.password=[[NSMutableString alloc] init];
 
+    }
+    BOOL test=[self.textField_hideField becomeFirstResponder];
+   // NSLog(@"%@",[self.textField_hideField resignFirstResponder]) ;
     
     
 }

@@ -57,6 +57,10 @@
 		35F063C31A86143B00964E78 /* changeTixianPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F063C21A86143B00964E78 /* changeTixianPasswordViewController.m */; };
 		E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */; };
 		E24DD7CE1A82E62900E75206 /* POSPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */; };
+		E2B014201A87DE8D0076FB8A /* POSEnterCardIdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B0141E1A87DE8D0076FB8A /* POSEnterCardIdViewController.m */; };
+		E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B0141F1A87DE8D0076FB8A /* POSEnterCardIdViewController.xib */; };
+		E2B014251A87E01C0076FB8A /* POSEnterCardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B014231A87E01C0076FB8A /* POSEnterCardInfoViewController.m */; };
+		E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B014241A87E01C0076FB8A /* POSEnterCardInfoViewController.xib */; };
 		F243AFE01A75562600324F95 /* POSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFDF1A75562600324F95 /* POSPickerView.m */; };
 		F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F243AFE11A75563C00324F95 /* POSPickerView.xib */; };
 		F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */; };
@@ -185,6 +189,12 @@
 		E24DD7CA1A82E61A00E75206 /* POSPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPasswordView.h; sourceTree = "<group>"; };
 		E24DD7CB1A82E61A00E75206 /* POSPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPasswordView.m; sourceTree = "<group>"; };
 		E24DD7CD1A82E62900E75206 /* POSPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPasswordView.xib; sourceTree = "<group>"; };
+		E2B0141D1A87DE8D0076FB8A /* POSEnterCardIdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSEnterCardIdViewController.h; sourceTree = "<group>"; };
+		E2B0141E1A87DE8D0076FB8A /* POSEnterCardIdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSEnterCardIdViewController.m; sourceTree = "<group>"; };
+		E2B0141F1A87DE8D0076FB8A /* POSEnterCardIdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSEnterCardIdViewController.xib; sourceTree = "<group>"; };
+		E2B014221A87E01C0076FB8A /* POSEnterCardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSEnterCardInfoViewController.h; sourceTree = "<group>"; };
+		E2B014231A87E01C0076FB8A /* POSEnterCardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSEnterCardInfoViewController.m; sourceTree = "<group>"; };
+		E2B014241A87E01C0076FB8A /* POSEnterCardInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSEnterCardInfoViewController.xib; sourceTree = "<group>"; };
 		F243AFDE1A75562600324F95 /* POSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPickerView.h; sourceTree = "<group>"; };
 		F243AFDF1A75562600324F95 /* POSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPickerView.m; sourceTree = "<group>"; };
 		F243AFE11A75563C00324F95 /* POSPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPickerView.xib; sourceTree = "<group>"; };
@@ -537,6 +547,12 @@
 				F282000B1A5DABB700074ADA /* POSNoCardPaymentController.h */,
 				F282000C1A5DABB700074ADA /* POSNoCardPaymentController.m */,
 				F282000D1A5DABB700074ADA /* POSNoCardPaymentController.xib */,
+				E2B0141D1A87DE8D0076FB8A /* POSEnterCardIdViewController.h */,
+				E2B0141E1A87DE8D0076FB8A /* POSEnterCardIdViewController.m */,
+				E2B0141F1A87DE8D0076FB8A /* POSEnterCardIdViewController.xib */,
+				E2B014221A87E01C0076FB8A /* POSEnterCardInfoViewController.h */,
+				E2B014231A87E01C0076FB8A /* POSEnterCardInfoViewController.m */,
+				E2B014241A87E01C0076FB8A /* POSEnterCardInfoViewController.xib */,
 			);
 			name = NoCardPayment;
 			sourceTree = "<group>";
@@ -649,6 +665,7 @@
 				F282000A1A5D82E500074ADA /* POSCardPaymentController.xib in Resources */,
 				F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */,
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
+				E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
 				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
 				0E224A351A87CFE600C578CB /* PageViewController.xib in Resources */,
@@ -663,6 +680,7 @@
 				0E224A451A87D40200C578CB /* POSPaintViewController.xib in Resources */,
 				F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
+				E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,6 +747,7 @@
 				35F063C31A86143B00964E78 /* changeTixianPasswordViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				F243AFE01A75562600324F95 /* POSPickerView.m in Sources */,
+				E2B014201A87DE8D0076FB8A /* POSEnterCardIdViewController.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
 				0E224A321A87CFE600C578CB /* ConsumeTest.m in Sources */,
 				0E224A401A87D3A200C578CB /* PaintingWindow.m in Sources */,
@@ -758,6 +777,7 @@
 				35C817901A7FB7290066C52B /* pictureController.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
+				E2B014251A87E01C0076FB8A /* POSEnterCardInfoViewController.m in Sources */,
 				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,
 				F282001F1A5DBE9300074ADA /* POSAlertView.m in Sources */,
 				F28200091A5D82E500074ADA /* POSCardPaymentController.m in Sources */,

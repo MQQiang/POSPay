@@ -7,8 +7,9 @@
 //
 
 #import "POSNoCardPaymentController.h"
-
+#import "POSEnterCardIdViewController.h"
 @interface POSNoCardPaymentController ()
+- (IBAction)next:(id)sender;
 
 @end
 
@@ -34,4 +35,10 @@
 }
 */
 
+- (IBAction)next:(id)sender {
+    POSEnterCardIdViewController *pushView =[[POSEnterCardIdViewController alloc]init];
+    [self.navigationController pushViewController:pushView animated:YES];
+    
+    
+}
 @end

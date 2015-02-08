@@ -57,8 +57,7 @@
     size_t movedBytes = 0;
     // uint8_t ivkCCBlockSize3DES;
     
-    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES)
-    & ~(kCCBlockSize3DES - 1);
+    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES)  & ~(kCCBlockSize3DES - 1);
     
     bufferPtr = malloc(bufferPtrSize * sizeof(uint8_t));
     memset((void *)bufferPtr, 0x0, bufferPtrSize);
@@ -292,6 +291,7 @@
     {
         //得到解密出来的data数据，改变为utf-8的字符串
         result = [[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved] encoding:NSUTF8StringEncoding];
+
     }
     else //encryptOperation==0  （加密过程中，把加好密的数据转成base64的）
     {

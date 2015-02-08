@@ -64,8 +64,9 @@
     sleep(2);
     alertView.lableTextDetail.text=@"刷卡成功";
 
-    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(enterPassword:) object:alertView];
-    [thread start];
+//    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(enterPassword:) object:alertView];
+//    [thread start];
+    [self performSelectorOnMainThread:@selector(enterPassword:) withObject:alertView waitUntilDone:YES];
     
 }
 -(void )enterPassword:(POSAlertView * )alertView
