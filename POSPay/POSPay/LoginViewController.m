@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "UserInfo.h"
+#import "POSPaintViewController.h"
+
 @interface LoginViewController ()
 - (IBAction)cancel:(id)sender;
 
@@ -271,7 +273,11 @@
 */
 
 - (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+//    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    POSPaintViewController *vc = [[POSPaintViewController alloc] init];
+    
+    [self presentViewController:vc animated:YES completion:^{}];
     
     
 }

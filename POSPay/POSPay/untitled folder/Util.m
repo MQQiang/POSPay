@@ -291,7 +291,7 @@
     if (encryptOperation == kCCDecrypt)//encryptOperation==1  解码
     {
         //得到解密出来的data数据，改变为utf-8的字符串
-        result = [[[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved] encoding:NSUTF8StringEncoding] autorelease];
+        result = [[NSString alloc] initWithData:[NSData dataWithBytes:(const void *)dataOut length:(NSUInteger)dataOutMoved] encoding:NSUTF8StringEncoding];
     }
     else //encryptOperation==0  （加密过程中，把加好密的数据转成base64的）
     {
@@ -478,4 +478,3 @@
 
 @end
 
-@end

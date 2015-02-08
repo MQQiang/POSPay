@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25735EE90FBB0B03B308AC42 /* libPods.a */; };
+		0E224A301A87CFE600C578CB /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A1C1A87CFE600C578CB /* BaseTest.m */; };
+		0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A1E1A87CFE600C578CB /* CalcMacTest.m */; };
+		0E224A321A87CFE600C578CB /* ConsumeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A201A87CFE600C578CB /* ConsumeTest.m */; };
+		0E224A331A87CFE600C578CB /* ME11Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A221A87CFE600C578CB /* ME11Test.m */; };
+		0E224A341A87CFE600C578CB /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A261A87CFE600C578CB /* PageViewController.m */; };
+		0E224A351A87CFE600C578CB /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E224A271A87CFE600C578CB /* PageViewController.xib */; };
+		0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A291A87CFE600C578CB /* PBOCTest.m */; };
+		0E224A371A87CFE600C578CB /* PinInputTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A2B1A87CFE600C578CB /* PinInputTest.m */; };
+		0E224A381A87CFE600C578CB /* PrintTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A2D1A87CFE600C578CB /* PrintTest.m */; };
+		0E224A391A87CFE600C578CB /* SwipeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A2F1A87CFE600C578CB /* SwipeTest.m */; };
+		0E224A3F1A87D3A200C578CB /* PaintingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A3C1A87D3A200C578CB /* PaintingView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E224A401A87D3A200C578CB /* PaintingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A3E1A87D3A200C578CB /* PaintingWindow.m */; };
+		0E224A441A87D40200C578CB /* POSPaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A421A87D40200C578CB /* POSPaintViewController.m */; };
+		0E224A451A87D40200C578CB /* POSPaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E224A431A87D40200C578CB /* POSPaintViewController.xib */; };
 		0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DB1A695C60007F6D6E /* AppConstants.m */; };
 		0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */; };
 		0E7512E21A696657007F6D6E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512E11A696657007F6D6E /* UserInfo.m */; };
@@ -74,6 +88,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E224A1B1A87CFE600C578CB /* BaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTest.h; path = ME11Test/BaseTest.h; sourceTree = "<group>"; };
+		0E224A1C1A87CFE600C578CB /* BaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTest.m; path = ME11Test/BaseTest.m; sourceTree = "<group>"; };
+		0E224A1D1A87CFE600C578CB /* CalcMacTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalcMacTest.h; path = ME11Test/CalcMacTest.h; sourceTree = "<group>"; };
+		0E224A1E1A87CFE600C578CB /* CalcMacTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalcMacTest.m; path = ME11Test/CalcMacTest.m; sourceTree = "<group>"; };
+		0E224A1F1A87CFE600C578CB /* ConsumeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsumeTest.h; path = ME11Test/ConsumeTest.h; sourceTree = "<group>"; };
+		0E224A201A87CFE600C578CB /* ConsumeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsumeTest.m; path = ME11Test/ConsumeTest.m; sourceTree = "<group>"; };
+		0E224A211A87CFE600C578CB /* ME11Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ME11Test.h; path = ME11Test/ME11Test.h; sourceTree = "<group>"; };
+		0E224A221A87CFE600C578CB /* ME11Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ME11Test.m; path = ME11Test/ME11Test.m; sourceTree = "<group>"; };
+		0E224A231A87CFE600C578CB /* NLDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLDump.h; path = ME11Test/NLDump.h; sourceTree = "<group>"; };
+		0E224A241A87CFE600C578CB /* NLISOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLISOUtils.h; path = ME11Test/NLISOUtils.h; sourceTree = "<group>"; };
+		0E224A251A87CFE600C578CB /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = ME11Test/PageViewController.h; sourceTree = "<group>"; };
+		0E224A261A87CFE600C578CB /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = ME11Test/PageViewController.m; sourceTree = "<group>"; };
+		0E224A271A87CFE600C578CB /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PageViewController.xib; path = ME11Test/PageViewController.xib; sourceTree = "<group>"; };
+		0E224A281A87CFE600C578CB /* PBOCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBOCTest.h; path = ME11Test/PBOCTest.h; sourceTree = "<group>"; };
+		0E224A291A87CFE600C578CB /* PBOCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBOCTest.m; path = ME11Test/PBOCTest.m; sourceTree = "<group>"; };
+		0E224A2A1A87CFE600C578CB /* PinInputTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinInputTest.h; path = ME11Test/PinInputTest.h; sourceTree = "<group>"; };
+		0E224A2B1A87CFE600C578CB /* PinInputTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinInputTest.m; path = ME11Test/PinInputTest.m; sourceTree = "<group>"; };
+		0E224A2C1A87CFE600C578CB /* PrintTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrintTest.h; path = ME11Test/PrintTest.h; sourceTree = "<group>"; };
+		0E224A2D1A87CFE600C578CB /* PrintTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrintTest.m; path = ME11Test/PrintTest.m; sourceTree = "<group>"; };
+		0E224A2E1A87CFE600C578CB /* SwipeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeTest.h; path = ME11Test/SwipeTest.h; sourceTree = "<group>"; };
+		0E224A2F1A87CFE600C578CB /* SwipeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeTest.m; path = ME11Test/SwipeTest.m; sourceTree = "<group>"; };
+		0E224A3B1A87D3A200C578CB /* PaintingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaintingView.h; path = PaintOnScreen/PaintingView.h; sourceTree = "<group>"; };
+		0E224A3C1A87D3A200C578CB /* PaintingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaintingView.m; path = PaintOnScreen/PaintingView.m; sourceTree = "<group>"; };
+		0E224A3D1A87D3A200C578CB /* PaintingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaintingWindow.h; path = PaintOnScreen/PaintingWindow.h; sourceTree = "<group>"; };
+		0E224A3E1A87D3A200C578CB /* PaintingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaintingWindow.m; path = PaintOnScreen/PaintingWindow.m; sourceTree = "<group>"; };
+		0E224A411A87D40200C578CB /* POSPaintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPaintViewController.h; sourceTree = "<group>"; };
+		0E224A421A87D40200C578CB /* POSPaintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPaintViewController.m; sourceTree = "<group>"; };
+		0E224A431A87D40200C578CB /* POSPaintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPaintViewController.xib; sourceTree = "<group>"; };
 		0E7512DA1A695C60007F6D6E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = "untitled folder/AppConstants.h"; sourceTree = "<group>"; };
 		0E7512DB1A695C60007F6D6E /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConstants.m; path = "untitled folder/AppConstants.m"; sourceTree = "<group>"; };
 		0E7512DC1A695C60007F6D6E /* NetRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestInterface.h; path = "untitled folder/NetRequestInterface.h"; sourceTree = "<group>"; };
@@ -192,6 +234,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E224A121A87CC7B00C578CB /* METest */ = {
+			isa = PBXGroup;
+			children = (
+				0E224A1B1A87CFE600C578CB /* BaseTest.h */,
+				0E224A1C1A87CFE600C578CB /* BaseTest.m */,
+				0E224A1D1A87CFE600C578CB /* CalcMacTest.h */,
+				0E224A1E1A87CFE600C578CB /* CalcMacTest.m */,
+				0E224A1F1A87CFE600C578CB /* ConsumeTest.h */,
+				0E224A201A87CFE600C578CB /* ConsumeTest.m */,
+				0E224A211A87CFE600C578CB /* ME11Test.h */,
+				0E224A221A87CFE600C578CB /* ME11Test.m */,
+				0E224A231A87CFE600C578CB /* NLDump.h */,
+				0E224A241A87CFE600C578CB /* NLISOUtils.h */,
+				0E224A251A87CFE600C578CB /* PageViewController.h */,
+				0E224A261A87CFE600C578CB /* PageViewController.m */,
+				0E224A271A87CFE600C578CB /* PageViewController.xib */,
+				0E224A281A87CFE600C578CB /* PBOCTest.h */,
+				0E224A291A87CFE600C578CB /* PBOCTest.m */,
+				0E224A2A1A87CFE600C578CB /* PinInputTest.h */,
+				0E224A2B1A87CFE600C578CB /* PinInputTest.m */,
+				0E224A2C1A87CFE600C578CB /* PrintTest.h */,
+				0E224A2D1A87CFE600C578CB /* PrintTest.m */,
+				0E224A2E1A87CFE600C578CB /* SwipeTest.h */,
+				0E224A2F1A87CFE600C578CB /* SwipeTest.m */,
+			);
+			name = METest;
+			sourceTree = "<group>";
+		};
+		0E224A3A1A87D25A00C578CB /* FingerPaint */ = {
+			isa = PBXGroup;
+			children = (
+				0E224A3B1A87D3A200C578CB /* PaintingView.h */,
+				0E224A3C1A87D3A200C578CB /* PaintingView.m */,
+				0E224A3D1A87D3A200C578CB /* PaintingWindow.h */,
+				0E224A3E1A87D3A200C578CB /* PaintingWindow.m */,
+				0E224A411A87D40200C578CB /* POSPaintViewController.h */,
+				0E224A421A87D40200C578CB /* POSPaintViewController.m */,
+				0E224A431A87D40200C578CB /* POSPaintViewController.xib */,
+			);
+			name = FingerPaint;
+			sourceTree = "<group>";
+		};
 		0EB4658B1A584EA9002B240E /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +382,8 @@
 		0EC58DE91A55EBBA00F2B391 /* POSPay */ = {
 			isa = PBXGroup;
 			children = (
+				0E224A3A1A87D25A00C578CB /* FingerPaint */,
+				0E224A121A87CC7B00C578CB /* METest */,
 				F282FFFF1A5C571600074ADA /* Models */,
 				0ECCE76C1A599220001ECBD9 /* Tools */,
 				0EB465981A58517A002B240E /* ViewController */,
@@ -565,6 +651,7 @@
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
 				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
+				0E224A351A87CFE600C578CB /* PageViewController.xib in Resources */,
 				351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */,
 				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
 				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
@@ -573,6 +660,7 @@
 				0EC58DFE1A55EBBA00F2B391 /* LaunchScreen.xib in Resources */,
 				F282FFFE1A5C54CC00074ADA /* POSAccountTopCell.xib in Resources */,
 				357030BD1A64222A003287BD /* messageFooterView.xib in Resources */,
+				0E224A451A87D40200C578CB /* POSPaintViewController.xib in Resources */,
 				F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
@@ -629,8 +717,12 @@
 				F282FFFD1A5C54CC00074ADA /* POSAccountTopCell.m in Sources */,
 				0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */,
 				35C8178D1A7FB7150066C52B /* passwordController.m in Sources */,
+				0E224A341A87CFE600C578CB /* PageViewController.m in Sources */,
 				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
+				0E224A381A87CFE600C578CB /* PrintTest.m in Sources */,
+				0E224A391A87CFE600C578CB /* SwipeTest.m in Sources */,
 				35F063C01A86140D00964E78 /* chageLoginPasswordViewController.m in Sources */,
+				0E224A371A87CFE600C578CB /* PinInputTest.m in Sources */,
 				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
 				F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
@@ -638,11 +730,19 @@
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				F243AFE01A75562600324F95 /* POSPickerView.m in Sources */,
 				357030C01A642D85003287BD /* POSMessage.m in Sources */,
+				0E224A321A87CFE600C578CB /* ConsumeTest.m in Sources */,
+				0E224A401A87D3A200C578CB /* PaintingWindow.m in Sources */,
+				0E224A3F1A87D3A200C578CB /* PaintingView.m in Sources */,
+				0E224A301A87CFE600C578CB /* BaseTest.m in Sources */,
 				F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */,
 				0E7512E21A696657007F6D6E /* UserInfo.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
+				0E224A441A87D40200C578CB /* POSPaintViewController.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
+				0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */,
+				0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
+				0E224A331A87CFE600C578CB /* ME11Test.m in Sources */,
 				35B03E031A84E203001752A1 /* authenticationInfo.m in Sources */,
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
