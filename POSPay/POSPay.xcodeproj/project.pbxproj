@@ -447,6 +447,9 @@
 				0ECCE7711A599873001ECBD9 /* GTMBase64.m */,
 				0ECCE7731A599952001ECBD9 /* GTMDefines.h */,
 				0E7512E31A6E961F007F6D6E /* PrefixHeader.pch */,
+				351FC0C71A867138000C52C1 /* sixNumberPasswordView.h */,
+				351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */,
+				351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -462,9 +465,6 @@
 				35C8178F1A7FB7290066C52B /* pictureController.m */,
 				35C817911A7FB7630066C52B /* confirmController.h */,
 				35C817921A7FB7630066C52B /* confirmController.m */,
-				351FC0C71A867138000C52C1 /* sixNumberPasswordView.h */,
-				351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */,
-				351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";

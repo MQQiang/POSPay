@@ -28,7 +28,6 @@
     self.passwordView = passwordView;
     passwordView.frame = CGRectMake(0, 90, 320, 60);
     [self.view addSubview:passwordView];
-    self.passwordView = passwordView;
     self.nextBtn.enabled = NO;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordView.passwordField];
     
