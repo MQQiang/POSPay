@@ -963,12 +963,11 @@
                         <outlet property="nameLable" destination="QUD-qt-kQV" id="X45-ld-5v5"/>
                         <outlet property="stateLable" destination="I94-2e-sx4" id="ZHH-Si-Ts2"/>
                         <outlet property="typeLable" destination="3rb-5s-nvn" id="tPx-7n-02v"/>
-                        <segue destination="Mbs-X6-KVi" kind="push" identifier="authentication2account" id="E44-ew-RpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIc-f3-uXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="808"/>
+            <point key="canvasLocation" x="1848" y="808"/>
         </scene>
         <!--信息-->
         <scene sceneID="wg7-f3-ORb">
@@ -1078,6 +1077,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="gXJ-gZ-aCG"/>
-        <segue reference="cRk-Np-4ly"/>
     </inferredMetricsTieBreakers>
 </document>

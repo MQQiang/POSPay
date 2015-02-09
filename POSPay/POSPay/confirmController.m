@@ -61,7 +61,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)completeBtnClick{
-    [self performSegueWithIdentifier:@"authentication2account" sender:nil];
+    //[self performSegueWithIdentifier:@"authentication2account" sender:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 @end
