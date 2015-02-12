@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self addReturnBtn];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -27,6 +27,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)addReturnBtn{
+    UIButton *returnBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 32)];
+    [returnBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(returnToMain) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *returnBtnItem = [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
+    self.navigationItem.leftBarButtonItem = returnBtnItem;
+}
+- (void)returnToMain{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

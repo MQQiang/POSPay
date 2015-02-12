@@ -24,39 +24,65 @@
     [self addNewPasswordView];
     [self addNewPasswordAgainView];
     [self addConfirmBtn];
+    [self addLables];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)confirmBtnClick{
+    
+    NSString *previousPassword = self.PreviousPasswordView.passwordField.text;
+    NSString *password = self.passwordView.passwordField.text;
+    NSString *passwordAgain = self.passwordAgainView.passwordField.text;
+    if (![password isEqualToString:passwordAgain]) {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提现密码不一致，请重新输入。" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+}
+- (void)addLables{
+    UILabel *lable1 = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, 320, 10)];
+    UILabel *lable2 = [[UILabel alloc]initWithFrame:CGRectMake(10, 140, 320, 10)];
+    UILabel *lable3 = [[UILabel alloc]initWithFrame:CGRectMake(10, 210, 320, 10)];
+    //[lable1 setFont:[UIFont systemFontOfSize:5.0]];
+    lable1.text = @"原提现密码";
+    lable2.text = @"新提现密码";
+    lable3.text = @"新提现密码";
+    [self.view addSubview:lable1];
+    [self.view addSubview:lable2];
+    [self.view addSubview:lable3];
+}
 - (void)addPreviousPasswordView{
     sixNumberPasswordView *view = [sixNumberPasswordView sixNumberPasswordView];
-    view.frame = CGRectMake(0, 70, 320, 60);
+    view.frame = CGRectMake(0, 80, 320, 60);
     [self.view addSubview:view];
     self.PreviousPasswordView = view;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordView.passwordField];
 }
 - (void)addNewPasswordView{
     sixNumberPasswordView *view = [sixNumberPasswordView sixNumberPasswordView];
-    view.frame = CGRectMake(0, 140, 320, 60);
+    view.frame = CGRectMake(0, 150, 320, 60);
     [self.view addSubview:view];
     self.passwordView = view;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordView.passwordField];
 }
 - (void)addNewPasswordAgainView{
     sixNumberPasswordView *view = [sixNumberPasswordView sixNumberPasswordView];
-    view.frame = CGRectMake(0, 210, 320, 60);
+    view.frame = CGRectMake(0, 220, 320, 60);
     [self.view addSubview:view];
     self.passwordAgainView = view;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordView.passwordField];
 }
 - (void)addConfirmBtn{
-    UIButton *confirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 270, 320, 50)];
+    UIButton *confirmBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 280, 320, 50)];
     self.confirmBtn = confirmBtn;
     [confirmBtn setTitle:@"确认修改" forState:UIControlStateNormal];
     [self.view addSubview:confirmBtn];
     [confirmBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [confirmBtn addTarget:self action:@selector(confirmBtnClick) forControlEvents:UIControlEventTouchUpInside];
     //[self.confirmBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     //self.confirmBtn.enabled = NO;
 }

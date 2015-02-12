@@ -28,6 +28,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.nameField];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifyingCodeField];
+    [self addReturnBtn];
     self.nextBtn.enabled = NO;
     [self.nameField becomeFirstResponder];
 }
@@ -52,6 +53,16 @@
         self.nextBtn.enabled = YES;
     }
     else self.nextBtn.enabled = NO;
+}
+- (void)addReturnBtn{
+    UIButton *returnBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 32)];
+    [returnBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [returnBtn addTarget:self action:@selector(returnToMain) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *returnBtnItem = [[UIBarButtonItem alloc]initWithCustomView:returnBtn];
+    self.navigationItem.leftBarButtonItem = returnBtnItem;
+}
+- (void)returnToMain{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)nextBtnClick {
