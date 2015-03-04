@@ -46,6 +46,9 @@
 +(NSString *) encryptUseDES:(NSString *)clearText key:(NSString *)key;
 /****** 解密 ******/
 +(NSString *) decryptUseDES:(NSString *)plainText key:(NSString *)key;
+// 加密
++(NSString *)encodeStringWithThirdPartyCode:(NSString *)code;
+// 解密
 
-
++(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;
 @end

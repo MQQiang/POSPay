@@ -227,13 +227,13 @@
 + (NSString *)encryptWithText:(NSString *)sText
 {
     //kCCEncrypt 加密
-    return [self encrypt:sText encryptOrDecrypt:kCCEncrypt key:@"des"];
+    return [Util encrypt:sText encryptOrDecrypt:kCCEncrypt key:@"des"];
 }
 
 + (NSString *)decryptWithText:(NSString *)sText
 {
     //kCCDecrypt 解密
-    return [self encrypt:sText encryptOrDecrypt:kCCDecrypt key:@"des"];
+    return [Util encrypt:sText encryptOrDecrypt:kCCDecrypt key:@"des"];
 }
 
 + (NSString *)encrypt:(NSString *)sText encryptOrDecrypt:(CCOperation)encryptOperation key:(NSString *)key
@@ -333,7 +333,7 @@
         NSLog(@"DES加密成功");
         
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-        ciphertext = [self stringWithHexBytes2:data];
+        ciphertext = [Util stringWithHexBytes2:data];
         
     }else{
         NSLog(@"DES加密失败");
@@ -349,7 +349,7 @@
 +(NSString *) decryptUseDES:(NSString *)plainText key:(NSString *)key
 {
     NSString *cleartext = nil;
-    NSData *textData = [self parseHexToByteArray:plainText];
+    NSData *textData = [Util parseHexToByteArray:plainText];
     NSUInteger dataLength = [textData length];
     size_t bufferSize = dataLength + kCCBlockSizeAES128;
     void *buffer = malloc(bufferSize);
@@ -474,6 +474,41 @@
         }
     }
     return [hexStr uppercaseString];
+}
+
++(NSString *)encodeStringWithThirdPartyCode:(NSString *)code{
+    
+    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 8)];
+    
+    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(8, 8)];
+    
+    
+    NSString  *time1 = [Util decryptUseDES:code key:key1];
+    
+    NSString *time2 = [Util decryptUseDES:time1 key:key2];
+    
+    NSString *time3 = [Util decryptUseDES:time2 key:key1];
+    
+    
+    return time3;
+}
+// 解密
+
++(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;{
+    
+    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 8)];
+    
+    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(8, 8)];
+    
+    
+    NSString  *time1 = [Util decryptUseDES:code key:key1];
+    
+    NSString *time2 = [Util decryptUseDES:time1 key:key2];
+    
+    NSString *time3 = [Util decryptUseDES:time2 key:key1];
+    
+    
+    return time3;
 }
 
 @end
