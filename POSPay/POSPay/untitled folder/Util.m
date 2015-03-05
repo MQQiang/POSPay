@@ -114,7 +114,9 @@
 
 +(NSString *)baseServerUrl{
     
-    return @"http://stronglion2010.gicp.net:8099/yhk_cust_sys/scl_pos";
+//    return @"http://stronglion2010.gicp.net:8099/yhk_cust_sys/scl_pos";
+    
+    return @"http://183.14.155.238:8088/phoneweb/scl_pos";
 //    return @"http://183.14.162.254:8099/yhk_cust_sys/scl_pos";
     
    
@@ -351,7 +353,7 @@
     NSString *cleartext = nil;
     NSData *textData = [Util parseHexToByteArray:plainText];
     NSUInteger dataLength = [textData length];
-    size_t bufferSize = dataLength + kCCBlockSizeAES128;
+    size_t bufferSize = dataLength + kCCBlockSizeDES;
     void *buffer = malloc(bufferSize);
     size_t numBytesEncrypted = 0;
     
@@ -494,7 +496,7 @@
 }
 // 解密
 
-+(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;{
++(NSString *)decryptStringWithThirdPartyCode:(NSString *)code{
     
     NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 8)];
     

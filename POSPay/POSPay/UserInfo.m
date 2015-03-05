@@ -33,7 +33,7 @@
     NSString *code = dic[@"random_key"];
     
     
-    _randomCode = [Util TripleDES:code encryptOrDecrypt:kCCDecrypt];
+    _randomCode = code;
     
 }
 -(void)setDetailUserInfo:(NSDictionary *)dic{

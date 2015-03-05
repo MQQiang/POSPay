@@ -631,6 +631,7 @@
 				TargetAttributes = {
 					0EC58DE61A55EBBA00F2B391 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 93R557RJL3;
 					};
 					0EC58E021A55EBBA00F2B391 = {
 						CreatedOnToolsVersion = 6.1;
@@ -903,6 +904,7 @@
 			baseConfigurationReference = 763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",
@@ -921,6 +923,7 @@
 			baseConfigurationReference = E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",

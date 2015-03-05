@@ -50,5 +50,5 @@
 +(NSString *)encodeStringWithThirdPartyCode:(NSString *)code;
 // 解密
 
-+(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;
++(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;
 @end

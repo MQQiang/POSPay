@@ -129,6 +129,62 @@
     //背面照
     // 身份证与本人照
     // 签名
+
+//        
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        
+//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//        
+//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+//        
+//        NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.edite"] stringByAppendingString:@"13656678406"]   stringByAppendingString:@"MQ"]stringByAppendingString:@"210521198910181071"] stringByAppendingString: [UserInfo sharedUserinfo].randomCode]];
+//        
+//        
+//        UIImage *image  = [UIImage imageNamed:@"18"];
+//        
+//        NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+//        
+//        
+//        NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678406",@"real_name":@"MQ",@"idcard_no":@"210521198910181071",@"cred_img_a":imageData,@"cred_img_b":imageData,@"cred_img_c":imageData,@"sign":checkCode};
+//        
+//        [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            
+//            NSLog(@"%@",responseObject);
+//            NSDictionary *dic = (NSDictionary *)responseObject;
+//            if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+//                
+//                //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+//                
+//                //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//                [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+//                
+//            }
+//            else{
+//                
+//                
+//                [[[UIAlertView  alloc] initWithTitle:@"查询用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+//                
+//                
+//            }
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            
+//            
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            
+//            NSLog(@"Error: %@", error);
+//            
+//            NSLog(@"operation: %@", operation.responseString);
+//            
+//            [Util alertNetworkError:self.view];
+//            
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        }];
+//        
+//        
+//        
+    
+        
+    
     
     
 }
