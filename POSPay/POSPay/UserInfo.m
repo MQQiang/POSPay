@@ -7,6 +7,8 @@
 //
 
 #import "UserInfo.h"
+#import "Util.h"
+
 
 @implementation UserInfo
 
@@ -33,7 +35,7 @@
     NSString *code = dic[@"random_key"];
     
     
-    _randomCode = code;
+    _randomCode = [Util decryptStringWithThirdPartyCode:code];
     
 }
 -(void)setDetailUserInfo:(NSDictionary *)dic{

@@ -31,9 +31,7 @@
 
 
 -(void)test3DES{
-    
-    NSString *code = [Util encodeStringWithThirdPartyCode:@"4EF745F795C4FA24124A10E8947BD9D5"];
-    NSLog(@"%@",code);
+
     
 }
 

@@ -44,7 +44,7 @@
         if (self.password.length<6) {
             UITextField *currentField=[self.view_wordsView.subviews objectAtIndex:self.password.length];
            [self.password appendString:string];
-            NSLog(@"%@,%d",_password,_password.length);
+            NSLog(@"%@,%lu",_password,(unsigned long)_password.length);
             currentField.text=string;
         
         }

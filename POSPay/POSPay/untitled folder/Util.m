@@ -9,10 +9,15 @@
 #import "Util.h"
 #import "GTMBase64.h"
 #import "AFNetworking.h"
+#import "DesUtil.h"
+
 
 #define kChosenDigestLength		CC_SHA1_DIGEST_LENGTH
 
 #define DESKEY @"3F53BC47C0165EF589586E475452A227"
+
+
+static Byte iv[] = {1,2,3,4,5,6,7,8};
 
 @implementation Util
 
@@ -316,32 +321,42 @@
 +(NSString *) encryptUseDES:(NSString *)clearText key:(NSString *)key
 {
     NSString *ciphertext = nil;
-    NSData *textData = [clearText dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *textData = [Util parseHexToByteArray:clearText];
+    
+    
     NSUInteger dataLength = [textData length];
     
-    size_t bufferSize = dataLength + kCCBlockSizeAES128;
-    void * buffer = malloc(bufferSize);
+    unsigned char buffer[1024];
+    memset(buffer, 0, sizeof(char));
     size_t numBytesEncrypted = 0;
+    
+    NSData *keyData = [Util parseHexToByteArray:key];
+    
+    
     
     CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmDES,
                                           kCCOptionPKCS7Padding | kCCOptionECBMode,
-                                          [key UTF8String], kCCBlockSizeDES,
-                                          NULL,
-                                          [textData bytes]  , dataLength,
-                                          buffer, bufferSize,
+                                          [keyData bytes], kCCKeySizeDES,
+                                          iv,
+                                          [textData bytes], dataLength,
+                                          buffer, 1024,
                                           &numBytesEncrypted);
     
     if (cryptStatus == kCCSuccess) {
         NSLog(@"DES加密成功");
         
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-        ciphertext = [Util stringWithHexBytes2:data];
+        
+        Byte* bb = (Byte*)[data bytes];
+        
+         ciphertext = [Util parseByteArray2HexString:bb];
         
     }else{
         NSLog(@"DES加密失败");
     }
     
-    free(buffer);
+//    free(buffer);
+//    return [ciphertext substringToIndex:16];
     return ciphertext;
 }
 
@@ -350,31 +365,40 @@
  ******************************************************************************/
 +(NSString *) decryptUseDES:(NSString *)plainText key:(NSString *)key
 {
+    NSData *keyData = [Util parseHexToByteArray:key];
+    
+    
+    
+    
     NSString *cleartext = nil;
     NSData *textData = [Util parseHexToByteArray:plainText];
     NSUInteger dataLength = [textData length];
-    size_t bufferSize = dataLength + kCCBlockSizeDES;
-    void *buffer = malloc(bufferSize);
+    unsigned char buffer[1024];
+    memset(buffer, 0, sizeof(char));
     size_t numBytesEncrypted = 0;
     
     
     CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmDES,
                                           kCCOptionPKCS7Padding | kCCOptionECBMode,
-                                          [key UTF8String], kCCKeySizeDES,
-                                          NULL,
+                                          [keyData bytes], kCCKeySizeDES,
+                                          iv,
                                           [textData bytes]  , dataLength,
-                                          buffer, bufferSize,
+                                          buffer, 1024,
                                           &numBytesEncrypted);
     if (cryptStatus == kCCSuccess) {
         NSLog(@"DES解密成功");
         
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-        cleartext = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        cleartext = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        cleartext = [Util stringWithHexBytes2:data];
+        
+        
     }else{
         NSLog(@"DES解密失败");
     }
     
-    free(buffer);
+//    free(buffer);
     return cleartext;
 }
 
@@ -435,6 +459,7 @@
     }
     
     NSData *newData = [[NSData alloc] initWithBytes:bytes length:hexString.length/2];
+    NSLog(@"newData=%@",newData);
     return newData;
 }
 
@@ -455,6 +480,7 @@
             i++;
         }
     }
+    NSLog(@"bytes 的16进制数为:%@",hexStr);
     return hexStr;
 }
 
@@ -475,42 +501,59 @@
             i++;
         }
     }
+    NSLog(@"bytes 的16进制数为:%@",hexStr);
     return [hexStr uppercaseString];
 }
 
+
+// 加密
 +(NSString *)encodeStringWithThirdPartyCode:(NSString *)code{
+
+    //8C8E0A3E582C92003F0BE228A66437D7
+    //4EF745F795C4FA24124A10E8947BD9D5
+    //0BE9D717B1478B32
     
-    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 8)];
+    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 16)];
     
-    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(8, 8)];
+    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16, 16)];
     
     
-    NSString  *time1 = [Util decryptUseDES:code key:key1];
+    NSString  *time1 = [Util encryptUseDES:code key:key1];
     
+
     NSString *time2 = [Util decryptUseDES:time1 key:key2];
     
-    NSString *time3 = [Util decryptUseDES:time2 key:key1];
+    NSString *time3 = [Util encryptUseDES:time2 key:key1];
     
+    NSString  *returnString = [time3 substringToIndex:32];
     
-    return time3;
+    return returnString;
+
 }
 // 解密
 
 +(NSString *)decryptStringWithThirdPartyCode:(NSString *)code{
     
-    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 8)];
     
-    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(8, 8)];
+    
+    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 16)];
+    
+    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16,16)];
     
     
     NSString  *time1 = [Util decryptUseDES:code key:key1];
     
-    NSString *time2 = [Util decryptUseDES:time1 key:key2];
+    NSString *time2 = [Util encryptUseDES:time1 key:key2];
     
     NSString *time3 = [Util decryptUseDES:time2 key:key1];
     
     
-    return time3;
+    NSString  *returnString = [time3 substringToIndex:32];
+    
+    return returnString;
+    
+    
+    
 }
 
 @end

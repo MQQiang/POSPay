@@ -52,6 +52,7 @@
                 <outlet property="pickView" destination="dKc-Mr-Z7d" id="jts-od-7I7"/>
                 <outlet property="pickerTitle" destination="Zvx-ji-WhP" id="WNp-fZ-V9j"/>
             </connections>
+            <point key="canvasLocation" x="113" y="292"/>
         </view>
     </objects>
 </document>
