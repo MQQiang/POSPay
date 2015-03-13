@@ -629,11 +629,19 @@
                                 <state key="normal" title="保存修改">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickChangeButton:" destination="QAr-Gd-vLi" eventType="touchUpInside" id="04f-Ab-Mza"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="修改登录密码" id="r5n-LE-4PK"/>
+                    <connections>
+                        <outlet property="againPasswordTextField" destination="Od5-jx-Dt7" id="tiY-f7-VYI"/>
+                        <outlet property="newPasswordTextField" destination="t2S-ww-SOm" id="kzS-yK-W6r"/>
+                        <outlet property="originPasswordTextField" destination="XQt-9w-KjK" id="vRR-ZC-xPI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yp2-dO-mM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -646,9 +654,45 @@
                     <view key="view" contentMode="scaleToFill" id="2wq-ev-Mkq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="原提现密码" minimumFontSize="17" id="zcf-d0-duH">
+                                <rect key="frame" x="34" y="80" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" 新提现密码" minimumFontSize="17" id="u98-el-vx3">
+                                <rect key="frame" x="34" y="123" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="再次输入提现密码" minimumFontSize="17" id="rYf-dP-xFU">
+                                <rect key="frame" x="34" y="171" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jd2-Z7-hGb">
+                                <rect key="frame" x="130" y="225" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="保存修改">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickChangeButton:" destination="2im-8t-MhK" eventType="touchUpInside" id="gv5-df-hk6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="修改提现密码" id="ebm-Ho-Abk"/>
+                    <connections>
+                        <outlet property="againPasswordTextField" destination="rYf-dP-xFU" id="Oi2-MD-24B"/>
+                        <outlet property="newPasswordTextField" destination="u98-el-vx3" id="EKm-dK-IVd"/>
+                        <outlet property="originPasswordTextField" destination="zcf-d0-duH" id="yru-io-jum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chd-yG-IKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [NLBluetoothHelper startScan];
 
     self.driver = [[NLMESeriesDriver alloc] init];
     
@@ -46,11 +47,16 @@
         if ([self.viewController respondsToSelector:@selector(addText:)]) {
             [self.viewController performSelector:@selector(addText:) withObject:[NSString stringWithFormat:@"device error %@", err]];
         }
-        [(UINavigationController*)self.window.rootViewController topViewController].title = @"device connected failed";
+        
+        
+//        [(UINavigationController*)self.window.rootViewController topViewController].title = @"device connected failed";
+        
+        
+        
         [[[UIAlertView alloc] initWithTitle:@"连接失败" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
         return ;
     }
-    [(UINavigationController*)self.window.rootViewController topViewController].title = @"device is connected!!!";
+//    [(UINavigationController*)self.window.rootViewController topViewController].title = @"device is connected!!!";
     if ([self.viewController respondsToSelector:@selector(addText:)]) {
         [self.viewController performSelector:@selector(addText:) withObject:@"device is connected!!!"];
     }
@@ -89,10 +95,13 @@
         [[[UIAlertView alloc] initWithTitle:@"连接失败" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
         return ;
     }
-    [(UINavigationController*)self.window.rootViewController topViewController].title = @"device is connected!!!";
-    if ([self.viewController respondsToSelector:@selector(addText:)]) {
-        [self.viewController performSelector:@selector(addText:) withObject:@"device is connected!!!"];
-    }
+    
+    
+//    [(UINavigationController*)self.window.rootViewController topViewController].title = @"device is connected!!!";
+//    if ([self.viewController respondsToSelector:@selector(addText:)]) {
+//        [self.viewController performSelector:@selector(addText:) withObject:@"device is connected!!!"];
+//    }
+    NSLog(@"connect success");
     NSLog(@"Audio device instance %@", self.device);
 }
 

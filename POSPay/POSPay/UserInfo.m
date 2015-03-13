@@ -40,9 +40,12 @@
 }
 -(void)setDetailUserInfo:(NSDictionary *)dic{
     
+    _checkStatus = dic[@"verify_status"];
     _cardNumber = dic[@"cred_no"];
     _name = dic[@"real_name"];
     _checkUrl = dic[@"bank_union_qry_url"];
-    
+    _myAssets = dic[@"my_assets"];
+    _canExtractAmount = dic[@"extract_amount"];
+
 }
 @end

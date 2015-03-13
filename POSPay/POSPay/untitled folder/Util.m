@@ -9,7 +9,6 @@
 #import "Util.h"
 #import "GTMBase64.h"
 #import "AFNetworking.h"
-#import "DesUtil.h"
 
 
 #define kChosenDigestLength		CC_SHA1_DIGEST_LENGTH
@@ -121,7 +120,7 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
 //    return @"http://stronglion2010.gicp.net:8099/yhk_cust_sys/scl_pos";
     
-    return @"http://183.14.155.238:8088/phoneweb/scl_pos";
+    return @"http://14.153.193.187:8088/phoneweb/scl_pos";
 //    return @"http://183.14.162.254:8099/yhk_cust_sys/scl_pos";
     
    
@@ -553,6 +552,52 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     return returnString;
     
     
+    
+}
+
++ (NSString *)encodeToPercentEscapeString: (NSString *) input
+
+{
+    
+    // Encode all the reserved characters, per RFC 3986
+    
+    // (<http://www.ietf.org/rfc/rfc3986.txt>)
+    
+    NSString *outputStr = (NSString *)
+    
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                            
+                                            (CFStringRef)input,
+                                            
+                                            NULL,
+                                            
+                                            (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                            
+                                            kCFStringEncodingUTF8));
+    
+    return outputStr;
+    
+}
+
+
+
++ (NSString *)decodeFromPercentEscapeString: (NSString *) input
+
+{
+    
+    NSMutableString *outputStr = [NSMutableString stringWithString:input];
+    
+    [outputStr replaceOccurrencesOfString:@"+"
+     
+                               withString:@" "
+     
+                                  options:NSLiteralSearch
+     
+                                    range:NSMakeRange(0, [outputStr length])];
+    
+    
+    
+    return [outputStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
 }
 

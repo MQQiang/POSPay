@@ -9,6 +9,8 @@
 #import "pictureController.h"
 #import "authenticationInfo.h"
 #import "confirmController.h"
+#import "UserInfo.h"
+
 @interface pictureController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *mainPicture;
 @property (weak, nonatomic) IBOutlet UIButton *frontPicture;
@@ -85,7 +87,66 @@
 }
 
 - (IBAction)upload {
+
+        
+        // 手机号
+        
+        
+        //
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+
+        NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.edite"] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum]   stringByAppendingString:_userInfo.name]stringByAppendingString:_userInfo.IDnumber] stringByAppendingString: [UserInfo sharedUserinfo].randomCode]];
+        
+        NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.edite",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"real_name":_userInfo.name,@"idcard_no":_userInfo.IDnumber,@"sign":checkCode};
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:[Util baseServerUrl] parameters: parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            
+            NSData *fontImage = UIImageJPEGRepresentation(_userInfo.frontImage, 1.0);
+            
+            NSData *backImage = UIImageJPEGRepresentation(_userInfo.backImage, 1.0);
+            
+            NSData *mainImage = UIImageJPEGRepresentation(_userInfo.mainImage, 1.0);
+            
+            [formData appendPartWithFileData:fontImage name:@"cred_img_a" fileName:@"1.png" mimeType:@"image/jpg"];
+            
+            [formData appendPartWithFileData:backImage name:@"cred_img_b" fileName:@"1.png" mimeType:@"image/jpg"];
+            
+            [formData appendPartWithFileData:mainImage name:@"cred_img_c" fileName:@"1.png" mimeType:@"image/jpg"];
+            
+            
+        } error:nil];
+        
+        AFHTTPRequestOperation *opration = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+        
+        opration.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",@"text/javascript", nil];
+        
+        [opration setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            
+            NSDictionary * dic = (NSDictionary *)responseObject;
+            
+            NSLog(@"%@",dic);
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"信息上传成功" message:@"请耐心等待审核" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            
+            NSLog(@"%@",error);
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            
+            [[[UIAlertView  alloc] initWithTitle:@"上传信息失败" message:@"请检查网络" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+        }];
+        
+        [manager.operationQueue addOperation:opration];
+    
 }
+
+
 - (void)addRightBtn{
 //    UIButton *exampleBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
 //    [exampleBtn setTitle:@"示例" forState:UIControlStateNormal];

@@ -151,7 +151,7 @@
         else{
             
             
-            [[[UIAlertView  alloc] initWithTitle:@"登录失败" message:@"请检查用户名密码" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            [[[UIAlertView  alloc] initWithTitle:@"请求用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         }

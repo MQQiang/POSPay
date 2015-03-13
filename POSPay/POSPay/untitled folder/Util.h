@@ -51,4 +51,10 @@
 // 解密
 
 +(NSString *)decryptStringWithThirdPartyCode:(NSString *)code;
+
++ (NSString *)encodeToPercentEscapeString: (NSString *) input;
+
+
++ (NSString *)decodeFromPercentEscapeString: (NSString *) input;
+
 @end

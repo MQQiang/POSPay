@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loginUser];
-    [self test3DES];
+    [self loginUser];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -29,11 +29,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
--(void)test3DES{
-
-    
-}
 
 -(void)loginUser{
 //     手机号
@@ -75,7 +70,7 @@
 //                [self changePasswordWithType:1];
 //                [self requestUserInfo];
                 
-                [self perfectUserInfo];
+//                [self perfectUserInfo];
                 
             }else if([dic[@"rsp_code"] isEqualToString:@"6010"]){
                 
@@ -116,8 +111,6 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    //    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-    //   manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
     NSString *checkCode = [Util encodeStringWithMD5:[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.qry"] stringByAppendingString: [UserInfo sharedUserinfo].phoneNum]   stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
     
@@ -131,10 +124,8 @@
         NSDictionary *dic = (NSDictionary *)responseObject;
         if([dic[@"rsp_code"] isEqualToString:@"0000"]){
             
-            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
-            
-            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+                        [[UserInfo sharedUserinfo] setDetailUserInfo:dic];
+
             
         }
         else{
@@ -144,7 +135,7 @@
             
             
         }
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -155,7 +146,7 @@
         
         [Util alertNetworkError:self.view];
         
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }];
     
 
@@ -271,110 +262,6 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
-}
-
--(void)perfectUserInfo{
-    
-    // 手机号
-    
-    
-//    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
-    
-    
-    
-    UIImage *image  = [UIImage imageNamed:@"18"];
-    
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-    
-    
-
-    
-    
-    
-    
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.edite"] stringByAppendingString:@"13656678406"]   stringByAppendingString:@"MQ"]stringByAppendingString:@"210521198910181071"] stringByAppendingString: [UserInfo sharedUserinfo].randomCode]];
-    
-        NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.edite",@"mobile":@"13656678406",@"real_name":@"MQ",@"idcard_no":@"210521198910181071",@"sign":checkCode};
-
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:[Util baseServerUrl] parameters: parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-
-        [formData appendPartWithFileData:imageData name:@"cred_img_a" fileName:@"1.png" mimeType:@"image/jpg"];
-        
-        [formData appendPartWithFileData:imageData name:@"cred_img_b" fileName:@"1.png" mimeType:@"image/jpg"];
-        
-        [formData appendPartWithFileData:imageData name:@"cred_img_c" fileName:@"1.png" mimeType:@"image/jpg"];
-        
-        
-    } error:nil];
-    
-    AFHTTPRequestOperation *opration = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-    
-    opration.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",@"text/javascript", nil];
-    
-    [opration setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        
-        NSLog(@"%@",dic);
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                    [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        
-        NSLog(@"%@",error);
-         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        
-        [[[UIAlertView  alloc] initWithTitle:@"查询用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
-    }];
-
-    [manager.operationQueue addOperation:opration];
-    
-
-    
-//    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//        NSLog(@"%@",responseObject);
-//        NSDictionary *dic = (NSDictionary *)responseObject;
-//        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
-//            
-//            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
-//            
-//            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            [[[UIAlertView  alloc] initWithTitle:@"" message:@"密码修改成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
-//            
-//        }
-//        else{
-//            
-//            
-//            [[[UIAlertView  alloc] initWithTitle:@"查询用户信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
-//            
-//            
-//        }
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//        NSLog(@"Error: %@", error);
-//        
-//        NSLog(@"operation: %@", operation.responseString);
-//        
-//        [Util alertNetworkError:self.view];
-//        
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//    }];
-    
-    
-    
-    
     
 }
 
@@ -498,6 +385,69 @@
     
     
 }
+
+-(void)perfectUserInfo{
+    
+    
+    UIImage * image = [UIImage imageNamed:@"14"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+ 
+    
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.edite"] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum] stringByAppendingString:@"210521198910181071"] stringByAppendingString: [UserInfo sharedUserinfo].randomCode]];
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.user.edite",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"real_name":@"孟强",@"idcard_no":@"210521198910181071",@"sign":checkCode};
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:[Util baseServerUrl] parameters: parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        NSData *fontImage = UIImageJPEGRepresentation(image, 1.0);
+        
+        NSData *backImage = UIImageJPEGRepresentation(image, 1.0);
+        
+        NSData *mainImage = UIImageJPEGRepresentation(image, 1.0);
+        
+        [formData appendPartWithFileData:fontImage name:@"cred_img_a" fileName:@"1.png" mimeType:@"image/jpg"];
+        
+        [formData appendPartWithFileData:backImage name:@"cred_img_b" fileName:@"1.png" mimeType:@"image/jpg"];
+        
+        [formData appendPartWithFileData:mainImage name:@"cred_img_c" fileName:@"1.png" mimeType:@"image/jpg"];
+        
+        
+    } error:nil];
+    
+    AFHTTPRequestOperation *opration = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    
+    opration.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",@"text/javascript", nil];
+    
+    [opration setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        
+        NSLog(@"%@",dic);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [[[UIAlertView  alloc] initWithTitle:@"信息上传成功" message:@"请耐心等待审核" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+        NSLog(@"%@",error);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [[[UIAlertView  alloc] initWithTitle:@"上传信息失败" message:@"请检查网络" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+    }];
+    
+    [manager.operationQueue addOperation:opration];
+
+    
+    
+}
+
 
 /*
 #pragma mark - Navigation
