@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *passwordAgain;
+@property (weak, nonatomic) IBOutlet UITextField *tixianPassword;
+@property (weak, nonatomic) IBOutlet UITextField *tixianPasswordAgain;
+
 @property (weak, nonatomic) IBOutlet UITextField *identifingCode;
 
 @property (weak, nonatomic) IBOutlet UITextField *setPassword;
@@ -45,6 +48,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.password];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passwordAgain];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.identifingCode];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.tixianPassword];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.tixianPasswordAgain];
     self.sendIdentifyingCodeBtn.enabled = NO;
     self.downBtn.enabled = NO;
     self.agreeToContract = NO;
@@ -157,6 +162,16 @@
         self.sendIdentifyingCodeBtn.enabled = YES;
     }
     else self.sendIdentifyingCodeBtn.enabled = NO;
+    if (self.tixianPassword.text.length == 6 && self.tixianPasswordAgain.text.length != 0) {
+        if (![self.tixianPassword.text isEqualToString:self.tixianPasswordAgain.text]) {
+            NSLog(@"提现密码不一致");
+        }
+    }
+    if (self.tixianPasswordAgain.text.length == 6 && self.tixianPassword.text.length != 0) {
+        if (![self.tixianPasswordAgain.text isEqualToString:self.tixianPassword.text]) {
+            NSLog(@"提现密码不一致");
+        }
+    }
     self.downBtn.enabled = (self.phoneNumber.text.length && self.password.text.length && self.passwordAgain.text.length && self.identifingCode.text.length);
 }
 #pragma UIalertViewDelegate Method
