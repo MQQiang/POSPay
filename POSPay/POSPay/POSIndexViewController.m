@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.adView.showsVerticalScrollIndicator = NO;
+    //v self.adView.contentOffset = CGPointMake(0, 0);
     [self addAdView];
     
     
