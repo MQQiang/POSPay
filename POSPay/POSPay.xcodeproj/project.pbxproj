@@ -61,6 +61,17 @@
 		E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B0141F1A87DE8D0076FB8A /* POSEnterCardIdViewController.xib */; };
 		E2B014251A87E01C0076FB8A /* POSEnterCardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B014231A87E01C0076FB8A /* POSEnterCardInfoViewController.m */; };
 		E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B014241A87E01C0076FB8A /* POSEnterCardInfoViewController.xib */; };
+		F22DD4A61AB483F900949F42 /* POSScanPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22DD4A41AB483F900949F42 /* POSScanPaymentViewController.m */; };
+		F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22DD4A51AB483F900949F42 /* POSScanPaymentViewController.xib */; };
+		F22DD4AB1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F22DD4A91AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m */; };
+		F22DD4AC1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22DD4AA1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib */; };
+		F22DD4AE1AB4ACF700949F42 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4AD1AB4ACF700949F42 /* AVFoundation.framework */; };
+		F22DD4B41AB4B92300949F42 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4B31AB4B92300949F42 /* CoreMedia.framework */; };
+		F22DD4B61AB4B92C00949F42 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4B51AB4B92C00949F42 /* CoreVideo.framework */; };
+		F22DD4B81AB4B93500949F42 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4B71AB4B93500949F42 /* QuartzCore.framework */; };
+		F22DD4BA1AB4B94E00949F42 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4B91AB4B94E00949F42 /* libiconv.dylib */; };
+		F22DD4BF1AB4C09B00949F42 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DD4BE1AB4C09B00949F42 /* libzbar.a */; };
+		F22DD4C31AB4C17000949F42 /* ZBarSDK in Resources */ = {isa = PBXBuildFile; fileRef = F22DD4C21AB4C17000949F42 /* ZBarSDK */; };
 		F243AFE01A75562600324F95 /* POSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFDF1A75562600324F95 /* POSPickerView.m */; };
 		F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F243AFE11A75563C00324F95 /* POSPickerView.xib */; };
 		F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F243AFE41A75668300324F95 /* POSCardPaymentOrderViewController.m */; };
@@ -195,6 +206,20 @@
 		E2B014221A87E01C0076FB8A /* POSEnterCardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSEnterCardInfoViewController.h; sourceTree = "<group>"; };
 		E2B014231A87E01C0076FB8A /* POSEnterCardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSEnterCardInfoViewController.m; sourceTree = "<group>"; };
 		E2B014241A87E01C0076FB8A /* POSEnterCardInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSEnterCardInfoViewController.xib; sourceTree = "<group>"; };
+		F22DD4A31AB483F900949F42 /* POSScanPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSScanPaymentViewController.h; sourceTree = "<group>"; };
+		F22DD4A41AB483F900949F42 /* POSScanPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSScanPaymentViewController.m; sourceTree = "<group>"; };
+		F22DD4A51AB483F900949F42 /* POSScanPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSScanPaymentViewController.xib; sourceTree = "<group>"; };
+		F22DD4A81AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSScanPaymentOrderDetailViewController.h; sourceTree = "<group>"; };
+		F22DD4A91AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSScanPaymentOrderDetailViewController.m; sourceTree = "<group>"; };
+		F22DD4AA1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSScanPaymentOrderDetailViewController.xib; sourceTree = "<group>"; };
+		F22DD4AD1AB4ACF700949F42 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F22DD4AF1AB4B80B00949F42 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzbar.a; path = ZBarSDK/libzbar.a; sourceTree = "<group>"; };
+		F22DD4B31AB4B92300949F42 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F22DD4B51AB4B92C00949F42 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F22DD4B71AB4B93500949F42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F22DD4B91AB4B94E00949F42 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F22DD4BE1AB4C09B00949F42 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzbar.a; path = POSPay/ZBarSDK/libzbar.a; sourceTree = "<group>"; };
+		F22DD4C21AB4C17000949F42 /* ZBarSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZBarSDK; sourceTree = "<group>"; };
 		F243AFDE1A75562600324F95 /* POSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPickerView.h; sourceTree = "<group>"; };
 		F243AFDF1A75562600324F95 /* POSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPickerView.m; sourceTree = "<group>"; };
 		F243AFE11A75563C00324F95 /* POSPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPickerView.xib; sourceTree = "<group>"; };
@@ -229,6 +254,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22DD4BF1AB4C09B00949F42 /* libzbar.a in Frameworks */,
+				F22DD4BA1AB4B94E00949F42 /* libiconv.dylib in Frameworks */,
+				F22DD4B81AB4B93500949F42 /* QuartzCore.framework in Frameworks */,
+				F22DD4B61AB4B92C00949F42 /* CoreVideo.framework in Frameworks */,
+				F22DD4B41AB4B92300949F42 /* CoreMedia.framework in Frameworks */,
+				F22DD4AE1AB4ACF700949F42 /* AVFoundation.framework in Frameworks */,
 				0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */,
 				0EB4658F1A58500A002B240E /* MESDK.framework in Frameworks */,
 			);
@@ -392,6 +423,7 @@
 		0EC58DE91A55EBBA00F2B391 /* POSPay */ = {
 			isa = PBXGroup;
 			children = (
+				F22DD4C21AB4C17000949F42 /* ZBarSDK */,
 				0E224A3A1A87D25A00C578CB /* FingerPaint */,
 				0E224A121A87CC7B00C578CB /* METest */,
 				F282FFFF1A5C571600074ADA /* Models */,
@@ -494,9 +526,29 @@
 		C8CC537A5174372640A0F819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F22DD4BE1AB4C09B00949F42 /* libzbar.a */,
+				F22DD4B91AB4B94E00949F42 /* libiconv.dylib */,
+				F22DD4B71AB4B93500949F42 /* QuartzCore.framework */,
+				F22DD4B51AB4B92C00949F42 /* CoreVideo.framework */,
+				F22DD4B31AB4B92300949F42 /* CoreMedia.framework */,
+				F22DD4AF1AB4B80B00949F42 /* libzbar.a */,
+				F22DD4AD1AB4ACF700949F42 /* AVFoundation.framework */,
 				25735EE90FBB0B03B308AC42 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F22DD4A21AB4839900949F42 /* ScanPayment */ = {
+			isa = PBXGroup;
+			children = (
+				F22DD4A31AB483F900949F42 /* POSScanPaymentViewController.h */,
+				F22DD4A41AB483F900949F42 /* POSScanPaymentViewController.m */,
+				F22DD4A51AB483F900949F42 /* POSScanPaymentViewController.xib */,
+				F22DD4A81AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.h */,
+				F22DD4A91AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m */,
+				F22DD4AA1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib */,
+			);
+			name = ScanPayment;
 			sourceTree = "<group>";
 		};
 		F243AFDD1A75560700324F95 /* view */ = {
@@ -518,6 +570,7 @@
 		F28200051A5D81EF00074ADA /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				F22DD4A21AB4839900949F42 /* ScanPayment */,
 				F243AFDD1A75560700324F95 /* view */,
 				F28200111A5DB49500074ADA /* NoCardPayment */,
 				F28200101A5DB41600074ADA /* CardPayment */,
@@ -666,6 +719,7 @@
 				F282000A1A5D82E500074ADA /* POSCardPaymentController.xib in Resources */,
 				F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */,
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
+				F22DD4C31AB4C17000949F42 /* ZBarSDK in Resources */,
 				E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
 				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
@@ -682,7 +736,9 @@
 				F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
 				E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */,
+				F22DD4AC1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
+				F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,6 +814,7 @@
 				0E7512E21A696657007F6D6E /* UserInfo.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				0E224A441A87D40200C578CB /* POSPaintViewController.m in Sources */,
+				F22DD4AB1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */,
 				0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */,
@@ -766,6 +823,7 @@
 				35B03E031A84E203001752A1 /* authenticationInfo.m in Sources */,
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
+				F22DD4A61AB483F900949F42 /* POSScanPaymentViewController.m in Sources */,
 				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
 				351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
@@ -903,8 +961,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 763F4C2F295761E49E0D5B3C /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",
@@ -914,7 +974,16 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZBarSDK",
+					"$(PROJECT_DIR)/POSPay/ZBarSDK",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -922,8 +991,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E138A51BF58E0C2B98A69FB6 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/POSPay",
@@ -933,7 +1004,16 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/POSPay/PrefixHeader.pch";
 				INFOPLIST_FILE = POSPay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZBarSDK",
+					"$(PROJECT_DIR)/POSPay/ZBarSDK",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -21,6 +21,7 @@
 +(instancetype )instanceTextView
 {
     NSArray* nibView =  [[NSBundle mainBundle] loadNibNamed:@"POSPasswordView" owner:nil options:nil];
+    
     return [nibView objectAtIndex:0];
 }
 
@@ -32,7 +33,7 @@
     }
     BOOL test=[self.textField_hideField becomeFirstResponder];
    // NSLog(@"%@",[self.textField_hideField resignFirstResponder]) ;
-    
+    self.password=[[NSMutableString alloc] initWithString:@""];
     
 }
 
@@ -44,7 +45,7 @@
         if (self.password.length<6) {
             UITextField *currentField=[self.view_wordsView.subviews objectAtIndex:self.password.length];
            [self.password appendString:string];
-            NSLog(@"%@,%lu",_password,(unsigned long)_password.length);
+            NSLog(@"%@,%lu at%lu",_password,(unsigned long)_password.length,currentField.tag);
             currentField.text=string;
         
         }

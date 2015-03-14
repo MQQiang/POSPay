@@ -10,10 +10,12 @@
 #import "appCell.h"
 #import "POSCardPaymentController.h"
 #import "POSNoCardPaymentController.h"
+#import "POSScanPaymentViewController.h"
 @interface POSIndexViewController ()<UIScrollViewDelegate>
 //图片轮播器
 @property (weak, nonatomic) IBOutlet UIScrollView *adView;
 //应用格子
+- (IBAction)scanPayment:(id)sender;
 @property (strong, nonatomic) NSTimer *timer;
 @end
 
@@ -115,6 +117,13 @@
     POSNoCardPaymentController* pushedView=[[POSNoCardPaymentController alloc] init];
     pushedView.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:pushedView animated:YES];
+    
+    
+}
+- (IBAction)scanPayment:(id)sender {
+    POSScanPaymentViewController* pushView=[[POSScanPaymentViewController alloc] init];
+    pushView.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:pushView animated:YES];
     
     
 }
