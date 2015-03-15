@@ -12,7 +12,7 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
-
+#import 
 @interface Util : NSObject
 
 +(NSString *)encodeStringWithMD5:(NSString *)string;
@@ -35,7 +35,7 @@
 // 把一个byte数组转换为字符串
 +(NSString *) parseByteArray2HexString:(Byte[]) bytes;
 
-
++(NSString *)MD5WithStringArray:(NSMutableArray *)array;
 
 // nsData 转16进制
 + (NSString*)stringWithHexBytes2:(NSData *)sender;
