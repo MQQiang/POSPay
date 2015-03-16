@@ -22,6 +22,12 @@
 		0E224A401A87D3A200C578CB /* PaintingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A3E1A87D3A200C578CB /* PaintingWindow.m */; };
 		0E224A441A87D40200C578CB /* POSPaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A421A87D40200C578CB /* POSPaintViewController.m */; };
 		0E224A451A87D40200C578CB /* POSPaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E224A431A87D40200C578CB /* POSPaintViewController.xib */; };
+		0E38D0551AB6CFB500DAF1A9 /* POSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D04D1AB6CFB500DAF1A9 /* POSDatePickerView.m */; };
+		0E38D0561AB6CFB500DAF1A9 /* POSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D04E1AB6CFB500DAF1A9 /* POSDatePickerView.xib */; };
+		0E38D0571AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0501AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m */; };
+		0E38D0581AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0511AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib */; };
+		0E38D0591AB6CFB500DAF1A9 /* POSTradingRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0531AB6CFB500DAF1A9 /* POSTradingRecordViewController.m */; };
+		0E38D05A1AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0541AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib */; };
 		0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DB1A695C60007F6D6E /* AppConstants.m */; };
 		0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */; };
 		0E7512E21A696657007F6D6E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512E11A696657007F6D6E /* UserInfo.m */; };
@@ -136,6 +142,15 @@
 		0E224A411A87D40200C578CB /* POSPaintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSPaintViewController.h; sourceTree = "<group>"; };
 		0E224A421A87D40200C578CB /* POSPaintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSPaintViewController.m; sourceTree = "<group>"; };
 		0E224A431A87D40200C578CB /* POSPaintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSPaintViewController.xib; sourceTree = "<group>"; };
+		0E38D04C1AB6CFB500DAF1A9 /* POSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSDatePickerView.h; sourceTree = "<group>"; };
+		0E38D04D1AB6CFB500DAF1A9 /* POSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSDatePickerView.m; sourceTree = "<group>"; };
+		0E38D04E1AB6CFB500DAF1A9 /* POSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSDatePickerView.xib; sourceTree = "<group>"; };
+		0E38D04F1AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSTradingRecordTableViewCell.h; sourceTree = "<group>"; };
+		0E38D0501AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTradingRecordTableViewCell.m; sourceTree = "<group>"; };
+		0E38D0511AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSTradingRecordTableViewCell.xib; sourceTree = "<group>"; };
+		0E38D0521AB6CFB500DAF1A9 /* POSTradingRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSTradingRecordViewController.h; sourceTree = "<group>"; };
+		0E38D0531AB6CFB500DAF1A9 /* POSTradingRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTradingRecordViewController.m; sourceTree = "<group>"; };
+		0E38D0541AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSTradingRecordViewController.xib; sourceTree = "<group>"; };
 		0E7512DA1A695C60007F6D6E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = "untitled folder/AppConstants.h"; sourceTree = "<group>"; };
 		0E7512DB1A695C60007F6D6E /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConstants.m; path = "untitled folder/AppConstants.m"; sourceTree = "<group>"; };
 		0E7512DC1A695C60007F6D6E /* NetRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestInterface.h; path = "untitled folder/NetRequestInterface.h"; sourceTree = "<group>"; };
@@ -331,6 +346,22 @@
 			name = FingerPaint;
 			sourceTree = "<group>";
 		};
+		0E38D05B1AB6CFE400DAF1A9 /* TradeCheck */ = {
+			isa = PBXGroup;
+			children = (
+				0E38D04C1AB6CFB500DAF1A9 /* POSDatePickerView.h */,
+				0E38D04D1AB6CFB500DAF1A9 /* POSDatePickerView.m */,
+				0E38D04E1AB6CFB500DAF1A9 /* POSDatePickerView.xib */,
+				0E38D04F1AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.h */,
+				0E38D0501AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m */,
+				0E38D0511AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib */,
+				0E38D0521AB6CFB500DAF1A9 /* POSTradingRecordViewController.h */,
+				0E38D0531AB6CFB500DAF1A9 /* POSTradingRecordViewController.m */,
+				0E38D0541AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib */,
+			);
+			name = TradeCheck;
+			sourceTree = "<group>";
+		};
 		0EB4658B1A584EA9002B240E /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +436,7 @@
 		0EB465981A58517A002B240E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E38D05B1AB6CFE400DAF1A9 /* TradeCheck */,
 				F28200051A5D81EF00074ADA /* Payment */,
 				0EB4658C1A584EB7002B240E /* Index */,
 				0EB4658B1A584EA9002B240E /* Login */,
@@ -750,6 +782,7 @@
 				F282000A1A5D82E500074ADA /* POSCardPaymentController.xib in Resources */,
 				F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */,
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
+				0E38D0581AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib in Resources */,
 				F22DD4C31AB4C17000949F42 /* ZBarSDK in Resources */,
 				E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
@@ -769,8 +802,10 @@
 				E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */,
 				F22DD4AC1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
+				0E38D05A1AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib in Resources */,
 				F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */,
 				353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */,
+				0E38D0561AB6CFB500DAF1A9 /* POSDatePickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +884,7 @@
 				F22DD4AB1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m in Sources */,
 				353D98101AB5D70700BE0CE0 /* addBankCardViewController.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
+				0E38D0591AB6CFB500DAF1A9 /* POSTradingRecordViewController.m in Sources */,
 				0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */,
 				0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
@@ -859,7 +895,9 @@
 				F22DD4A61AB483F900949F42 /* POSScanPaymentViewController.m in Sources */,
 				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
 				351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */,
+				0E38D0571AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
+				0E38D0551AB6CFB500DAF1A9 /* POSDatePickerView.m in Sources */,
 				F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
