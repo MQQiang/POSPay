@@ -13,7 +13,7 @@
 @protocol POSDatePickerViewDelegate <NSObject>
 
 @required   
--(void)setTimeWith:(NSData *)data;
+-(void)setTimeWith:(NSDate *)date tag:(NSInteger)tag;
 @end
 
 
@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 - (IBAction)cancel:(id)sender;
 - (IBAction)confirm:(id)sender;
+
+
+@property(assign,nonatomic)NSInteger tag;
 @property(weak,nonatomic)id<POSDatePickerViewDelegate> delegate;
-+ (POSDatePickerView *)instanceWithFrame:(CGRect)frame;
++ (POSDatePickerView *)instanceWithFrame:(CGRect)frame Id:(NSInteger)tag date:(NSDate*) date;
 @end

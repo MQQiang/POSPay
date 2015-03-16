@@ -22,15 +22,19 @@
 }
 
 - (IBAction)confirm:(id)sender {
-    ;
-      [self.delegate setTimeWith:self.datePicker.date];
+    
+    [self.delegate setTimeWith:self.datePicker.date tag:self.tag];
+    [self removeFromSuperview];
+    
 }
-
-+ (POSDatePickerView *)instanceWithFrame:(CGRect)frame
++ (POSDatePickerView *)instanceWithFrame:(CGRect)frame Id:(NSInteger)tag date:(NSDate *)date
 {
+    
     POSDatePickerView *view = (POSDatePickerView *)[[NSBundle mainBundle] loadNibNamed:@"POSDatePickerView" owner:nil options:nil][0];
     view.frame = frame;
+    view.tag=tag;
     view.datePicker.datePickerMode=UIDatePickerModeDate;
+    view.datePicker.date=date;
     return view;
 }
 

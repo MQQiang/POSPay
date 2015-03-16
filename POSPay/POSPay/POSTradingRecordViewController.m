@@ -22,11 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableViewTradeRecord registerNib:[UINib nibWithNibName:@"POSTradingRecordTableViewCell" bundle:nil] forCellReuseIdentifier:@"POSTradingRecordTableViewCell"];
-    
+    self.startDate=[NSDate dateWithTimeIntervalSinceNow:0];
+    self.endDate=[NSDate dateWithTimeIntervalSinceNow:0];
+    NSString * temp=[self.startDate.description substringToIndex:10];
+    [self.button_end setTitle:[self.startDate.description substringToIndex:10] forState:UIControlStateNormal];
+    [self.button_start setTitle:[self.startDate.description substringToIndex:10] forState:UIControlStateNormal];
     
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.button_end.titleLabel.text=[self.startDate.description substringToIndex:10];
+    self.button_start.titleLabel.text=[self.startDate.description substringToIndex:10];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -67,15 +76,22 @@
 }
 
 
--(void)setTimeWith:(NSData *)data
+-(void)setTimeWith:(NSDate *)date tag:(NSInteger)tag
 {
-    NSString* title=[NSString stringWithFormat:@"%@",data];
-
+    if (tag==0) {
+        self.button_start.titleLabel.text=[date.description substringToIndex:10];
+        self.startDate=date;
+    }
+    if (tag==1) {
+        self.button_end.titleLabel.text=[date.description substringToIndex:10];
+        self.endDate=date;
+        
+    }
 }
 
 - (IBAction)chooseStartTime:(id)sender {
     
-    POSDatePickerView *datePicker=[POSDatePickerView instanceWithFrame:CGRectMake(0, self.view.frame.size.height-250, self.view.frame.size.width, 200)] ;
+    POSDatePickerView *datePicker=[POSDatePickerView instanceWithFrame:CGRectMake(0, self.view.frame.size.height-250, self.view.frame.size.width, 200) Id:0 date:self.startDate] ;
     datePicker.delegate=self;
     
     
@@ -87,7 +103,7 @@
 
 - (IBAction)chooseEndTime:(id)sender {
     
-    POSDatePickerView *datePicker=[POSDatePickerView instanceWithFrame:CGRectMake(0, self.view.frame.size.height-250, self.view.frame.size.width, 200)] ;
+    POSDatePickerView *datePicker=[POSDatePickerView instanceWithFrame:CGRectMake(0, self.view.frame.size.height-250, self.view.frame.size.width, 200) Id:1 date:self.endDate] ;
     
     
     datePicker.delegate=self;
