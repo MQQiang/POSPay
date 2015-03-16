@@ -38,6 +38,11 @@
 		0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECCE7711A599873001ECBD9 /* GTMBase64.m */; };
 		351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */; };
 		351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */; };
+		353D980A1AB5D68000BE0CE0 /* existedBankCardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98091AB5D68000BE0CE0 /* existedBankCardTableViewController.m */; };
+		353D98101AB5D70700BE0CE0 /* addBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D980F1AB5D70700BE0CE0 /* addBankCardViewController.m */; };
+		353D98141AB5DDA500BE0CE0 /* addBankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98121AB5DDA500BE0CE0 /* addBankCardTableViewCell.m */; };
+		353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */; };
+		353D98181AB68ED600BE0CE0 /* bankCardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98171AB68ED600BE0CE0 /* bankCardInfo.m */; };
 		357030BA1A64222A003287BD /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B51A64222A003287BD /* messageCell.m */; };
 		357030BB1A64222A003287BD /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B61A64222A003287BD /* messageCell.xib */; };
 		357030BC1A64222A003287BD /* messageFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B81A64222A003287BD /* messageFooterView.m */; };
@@ -163,6 +168,15 @@
 		351FC0C61A867138000C52C1 /* sixNumberPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixNumberPasswordView.m; sourceTree = "<group>"; };
 		351FC0C71A867138000C52C1 /* sixNumberPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixNumberPasswordView.h; sourceTree = "<group>"; };
 		351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixNumberPasswordView.xib; sourceTree = "<group>"; };
+		353D98081AB5D68000BE0CE0 /* existedBankCardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = existedBankCardTableViewController.h; sourceTree = "<group>"; };
+		353D98091AB5D68000BE0CE0 /* existedBankCardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = existedBankCardTableViewController.m; sourceTree = "<group>"; };
+		353D980E1AB5D70700BE0CE0 /* addBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBankCardViewController.h; sourceTree = "<group>"; };
+		353D980F1AB5D70700BE0CE0 /* addBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addBankCardViewController.m; sourceTree = "<group>"; };
+		353D98111AB5DDA500BE0CE0 /* addBankCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addBankCardTableViewCell.h; sourceTree = "<group>"; };
+		353D98121AB5DDA500BE0CE0 /* addBankCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addBankCardTableViewCell.m; sourceTree = "<group>"; };
+		353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addBankCardTableViewCell.xib; sourceTree = "<group>"; };
+		353D98161AB68ED600BE0CE0 /* bankCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bankCardInfo.h; sourceTree = "<group>"; };
+		353D98171AB68ED600BE0CE0 /* bankCardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bankCardInfo.m; sourceTree = "<group>"; };
 		357030B41A64222A003287BD /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
 		357030B51A64222A003287BD /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
 		357030B61A64222A003287BD /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
@@ -374,6 +388,7 @@
 		0EB465971A585169002B240E /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				353D97F91AB574CF00BE0CE0 /* addBankCard */,
 				F2C3C8E71A5AFDFA0021236C /* cell */,
 				35C8177B1A7FB5D90066C52B /* Authentication */,
 				35F063BA1A8607B100964E78 /* ChangePassword */,
@@ -484,6 +499,20 @@
 				351FC0C81A867138000C52C1 /* sixNumberPasswordView.xib */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		353D97F91AB574CF00BE0CE0 /* addBankCard */ = {
+			isa = PBXGroup;
+			children = (
+				353D98081AB5D68000BE0CE0 /* existedBankCardTableViewController.h */,
+				353D98091AB5D68000BE0CE0 /* existedBankCardTableViewController.m */,
+				353D980E1AB5D70700BE0CE0 /* addBankCardViewController.h */,
+				353D980F1AB5D70700BE0CE0 /* addBankCardViewController.m */,
+				353D98111AB5DDA500BE0CE0 /* addBankCardTableViewCell.h */,
+				353D98121AB5DDA500BE0CE0 /* addBankCardTableViewCell.m */,
+				353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */,
+			);
+			name = addBankCard;
 			sourceTree = "<group>";
 		};
 		35C8177B1A7FB5D90066C52B /* Authentication */ = {
@@ -619,6 +648,8 @@
 				0E7512E11A696657007F6D6E /* UserInfo.m */,
 				35B03E011A84E202001752A1 /* authenticationInfo.h */,
 				35B03E021A84E203001752A1 /* authenticationInfo.m */,
+				353D98161AB68ED600BE0CE0 /* bankCardInfo.h */,
+				353D98171AB68ED600BE0CE0 /* bankCardInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -739,6 +770,7 @@
 				F22DD4AC1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib in Resources */,
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
 				F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */,
+				353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +847,7 @@
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
 				0E224A441A87D40200C578CB /* POSPaintViewController.m in Sources */,
 				F22DD4AB1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.m in Sources */,
+				353D98101AB5D70700BE0CE0 /* addBankCardViewController.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */,
 				0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */,
@@ -830,6 +863,7 @@
 				F28200151A5DB4D900074ADA /* POSPaymentResultController.m in Sources */,
 				F28200031A5C71F400074ADA /* POSAboutProductController.m in Sources */,
 				0ECCE76F1A599256001ECBD9 /* Util.m in Sources */,
+				353D98181AB68ED600BE0CE0 /* bankCardInfo.m in Sources */,
 				357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */,
 				0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */,
 				357030BA1A64222A003287BD /* messageCell.m in Sources */,
@@ -840,6 +874,8 @@
 				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,
 				F282001F1A5DBE9300074ADA /* POSAlertView.m in Sources */,
 				F28200091A5D82E500074ADA /* POSCardPaymentController.m in Sources */,
+				353D980A1AB5D68000BE0CE0 /* existedBankCardTableViewController.m in Sources */,
+				353D98141AB5DDA500BE0CE0 /* addBankCardTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
