@@ -603,5 +603,21 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
 }
 
++(NSString *)MD5WithStringArray:(NSMutableArray *)array{
+    
+    NSString *outputString = nil;
+    
+    for (NSString * tempString in array) {
+        
+        outputString = [outputString stringByAppendingString:tempString];
+        
+    }
+    
+    outputString = [Util encodeStringWithMD5:outputString];
+    
+    return outputString;
+    
+}
+
 @end
 

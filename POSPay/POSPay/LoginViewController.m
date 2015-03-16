@@ -448,6 +448,345 @@
     
 }
 
+-(void)payToOtherAccount{
+    
+    // 快捷支付
+    // 手机号
+    // 签名
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],[UserInfo sharedUserinfo].phoneNum,@"13656678405",[Util passwordStringInMD5:@"123456"],@"1234",@"20000",[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"to_mobile":@"13656678405",@"login_pwd":[Util passwordStringInMD5:@"123456"],@"phone_check_code":@"1234",@"trans_amt":@"20000",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+
+-(void)addBackCardInfo{
+
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],[UserInfo sharedUserinfo].phoneNum,@"123456789065445678900987654",[UserInfo sharedUserinfo].checkUrl,[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.card.addcard",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_user_name":@"孟强",@"card_no":@"123456789065445678900987654",@"bank_name":@"中国银行",@"bank_union_code":[UserInfo sharedUserinfo].checkUrl,@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+
+-(void)requestReceiverAcount{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.bankcard.qry",[UserInfo sharedUserinfo].phoneNum,@"2567890876543678900876",@"01",@"20",[Util passwordStringInMD5:@"123456"],@"1234",[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.bankcard.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_no":@"2567890876543678900876",@"settle_type":@"01",@"settle_amt":@"20",@"login_pwd":[Util passwordStringInMD5:@"123456"],@"phone_check_code":@"1234",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+-(void)requestTradeRecords{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.settle.qry",[UserInfo sharedUserinfo].phoneNum,@"1",@"20",[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"create_date":@"20150301000000",@"end_date":@"20150302000000",@"start_rows":@"1",@"offset":@"20",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+-(void)userBringUpMoney{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],[UserInfo sharedUserinfo].phoneNum,@"1",@"20",[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.bankcard.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"create_date":@"20150301000000",@"end_date":@"20150302000000",@"start_rows":@"1",@"offset":@"20",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+}
+
+-(void)userShounldKnow{
+    
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.msg.qry",[UserInfo sharedUserinfo].phoneNum,@"01",[Util signSuffix],nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.msg.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"notice_type":@"01",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation
