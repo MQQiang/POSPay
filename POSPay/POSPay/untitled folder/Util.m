@@ -122,7 +122,7 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
 //    return @"http://stronglion2010.gicp.net:8099/yhk_cust_sys/scl_pos";
     
-    return @"http://14.153.193.187:8088/phoneweb/scl_pos";
+    return @"http://14.153.93.59:8088/phoneweb/scl_pos";
 //    return @"http://183.14.162.254:8099/yhk_cust_sys/scl_pos";
     
    
@@ -605,7 +605,7 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
 
 +(NSString *)MD5WithStringArray:(NSMutableArray *)array{
     
-    NSString *outputString = nil;
+    NSString *outputString = @"";
     
     for (NSString * tempString in array) {
         

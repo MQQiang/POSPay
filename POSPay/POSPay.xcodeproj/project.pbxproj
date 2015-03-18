@@ -28,6 +28,26 @@
 		0E38D0581AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0511AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib */; };
 		0E38D0591AB6CFB500DAF1A9 /* POSTradingRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0531AB6CFB500DAF1A9 /* POSTradingRecordViewController.m */; };
 		0E38D05A1AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0541AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib */; };
+		0E38D0AF1AB967DF00DAF1A9 /* AliPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0921AB967DF00DAF1A9 /* AliPayViewController.m */; };
+		0E38D0B01AB967DF00DAF1A9 /* AliPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0931AB967DF00DAF1A9 /* AliPayViewController.xib */; };
+		0E38D0B11AB967DF00DAF1A9 /* FinaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0951AB967DF00DAF1A9 /* FinaceDetailViewController.m */; };
+		0E38D0B21AB967DF00DAF1A9 /* FinaceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0961AB967DF00DAF1A9 /* FinaceDetailViewController.xib */; };
+		0E38D0B31AB967DF00DAF1A9 /* FinanceIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0981AB967DF00DAF1A9 /* FinanceIndexViewController.m */; };
+		0E38D0B41AB967DF00DAF1A9 /* FinanceIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0991AB967DF00DAF1A9 /* FinanceIndexViewController.xib */; };
+		0E38D0B51AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D09B1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.m */; };
+		0E38D0B61AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D09C1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.xib */; };
+		0E38D0B71AB967DF00DAF1A9 /* FlyTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D09E1AB967DF00DAF1A9 /* FlyTravelViewController.m */; };
+		0E38D0B81AB967DF00DAF1A9 /* FlyTravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D09F1AB967DF00DAF1A9 /* FlyTravelViewController.xib */; };
+		0E38D0B91AB967DF00DAF1A9 /* GameFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0A11AB967DF00DAF1A9 /* GameFeeViewController.m */; };
+		0E38D0BA1AB967DF00DAF1A9 /* GameFeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0A21AB967DF00DAF1A9 /* GameFeeViewController.xib */; };
+		0E38D0BB1AB967DF00DAF1A9 /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0A41AB967DF00DAF1A9 /* HotelViewController.m */; };
+		0E38D0BC1AB967DF00DAF1A9 /* HotelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0A51AB967DF00DAF1A9 /* HotelViewController.xib */; };
+		0E38D0BD1AB967DF00DAF1A9 /* LifeNormalFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0A71AB967DF00DAF1A9 /* LifeNormalFeeViewController.m */; };
+		0E38D0BE1AB967DF00DAF1A9 /* LifeNormalFeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0A81AB967DF00DAF1A9 /* LifeNormalFeeViewController.xib */; };
+		0E38D0BF1AB967DF00DAF1A9 /* PhoneFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0AA1AB967DF00DAF1A9 /* PhoneFeeViewController.m */; };
+		0E38D0C01AB967DF00DAF1A9 /* PhoneFeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0AB1AB967DF00DAF1A9 /* PhoneFeeViewController.xib */; };
+		0E38D0C11AB967DF00DAF1A9 /* TrainTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D0AD1AB967DF00DAF1A9 /* TrainTravelViewController.m */; };
+		0E38D0C21AB967DF00DAF1A9 /* TrainTravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E38D0AE1AB967DF00DAF1A9 /* TrainTravelViewController.xib */; };
 		0E7512DE1A695C60007F6D6E /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DB1A695C60007F6D6E /* AppConstants.m */; };
 		0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512DD1A695C60007F6D6E /* NetRequestInterface.m */; };
 		0E7512E21A696657007F6D6E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7512E11A696657007F6D6E /* UserInfo.m */; };
@@ -154,6 +174,36 @@
 		0E38D0521AB6CFB500DAF1A9 /* POSTradingRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POSTradingRecordViewController.h; sourceTree = "<group>"; };
 		0E38D0531AB6CFB500DAF1A9 /* POSTradingRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POSTradingRecordViewController.m; sourceTree = "<group>"; };
 		0E38D0541AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSTradingRecordViewController.xib; sourceTree = "<group>"; };
+		0E38D0911AB967DF00DAF1A9 /* AliPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliPayViewController.h; sourceTree = "<group>"; };
+		0E38D0921AB967DF00DAF1A9 /* AliPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliPayViewController.m; sourceTree = "<group>"; };
+		0E38D0931AB967DF00DAF1A9 /* AliPayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AliPayViewController.xib; sourceTree = "<group>"; };
+		0E38D0941AB967DF00DAF1A9 /* FinaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinaceDetailViewController.h; sourceTree = "<group>"; };
+		0E38D0951AB967DF00DAF1A9 /* FinaceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinaceDetailViewController.m; sourceTree = "<group>"; };
+		0E38D0961AB967DF00DAF1A9 /* FinaceDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinaceDetailViewController.xib; sourceTree = "<group>"; };
+		0E38D0971AB967DF00DAF1A9 /* FinanceIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceIndexViewController.h; sourceTree = "<group>"; };
+		0E38D0981AB967DF00DAF1A9 /* FinanceIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceIndexViewController.m; sourceTree = "<group>"; };
+		0E38D0991AB967DF00DAF1A9 /* FinanceIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceIndexViewController.xib; sourceTree = "<group>"; };
+		0E38D09A1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceIndexViewTableViewCell.h; sourceTree = "<group>"; };
+		0E38D09B1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceIndexViewTableViewCell.m; sourceTree = "<group>"; };
+		0E38D09C1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceIndexViewTableViewCell.xib; sourceTree = "<group>"; };
+		0E38D09D1AB967DF00DAF1A9 /* FlyTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyTravelViewController.h; sourceTree = "<group>"; };
+		0E38D09E1AB967DF00DAF1A9 /* FlyTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyTravelViewController.m; sourceTree = "<group>"; };
+		0E38D09F1AB967DF00DAF1A9 /* FlyTravelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlyTravelViewController.xib; sourceTree = "<group>"; };
+		0E38D0A01AB967DF00DAF1A9 /* GameFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFeeViewController.h; sourceTree = "<group>"; };
+		0E38D0A11AB967DF00DAF1A9 /* GameFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameFeeViewController.m; sourceTree = "<group>"; };
+		0E38D0A21AB967DF00DAF1A9 /* GameFeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameFeeViewController.xib; sourceTree = "<group>"; };
+		0E38D0A31AB967DF00DAF1A9 /* HotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
+		0E38D0A41AB967DF00DAF1A9 /* HotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
+		0E38D0A51AB967DF00DAF1A9 /* HotelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelViewController.xib; sourceTree = "<group>"; };
+		0E38D0A61AB967DF00DAF1A9 /* LifeNormalFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeNormalFeeViewController.h; sourceTree = "<group>"; };
+		0E38D0A71AB967DF00DAF1A9 /* LifeNormalFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeNormalFeeViewController.m; sourceTree = "<group>"; };
+		0E38D0A81AB967DF00DAF1A9 /* LifeNormalFeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeNormalFeeViewController.xib; sourceTree = "<group>"; };
+		0E38D0A91AB967DF00DAF1A9 /* PhoneFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneFeeViewController.h; sourceTree = "<group>"; };
+		0E38D0AA1AB967DF00DAF1A9 /* PhoneFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneFeeViewController.m; sourceTree = "<group>"; };
+		0E38D0AB1AB967DF00DAF1A9 /* PhoneFeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneFeeViewController.xib; sourceTree = "<group>"; };
+		0E38D0AC1AB967DF00DAF1A9 /* TrainTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTravelViewController.h; sourceTree = "<group>"; };
+		0E38D0AD1AB967DF00DAF1A9 /* TrainTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTravelViewController.m; sourceTree = "<group>"; };
+		0E38D0AE1AB967DF00DAF1A9 /* TrainTravelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainTravelViewController.xib; sourceTree = "<group>"; };
 		0E7512DA1A695C60007F6D6E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConstants.h; path = "untitled folder/AppConstants.h"; sourceTree = "<group>"; };
 		0E7512DB1A695C60007F6D6E /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConstants.m; path = "untitled folder/AppConstants.m"; sourceTree = "<group>"; };
 		0E7512DC1A695C60007F6D6E /* NetRequestInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequestInterface.h; path = "untitled folder/NetRequestInterface.h"; sourceTree = "<group>"; };
@@ -371,6 +421,57 @@
 			name = TradeCheck;
 			sourceTree = "<group>";
 		};
+		0E38D0C31AB967E800DAF1A9 /* Finace */ = {
+			isa = PBXGroup;
+			children = (
+				0E38D0941AB967DF00DAF1A9 /* FinaceDetailViewController.h */,
+				0E38D0951AB967DF00DAF1A9 /* FinaceDetailViewController.m */,
+				0E38D0961AB967DF00DAF1A9 /* FinaceDetailViewController.xib */,
+				0E38D0971AB967DF00DAF1A9 /* FinanceIndexViewController.h */,
+				0E38D0981AB967DF00DAF1A9 /* FinanceIndexViewController.m */,
+				0E38D0991AB967DF00DAF1A9 /* FinanceIndexViewController.xib */,
+				0E38D09A1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.h */,
+				0E38D09B1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.m */,
+				0E38D09C1AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.xib */,
+			);
+			name = Finace;
+			sourceTree = "<group>";
+		};
+		0E38D0C41AB9680900DAF1A9 /* Fee */ = {
+			isa = PBXGroup;
+			children = (
+				0E38D0A01AB967DF00DAF1A9 /* GameFeeViewController.h */,
+				0E38D0A11AB967DF00DAF1A9 /* GameFeeViewController.m */,
+				0E38D0A21AB967DF00DAF1A9 /* GameFeeViewController.xib */,
+				0E38D0A61AB967DF00DAF1A9 /* LifeNormalFeeViewController.h */,
+				0E38D0A71AB967DF00DAF1A9 /* LifeNormalFeeViewController.m */,
+				0E38D0A81AB967DF00DAF1A9 /* LifeNormalFeeViewController.xib */,
+				0E38D0A91AB967DF00DAF1A9 /* PhoneFeeViewController.h */,
+				0E38D0AA1AB967DF00DAF1A9 /* PhoneFeeViewController.m */,
+				0E38D0AB1AB967DF00DAF1A9 /* PhoneFeeViewController.xib */,
+				0E38D0911AB967DF00DAF1A9 /* AliPayViewController.h */,
+				0E38D0921AB967DF00DAF1A9 /* AliPayViewController.m */,
+				0E38D0931AB967DF00DAF1A9 /* AliPayViewController.xib */,
+			);
+			name = Fee;
+			sourceTree = "<group>";
+		};
+		0E38D0C51AB9682F00DAF1A9 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				0E38D09D1AB967DF00DAF1A9 /* FlyTravelViewController.h */,
+				0E38D09E1AB967DF00DAF1A9 /* FlyTravelViewController.m */,
+				0E38D09F1AB967DF00DAF1A9 /* FlyTravelViewController.xib */,
+				0E38D0A31AB967DF00DAF1A9 /* HotelViewController.h */,
+				0E38D0A41AB967DF00DAF1A9 /* HotelViewController.m */,
+				0E38D0A51AB967DF00DAF1A9 /* HotelViewController.xib */,
+				0E38D0AC1AB967DF00DAF1A9 /* TrainTravelViewController.h */,
+				0E38D0AD1AB967DF00DAF1A9 /* TrainTravelViewController.m */,
+				0E38D0AE1AB967DF00DAF1A9 /* TrainTravelViewController.xib */,
+			);
+			name = Travel;
+			sourceTree = "<group>";
+		};
 		0EB4658B1A584EA9002B240E /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +547,9 @@
 		0EB465981A58517A002B240E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E38D0C41AB9680900DAF1A9 /* Fee */,
+				0E38D0C51AB9682F00DAF1A9 /* Travel */,
+				0E38D0C31AB967E800DAF1A9 /* Finace */,
 				0E38D05B1AB6CFE400DAF1A9 /* TradeCheck */,
 				F28200051A5D81EF00074ADA /* Payment */,
 				0EB4658C1A584EB7002B240E /* Index */,
@@ -806,10 +910,17 @@
 				F243AFE71A75668300324F95 /* POSCardPaymentOrderViewController.xib in Resources */,
 				F28200161A5DB4D900074ADA /* POSPaymentResultController.xib in Resources */,
 				0E38D0581AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.xib in Resources */,
+				0E38D0B81AB967DF00DAF1A9 /* FlyTravelViewController.xib in Resources */,
+				0E38D0B01AB967DF00DAF1A9 /* AliPayViewController.xib in Resources */,
 				F22DD4C31AB4C17000949F42 /* ZBarSDK in Resources */,
 				E2B014211A87DE8D0076FB8A /* POSEnterCardIdViewController.xib in Resources */,
+				0E38D0C01AB967DF00DAF1A9 /* PhoneFeeViewController.xib in Resources */,
 				0EC58DF91A55EBBA00F2B391 /* Main.storyboard in Resources */,
+				0E38D0C21AB967DF00DAF1A9 /* TrainTravelViewController.xib in Resources */,
+				0E38D0B41AB967DF00DAF1A9 /* FinanceIndexViewController.xib in Resources */,
+				0E38D0B61AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.xib in Resources */,
 				F282000F1A5DABB700074ADA /* POSNoCardPaymentController.xib in Resources */,
+				0E38D0BE1AB967DF00DAF1A9 /* LifeNormalFeeViewController.xib in Resources */,
 				0E224A351A87CFE600C578CB /* PageViewController.xib in Resources */,
 				351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */,
 				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
@@ -821,6 +932,7 @@
 				357030BD1A64222A003287BD /* messageFooterView.xib in Resources */,
 				0E224A451A87D40200C578CB /* POSPaintViewController.xib in Resources */,
 				F282001C1A5DB8CD00074ADA /* POSAlertView.xib in Resources */,
+				0E38D0BC1AB967DF00DAF1A9 /* HotelViewController.xib in Resources */,
 				0EC58DFB1A55EBBA00F2B391 /* Images.xcassets in Resources */,
 				E2B014261A87E01C0076FB8A /* POSEnterCardInfoViewController.xib in Resources */,
 				F22DD4AC1AB48C8B00949F42 /* POSScanPaymentOrderDetailViewController.xib in Resources */,
@@ -828,7 +940,9 @@
 				0E38D05A1AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib in Resources */,
 				F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */,
 				353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */,
+				0E38D0B21AB967DF00DAF1A9 /* FinaceDetailViewController.xib in Resources */,
 				0E38D0561AB6CFB500DAF1A9 /* POSDatePickerView.xib in Resources */,
+				0E38D0BA1AB967DF00DAF1A9 /* GameFeeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +1015,9 @@
 				0E224A401A87D3A200C578CB /* PaintingWindow.m in Sources */,
 				0E224A3F1A87D3A200C578CB /* PaintingView.m in Sources */,
 				0E224A301A87CFE600C578CB /* BaseTest.m in Sources */,
+				0E38D0B91AB967DF00DAF1A9 /* GameFeeViewController.m in Sources */,
+				0E38D0BD1AB967DF00DAF1A9 /* LifeNormalFeeViewController.m in Sources */,
+				0E38D0BF1AB967DF00DAF1A9 /* PhoneFeeViewController.m in Sources */,
 				F243AFE61A75668300324F95 /* POSCardPaymentOrderViewController.m in Sources */,
 				0E7512E21A696657007F6D6E /* UserInfo.m in Sources */,
 				0EC58DF01A55EBBA00F2B391 /* AppDelegate.m in Sources */,
@@ -909,15 +1026,20 @@
 				353D98101AB5D70700BE0CE0 /* addBankCardViewController.m in Sources */,
 				357030D11A68F016003287BD /* newPwdViewController.m in Sources */,
 				0E38D0591AB6CFB500DAF1A9 /* POSTradingRecordViewController.m in Sources */,
+				0E38D0B51AB967DF00DAF1A9 /* FinanceIndexViewTableViewCell.m in Sources */,
 				0E224A361A87CFE600C578CB /* PBOCTest.m in Sources */,
 				0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */,
 				0EC58DF31A55EBBA00F2B391 /* POSIndexViewController.m in Sources */,
 				0E224A331A87CFE600C578CB /* ME11Test.m in Sources */,
+				0E38D0B31AB967DF00DAF1A9 /* FinanceIndexViewController.m in Sources */,
 				35B03E031A84E203001752A1 /* authenticationInfo.m in Sources */,
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				F22DD4A61AB483F900949F42 /* POSScanPaymentViewController.m in Sources */,
+				0E38D0C11AB967DF00DAF1A9 /* TrainTravelViewController.m in Sources */,
+				0E38D0AF1AB967DF00DAF1A9 /* AliPayViewController.m in Sources */,
 				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
+				0E38D0BB1AB967DF00DAF1A9 /* HotelViewController.m in Sources */,
 				351FC0C91A867138000C52C1 /* sixNumberPasswordView.m in Sources */,
 				0E38D0571AB6CFB500DAF1A9 /* POSTradingRecordTableViewCell.m in Sources */,
 				357030CB1A68EFA9003287BD /* rigisterViewController.m in Sources */,
@@ -930,10 +1052,12 @@
 				0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */,
 				353D98221AB7119A00BE0CE0 /* tixianViewController2.m in Sources */,
 				357030BA1A64222A003287BD /* messageCell.m in Sources */,
+				0E38D0B71AB967DF00DAF1A9 /* FlyTravelViewController.m in Sources */,
 				35C817901A7FB7290066C52B /* pictureController.m in Sources */,
 				353D981C1AB70D2600BE0CE0 /* bankCardTableViewController.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
+				0E38D0B11AB967DF00DAF1A9 /* FinaceDetailViewController.m in Sources */,
 				E2B014251A87E01C0076FB8A /* POSEnterCardInfoViewController.m in Sources */,
 				357030BC1A64222A003287BD /* messageFooterView.m in Sources */,
 				F282001F1A5DBE9300074ADA /* POSAlertView.m in Sources */,

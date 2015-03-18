@@ -68,7 +68,7 @@
                 [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
 //                  [self cancel:nil];
 //                [self changePasswordWithType:1];
-//                [self requestUserInfo];
+                [self requestUserInfo];
                 
 //                [self perfectUserInfo];
                 
@@ -125,7 +125,13 @@
         if([dic[@"rsp_code"] isEqualToString:@"0000"]){
             
                         [[UserInfo sharedUserinfo] setDetailUserInfo:dic];
-
+//            [self requestTradeRecords];
+//            [self userShounldKnow];
+//            [self requestReceiverAcount];
+//            [self requesPayFeiWithType:0];
+//            [self addBackCardInfo];
+            
+            [self payByCard];
             
         }
         else{
@@ -166,8 +172,7 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-//    AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-//   manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
     
     NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.mdy.pwd" ] stringByAppendingString:@"13656678405" ] stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]] stringByAppendingString:pw]  stringByAppendingString:new_pw ]  stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
     
@@ -224,11 +229,11 @@
     
 
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.settle.qryrate"] stringByAppendingString:@"13656678405" ]   stringByAppendingString:[[NSNumber numberWithInteger:type] stringValue]]stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.settle.qryrate"] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum ]   stringByAppendingString:@"0020" ]stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678405",@"rate_type":[[NSNumber numberWithInteger:type] stringValue],@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678405",@"rate_type":@"0020",@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -277,15 +282,13 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.user.edite"] stringByAppendingString:@"13656678405"]   stringByAppendingString:@"MQ"]stringByAppendingString:@"210521198910181071"] stringByAppendingString: [UserInfo sharedUserinfo].randomCode]];
     
     
-    UIImage *image  = [UIImage imageNamed:@"1_1280x800"];
-    
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSString *checkCode = [Util encodeStringWithMD5:[[[[[[Util appKey] stringByAppendingString:[Util appVersion] ]stringByAppendingString:@"phonepay.scl.pos.settle.qryrate"] stringByAppendingString:[UserInfo sharedUserinfo].phoneNum ]   stringByAppendingString:@"0020" ]stringByAppendingString:[UserInfo sharedUserinfo].randomCode]];
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678405",@"real_name":@"MQ",@"idcard_no":@"210521198910181071",@"cred_img_a":imageData,@"cred_img_b":imageData,@"cred_img_c":imageData,@"sign":checkCode};
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qryrate",@"mobile":@"13656678405",@"rate_type":@"0020",@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -319,7 +322,6 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
     
     
     
@@ -518,14 +520,14 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],[UserInfo sharedUserinfo].phoneNum,@"123456789065445678900987654",[UserInfo sharedUserinfo].checkUrl,[Util signSuffix],nil];
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.card.addcard",[UserInfo sharedUserinfo].phoneNum,@"6217906200000223011",@"104331000108",[UserInfo sharedUserinfo].randomCode,nil];
     
     
     NSString *checkCode = [Util MD5WithStringArray:stringArray];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.card.addcard",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_user_name":@"孟强",@"card_no":@"123456789065445678900987654",@"bank_name":@"中国银行",@"bank_union_code":[UserInfo sharedUserinfo].checkUrl,@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.card.addcard",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_user_name":@"MQ",@"card_no":@"6217906200000223011",@"bank_name":@"中国银行股份有限公司杭州浙大支行",@"bank_union_code":@"104331000108",@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -536,9 +538,22 @@
             //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
             
             //            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"添加银行卡成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
         }
+        
+          else  if([dic[@"rsp_code"] isEqualToString:@"6021"]){
+
+            [[[UIAlertView  alloc] initWithTitle:@"错误" message:@"银行卡用户名与认证用户名不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        
+          else  if([dic[@"rsp_code"] isEqualToString:@"6020"]){
+              
+              [[[UIAlertView  alloc] initWithTitle:@"错误" message:@"该银行卡已绑定" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+              
+          }
+        
         else{
             
             
@@ -546,6 +561,7 @@
             
             
         }
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         
@@ -568,7 +584,7 @@
 
 
 -(void)requestReceiverAcount{
-    
+    // 处理settles字段 ToDo
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -576,14 +592,14 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.bankcard.qry",[UserInfo sharedUserinfo].phoneNum,@"2567890876543678900876",@"01",@"20",[Util passwordStringInMD5:@"123456"],@"1234",[Util signSuffix],nil];
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.bankcard.qry",[UserInfo sharedUserinfo].phoneNum,[UserInfo sharedUserinfo].randomCode,nil];
     
     
     NSString *checkCode = [Util MD5WithStringArray:stringArray];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.bankcard.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_no":@"2567890876543678900876",@"settle_type":@"01",@"settle_amt":@"20",@"login_pwd":[Util passwordStringInMD5:@"123456"],@"phone_check_code":@"1234",@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.bankcard.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -627,20 +643,22 @@
 -(void)requestTradeRecords{
     
     
+    //Todo  返回的     settles =     （)处理
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.settle.qry",[UserInfo sharedUserinfo].phoneNum,@"1",@"20",[Util signSuffix],nil];
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.settle.qry",[UserInfo sharedUserinfo].phoneNum,@"0",@"20",[UserInfo sharedUserinfo].randomCode,nil];
     
     
     NSString *checkCode = [Util MD5WithStringArray:stringArray];
     
     
     
-    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"create_date":@"20150301000000",@"end_date":@"20150302000000",@"start_rows":@"1",@"offset":@"20",@"sign":checkCode};
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"create_date":@"20150301000000",@"end_date":@"20150302000000",@"start_rows":@"0",@"offset":@"20",@"sign":checkCode};
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -657,7 +675,7 @@
         else{
             
             
-            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            [[[UIAlertView  alloc] initWithTitle:@"查询失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
             
         }
@@ -744,7 +762,7 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
     
-    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.msg.qry",[UserInfo sharedUserinfo].phoneNum,@"01",[Util signSuffix],nil];
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.msg.qry",[UserInfo sharedUserinfo].phoneNum,@"01",[UserInfo sharedUserinfo].randomCode,nil];
     
     
     NSString *checkCode = [Util MD5WithStringArray:stringArray];
@@ -752,6 +770,7 @@
     
     
     NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.msg.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"notice_type":@"01",@"sign":checkCode};
+    
     
     [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -761,8 +780,10 @@
             
             //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
             
+            NSString *notice = dic[@"des_msg"];
+            
             //            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [[[UIAlertView  alloc] initWithTitle:@"" message:@"转账成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            [[[UIAlertView  alloc] initWithTitle:@"用户须知" message:notice delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
             
         }
         else{

@@ -49,7 +49,7 @@
     messageFooterView *footerView = [messageFooterView messageFooterView];
     self.messageTableView.tableFooterView = footerView;
     
-    [self requestUserMessageWithType:1];
+//    [self requestUserMessageWithType:1];
 }
 
 - (void)didReceiveMemoryWarning {
