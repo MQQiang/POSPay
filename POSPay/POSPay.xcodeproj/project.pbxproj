@@ -49,6 +49,9 @@
 		353D98141AB5DDA500BE0CE0 /* addBankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98121AB5DDA500BE0CE0 /* addBankCardTableViewCell.m */; };
 		353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */; };
 		353D98181AB68ED600BE0CE0 /* bankCardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98171AB68ED600BE0CE0 /* bankCardInfo.m */; };
+		353D981C1AB70D2600BE0CE0 /* bankCardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D981B1AB70D2600BE0CE0 /* bankCardTableViewController.m */; };
+		353D981F1AB7118500BE0CE0 /* tixianViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D981E1AB7118500BE0CE0 /* tixianViewController1.m */; };
+		353D98221AB7119A00BE0CE0 /* tixianViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 353D98211AB7119A00BE0CE0 /* tixianViewController2.m */; };
 		357030BA1A64222A003287BD /* messageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B51A64222A003287BD /* messageCell.m */; };
 		357030BB1A64222A003287BD /* messageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357030B61A64222A003287BD /* messageCell.xib */; };
 		357030BC1A64222A003287BD /* messageFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030B81A64222A003287BD /* messageFooterView.m */; };
@@ -192,6 +195,12 @@
 		353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addBankCardTableViewCell.xib; sourceTree = "<group>"; };
 		353D98161AB68ED600BE0CE0 /* bankCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bankCardInfo.h; sourceTree = "<group>"; };
 		353D98171AB68ED600BE0CE0 /* bankCardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bankCardInfo.m; sourceTree = "<group>"; };
+		353D981A1AB70D2600BE0CE0 /* bankCardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bankCardTableViewController.h; sourceTree = "<group>"; };
+		353D981B1AB70D2600BE0CE0 /* bankCardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bankCardTableViewController.m; sourceTree = "<group>"; };
+		353D981D1AB7118500BE0CE0 /* tixianViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tixianViewController1.h; sourceTree = "<group>"; };
+		353D981E1AB7118500BE0CE0 /* tixianViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tixianViewController1.m; sourceTree = "<group>"; };
+		353D98201AB7119A00BE0CE0 /* tixianViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tixianViewController2.h; sourceTree = "<group>"; };
+		353D98211AB7119A00BE0CE0 /* tixianViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tixianViewController2.m; sourceTree = "<group>"; };
 		357030B41A64222A003287BD /* messageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageCell.h; sourceTree = "<group>"; };
 		357030B51A64222A003287BD /* messageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageCell.m; sourceTree = "<group>"; };
 		357030B61A64222A003287BD /* messageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messageCell.xib; sourceTree = "<group>"; };
@@ -419,6 +428,7 @@
 		0EB465971A585169002B240E /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				353D98191AB70A5700BE0CE0 /* tixian */,
 				353D97F91AB574CF00BE0CE0 /* addBankCard */,
 				F2C3C8E71A5AFDFA0021236C /* cell */,
 				35C8177B1A7FB5D90066C52B /* Authentication */,
@@ -545,6 +555,19 @@
 				353D98131AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib */,
 			);
 			name = addBankCard;
+			sourceTree = "<group>";
+		};
+		353D98191AB70A5700BE0CE0 /* tixian */ = {
+			isa = PBXGroup;
+			children = (
+				353D981A1AB70D2600BE0CE0 /* bankCardTableViewController.h */,
+				353D981B1AB70D2600BE0CE0 /* bankCardTableViewController.m */,
+				353D981D1AB7118500BE0CE0 /* tixianViewController1.h */,
+				353D981E1AB7118500BE0CE0 /* tixianViewController1.m */,
+				353D98201AB7119A00BE0CE0 /* tixianViewController2.h */,
+				353D98211AB7119A00BE0CE0 /* tixianViewController2.m */,
+			);
+			name = tixian;
 			sourceTree = "<group>";
 		};
 		35C8177B1A7FB5D90066C52B /* Authentication */ = {
@@ -863,6 +886,7 @@
 				35C817931A7FB7630066C52B /* confirmController.m in Sources */,
 				0E224A381A87CFE600C578CB /* PrintTest.m in Sources */,
 				0E224A391A87CFE600C578CB /* SwipeTest.m in Sources */,
+				353D981F1AB7118500BE0CE0 /* tixianViewController1.m in Sources */,
 				35F063C01A86140D00964E78 /* chageLoginPasswordViewController.m in Sources */,
 				0E224A371A87CFE600C578CB /* PinInputTest.m in Sources */,
 				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
@@ -904,8 +928,10 @@
 				353D98181AB68ED600BE0CE0 /* bankCardInfo.m in Sources */,
 				357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */,
 				0E7512DF1A695C60007F6D6E /* NetRequestInterface.m in Sources */,
+				353D98221AB7119A00BE0CE0 /* tixianViewController2.m in Sources */,
 				357030BA1A64222A003287BD /* messageCell.m in Sources */,
 				35C817901A7FB7290066C52B /* pictureController.m in Sources */,
+				353D981C1AB70D2600BE0CE0 /* bankCardTableViewController.m in Sources */,
 				0ECCE7721A599873001ECBD9 /* GTMBase64.m in Sources */,
 				F2C3C8E51A5AFCED0021236C /* POSAccountViewController.m in Sources */,
 				E2B014251A87E01C0076FB8A /* POSEnterCardInfoViewController.m in Sources */,

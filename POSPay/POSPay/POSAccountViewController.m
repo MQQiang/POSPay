@@ -68,6 +68,9 @@
     if(indexPath.section == 1 && indexPath.row == 0){
         [self performSegueWithIdentifier:@"account2addBankCard" sender:nil];
     }
+    if(indexPath.section == 1 && indexPath.row == 1){
+        [self performSegueWithIdentifier:@"account2tixian" sender:nil];
+    }
 }
 
 #pragma mark - Table view data source
