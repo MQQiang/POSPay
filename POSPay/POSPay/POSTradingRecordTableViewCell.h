@@ -20,7 +20,7 @@
 -(void)changeCellWithType:(BOOL) type UserName:(NSString *) username BankName:(NSString * )bankname cardID:(NSString * ) cardId Time:(NSString * ) time PaidMoney:(NSString * ) money transferState:(BOOL) type;
 
 
-
+-(void)setupCellWithDic:(NSDictionary *)dic;
 
 
 @end

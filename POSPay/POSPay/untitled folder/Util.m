@@ -10,7 +10,7 @@
 #import "GTMBase64.h"
 #import "AFNetworking.h"
 //#import "DesUtil.h"
-
+#import "UserInfo.h"
 
 
 #define kChosenDigestLength		CC_SHA1_DIGEST_LENGTH
@@ -561,9 +561,9 @@ static Byte iv[] = {0,0,0,0,0,0,0,0};
     //4EF745F795C4FA24124A10E8947BD9D5
     //0BE9D717B1478B32
     
-    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 16)];
+    NSString *key1 = [[UserInfo sharedUserinfo].randomCode substringWithRange:NSMakeRange(0, 16)];
     
-    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16, 16)];
+    NSString *key2 = [[UserInfo sharedUserinfo].randomCode substringWithRange:NSMakeRange(16, 16)];
     
     
     NSString  *time1 = [Util encryptUseDESTwo:code key:key1];
@@ -586,7 +586,7 @@ static Byte iv[] = {0,0,0,0,0,0,0,0};
     
     NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 16)];
     
-    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16,16)];
+    NSString *key2 = [DESKEY  substringWithRange:NSMakeRange(16,16)];
     
     
     NSString  *time1 = [Util decryptUseDES:code key:key1];

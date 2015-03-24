@@ -44,10 +44,24 @@
     }
     
     
+}
+
+-(void)setupCellWithDic:(NSDictionary *)dic{
     
+    //trans_type_text
+    NSString *type = dic[@"trans_type_text"];
+    NSString *states = dic[@"trans_status"];
+    NSString *account = dic[@"trans_account"];
     
+    NSString *cardNum = dic[@"bank_card_no"];
     
+    NSString *payType = dic[@"pay_type_text"];
     
+    NSString *settleAmount = dic[@"settle_amt"];
+    NSString *fee = dic[@"fee"];
+    NSString *accountMoney = dic[@"trans_after_account"];
+    
+    NSString *transTime = dic[@"trans_time"];
     
 }
 

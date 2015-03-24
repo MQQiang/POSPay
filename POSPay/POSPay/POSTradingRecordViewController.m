@@ -9,12 +9,14 @@
 #import "POSTradingRecordViewController.h"
 #import "POSDatePickerView.h"
 #import "POSTradingRecordTableViewCell.h"
+
+#import "UserInfo.h"
 @interface POSTradingRecordViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *button_start;
 @property (weak, nonatomic) IBOutlet UIButton *button_end;
 - (IBAction)chooseStartTime:(id)sender;
 - (IBAction)chooseEndTime:(id)sender;
-
+@property(nonatomic,strong) NSMutableArray *tradeRecordArray;
 @end
 
 @implementation POSTradingRecordViewController
@@ -28,6 +30,8 @@
     [self.button_end setTitle:[self.startDate.description substringToIndex:10] forState:UIControlStateNormal];
     [self.button_start setTitle:[self.startDate.description substringToIndex:10] forState:UIControlStateNormal];
     
+    
+    _tradeRecordArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -111,4 +115,68 @@
     
     
 }
+
+-(void)requestTradeRecords{
+    
+    
+    //Todo  返回的     settles =     （)处理
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.settle.qry",[UserInfo sharedUserinfo].phoneNum,@"0",@"20",[UserInfo sharedUserinfo].randomCode,nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.settle.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"create_date":@"20150301000000",@"end_date":@"20150302000000",@"start_rows":@"0",@"offset":@"20",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            _tradeRecordArray = dic[@"settle"];
+            
+            [_tableViewTradeRecord reloadData];
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"查询失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+
 @end
