@@ -24,15 +24,17 @@
 
 //0 未审核 1 通过 2 驳回 // 审核状态
 @property(nonatomic,strong)NSString *checkStatus;
+@property(nonatomic,strong)NSString *checkDetailString;
 
 // 账户金额
 @property(nonatomic,strong)NSNumber *myAssets;
 @property(nonatomic,assign)BOOL isUserLogin;
+@property(nonatomic,assign)BOOL hasDetailInfo;
 
 // 可提现金额
 @property(nonatomic,strong)NSNumber *canExtractAmount;
 
-
+@property(nonatomic,strong)NSNumber *cannotExtractAmount;
 -(void)setUserInfoWithDic:(NSDictionary *)dic;
 
 

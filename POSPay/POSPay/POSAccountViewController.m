@@ -12,6 +12,8 @@
 #import "POSTradingRecordViewController.h"
 @interface POSAccountViewController ()<UITableViewDelegate>
 
+
+@property(nonatomic,strong)NSDictionary *infoDic;
 @end
 
 @implementation POSAccountViewController
@@ -95,15 +97,15 @@
     {
         
         POSAccountTopCell * cell=[self.tableView dequeueReusableCellWithIdentifier:@"POSAccountViewControllerTopCell"];
-        cell.nameLabel.text=@"name";
-        cell.phoneLabel.text=@"123456789";
-        cell.balanceLabel.text=@"30000";
+        
+        [cell setupCell];
+    
         return cell;
     }
-#warning 只能初始化设置style？
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"POSAccountViewControllerCell" ];
     if (cell==nil) {
+        
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"POSAccountViewControllerTableViewControllerId"];
     }
     
@@ -114,12 +116,34 @@
     if(indexPath.section==0)
     {
         if(indexPath.row==1){
-            cell.detailTextLabel.text=@"20000";
-        }
-        if(indexPath.row==2){
-            cell.detailTextLabel.text=@"10000";
+            
+
+                cell.detailTextLabel.text=[[UserInfo sharedUserinfo].canExtractAmount stringValue];
+
             
         }
+        if(indexPath.row==2){
+            
+            cell.detailTextLabel.text = [[UserInfo sharedUserinfo].cannotExtractAmount stringValue];
+            
+        }
+    }
+    
+    if (indexPath.section == 5) {
+        
+        if (indexPath.row == 1) {
+            
+            cell.detailTextLabel.text = [UserInfo sharedUserinfo].checkDetailString;
+            cell.detailTextLabel.textColor = [UIColor redColor];
+            
+        }
+        if (indexPath.row == 2) {
+            
+            cell.detailTextLabel.text = [UserInfo sharedUserinfo].checkDetailString;
+            cell.detailTextLabel.textColor = [UIColor redColor];
+        }
+        
+        
     }
     
     

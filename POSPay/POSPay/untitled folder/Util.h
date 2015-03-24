@@ -46,6 +46,9 @@
 +(NSString *) encryptUseDES:(NSString *)clearText key:(NSString *)key;
 /****** 解密 ******/
 +(NSString *) decryptUseDES:(NSString *)plainText key:(NSString *)key;
+
+
++(NSString *) encryptUseDESTwo:(NSString *)clearText key:(NSString *)key;
 // 加密
 +(NSString *)encodeStringWithThirdPartyCode:(NSString *)code;
 // 解密
@@ -56,5 +59,11 @@
 
 
 + (NSString *)decodeFromPercentEscapeString: (NSString *) input;
+
++(NSData *)HexConvertToASCII:(NSString *)hexString;
+
++(NSString *)ConvertASCIIToHex:(NSString *)assicString;
+
++(NSString *)encodeASCIIToThirdParty3DES:(NSString *)code;
 
 @end

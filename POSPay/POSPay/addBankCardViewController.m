@@ -8,7 +8,7 @@
 
 #import "addBankCardViewController.h"
 #import "bankCardInfo.h"
-
+#import "UserInfo.h"
 @interface addBankCardViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *bankCardNumberField;
 @property (copy, nonatomic) NSString *bankName;
@@ -83,4 +83,78 @@
     UIAlertView *view = [[UIAlertView alloc]initWithTitle:@"提示" message:[NSString stringWithFormat:@"    请再次确认您输入的银行卡号（%@）正确，且持卡人姓名为【】。",self.bankCardNumberField.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"完成", nil];
     [view show];
 }
+
+-(void)addBackCardInfo{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.card.addcard",[UserInfo sharedUserinfo].phoneNum,@"6217906200000223011",@"104331000108",[UserInfo sharedUserinfo].randomCode,nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.card.addcard",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"card_user_name":@"MQ",@"card_no":@"6217906200000223011",@"bank_name":@"中国银行股份有限公司杭州浙大支行",@"bank_union_code":@"104331000108",@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[[UIAlertView  alloc] initWithTitle:@"" message:@"添加银行卡成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        
+        else  if([dic[@"rsp_code"] isEqualToString:@"6021"]){
+            
+            [[[UIAlertView  alloc] initWithTitle:@"错误" message:@"银行卡用户名与认证用户名不一致" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        
+        else  if([dic[@"rsp_code"] isEqualToString:@"6020"]){
+            
+            [[[UIAlertView  alloc] initWithTitle:@"错误" message:@"该银行卡已绑定" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+        }
+        
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"转账失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
+}
+
+
+
 @end

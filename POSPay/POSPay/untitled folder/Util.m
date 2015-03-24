@@ -18,7 +18,7 @@
 #define DESKEY @"3F53BC47C0165EF589586E475452A227"
 
 
-static Byte iv[] = {1,2,3,4,5,6,7,8};
+static Byte iv[] = {0,0,0,0,0,0,0,0};
 
 @implementation Util
 
@@ -120,12 +120,8 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
 
 +(NSString *)baseServerUrl{
     
-//    return @"http://stronglion2010.gicp.net:8099/yhk_cust_sys/scl_pos";
-    
-    return @"http://14.153.93.59:8088/phoneweb/scl_pos";
-//    return @"http://183.14.162.254:8099/yhk_cust_sys/scl_pos";
-    
-   
+    return @"http://14.153.242.111:8088/phoneweb/scl_pos";
+
 }
 +(NSString *)appKey{
     return @"01010101";
@@ -327,6 +323,52 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
     NSUInteger dataLength = [textData length];
     
+    size_t bufferSize = dataLength +kCCBlockSizeDES;
+    unsigned char buffer[bufferSize];
+    memset(buffer, 0, sizeof(char));
+    size_t numBytesEncrypted = 0;
+    
+    NSData *keyData = [Util parseHexToByteArray:key];
+    
+    
+    
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmDES,
+                                          kCCOptionPKCS7Padding | kCCOptionECBMode,
+                                          [keyData bytes], kCCKeySizeDES,
+                                          iv,
+                                          [textData bytes], dataLength,
+                                          buffer, bufferSize,
+                                          &numBytesEncrypted);
+    
+    if (cryptStatus == kCCSuccess) {
+        NSLog(@"DES加密成功");
+        
+        NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
+        //        cleartext = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        ciphertext = [Util stringWithHexBytes2:data];
+        
+        
+        
+    }else{
+        NSLog(@"DES加密失败");
+    }
+    
+//    free(buffer);
+//    return [ciphertext substringToIndex:16];
+//    return [ciphertext substringToIndex:dataLength];
+    return ciphertext;
+}
+
++(NSString *) encryptUseDESTwo:(NSString *)clearText key:(NSString *)key
+{
+    NSString *ciphertext = nil;
+    NSData *textData = [Util parseHexToByteArray:clearText];
+    
+    
+    NSUInteger dataLength = [textData length];
+    
+    size_t bufferSize = dataLength +kCCBlockSizeDES;
     unsigned char buffer[1024];
     memset(buffer, 0, sizeof(char));
     size_t numBytesEncrypted = 0;
@@ -347,18 +389,20 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
         NSLog(@"DES加密成功");
         
         NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
+        //        cleartext = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        Byte* bb = (Byte*)[data bytes];
+        ciphertext = [Util stringWithHexBytes2:data];
         
-         ciphertext = [Util parseByteArray2HexString:bb];
+        
         
     }else{
         NSLog(@"DES加密失败");
     }
     
-//    free(buffer);
-//    return [ciphertext substringToIndex:16];
-    return ciphertext;
+    //    free(buffer);
+    //    return [ciphertext substringToIndex:16];
+    //    return [ciphertext substringToIndex:dataLength];
+     return [ciphertext substringWithRange:NSMakeRange(0, ciphertext.length-16)];;
 }
 
 /******************************************************************************
@@ -374,7 +418,10 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     NSString *cleartext = nil;
     NSData *textData = [Util parseHexToByteArray:plainText];
     NSUInteger dataLength = [textData length];
+    size_t bufferSize = dataLength +kCCBlockSizeDES;
     unsigned char buffer[1024];
+
+//    unsigned char buffer[16];
     memset(buffer, 0, sizeof(char));
     size_t numBytesEncrypted = 0;
     
@@ -384,7 +431,7 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
                                           [keyData bytes], kCCKeySizeDES,
                                           iv,
                                           [textData bytes]  , dataLength,
-                                          buffer, 1024,
+                                          buffer,1024,
                                           &numBytesEncrypted);
     if (cryptStatus == kCCSuccess) {
         NSLog(@"DES解密成功");
@@ -519,16 +566,16 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16, 16)];
     
     
-    NSString  *time1 = [Util encryptUseDES:code key:key1];
+    NSString  *time1 = [Util encryptUseDESTwo:code key:key1];
     
 
     NSString *time2 = [Util decryptUseDES:time1 key:key2];
+//
+    NSString *time3 = [Util encryptUseDESTwo:time2 key:key1];
     
-    NSString *time3 = [Util encryptUseDES:time2 key:key1];
     
-    NSString  *returnString = [time3 substringToIndex:32];
     
-    return returnString;
+    return time3;
 
 }
 // 解密
@@ -544,18 +591,44 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     
     NSString  *time1 = [Util decryptUseDES:code key:key1];
     
-    NSString *time2 = [Util encryptUseDES:time1 key:key2];
-    
+    NSString *time2 = [Util encryptUseDESTwo:time1 key:key2];
+//
     NSString *time3 = [Util decryptUseDES:time2 key:key1];
     
     
-    NSString  *returnString = [time3 substringToIndex:32];
+   
     
-    return returnString;
+    return time3;
     
     
     
 }
+
++(NSString *)decryptCiDaoStringWithThirdPartyCode:(NSString *)code{
+    
+    
+    
+    NSString *key1 = [DESKEY substringWithRange:NSMakeRange(0, 16)];
+    
+    NSString *key2 = [DESKEY substringWithRange:NSMakeRange(16,16)];
+    
+    
+    NSString  *time1 = [Util decryptUseDES:code key:key1];
+    
+    NSString *time2 = [Util encryptUseDES:time1 key:key2];
+    //
+    NSString *time3 = [Util decryptUseDES:time2 key:key1];
+    
+    
+    
+    
+    return time3;
+    
+    
+    
+}
+
+
 
 + (NSString *)encodeToPercentEscapeString: (NSString *) input
 
@@ -616,6 +689,83 @@ static Byte iv[] = {1,2,3,4,5,6,7,8};
     outputString = [Util encodeStringWithMD5:outputString];
     
     return outputString;
+    
+}
+
++(NSData *)HexConvertToASCII:(NSString *)hexString{
+    int j=0;
+    Byte bytes[22];  ///3ds key的Byte 数组， 128位
+    for(int i=0;i<[hexString length];i++)
+    {
+        int int_ch;  /// 两位16进制数转化后的10进制数
+        
+        unichar hex_char1 = [hexString characterAtIndex:i]; ////两位16进制数中的第一位(高位*16)
+        
+        int int_ch1;
+        
+        if(hex_char1 >= '0' && hex_char1 <='9')
+            
+            int_ch1 = (hex_char1-48)*16;   //// 0 的Ascll - 48
+        
+        else if(hex_char1 >= 'A' && hex_char1 <='F')
+            
+            int_ch1 = (hex_char1-55)*16; //// A 的Ascll - 65
+        
+        else
+            
+            int_ch1 = (hex_char1-87)*16; //// a 的Ascll - 97
+        
+        i++;
+        
+        unichar hex_char2 = [hexString characterAtIndex:i]; ///两位16进制数中的第二位(低位)
+        
+        int int_ch2;
+        
+        if(hex_char2 >= '0' && hex_char2 <='9')
+            
+            int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
+        
+        else if(hex_char1 >= 'A' && hex_char1 <='F')
+            
+            int_ch2 = hex_char2-55; //// A 的Ascll - 65
+        
+        else
+            
+            int_ch2 = hex_char2-87; //// a 的Ascll - 97
+        
+        
+        
+        int_ch = int_ch1+int_ch2;
+        
+        NSLog(@"int_ch=%d",int_ch);
+        
+        bytes[j] = int_ch;  ///将转化后的数放入Byte数组里
+        
+        j++;
+        
+    }
+    
+    NSData *newData = [[NSData alloc] initWithBytes:bytes length:22];
+    return newData;
+}
++(NSString *)ConvertASCIIToHex:(NSString *)assicString{
+    
+    NSData *date = [assicString dataUsingEncoding:NSASCIIStringEncoding];
+    
+    NSString *st = [Util parseByteArray2HexString:[date bytes]];
+    
+    return st;
+    
+    
+}
+
++(NSString *)encodeASCIIToThirdParty3DES:(NSString *)code{
+    
+    NSString *tempString = [Util ConvertASCIIToHex:code];
+    
+    
+    return [Util encodeStringWithThirdPartyCode:tempString];
+    
     
 }
 

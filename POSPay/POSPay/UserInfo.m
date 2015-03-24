@@ -19,9 +19,9 @@
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         sharedAccountManagerInstance = [[self alloc] init];
+        sharedAccountManagerInstance.isUserLogin = false;
+        sharedAccountManagerInstance.hasDetailInfo = false;
     });
-    
-    sharedAccountManagerInstance.isUserLogin = false;
     
     return sharedAccountManagerInstance;
     
@@ -40,12 +40,28 @@
 }
 -(void)setDetailUserInfo:(NSDictionary *)dic{
     
+    _hasDetailInfo = true;
     _checkStatus = dic[@"verify_status"];
     _cardNumber = dic[@"cred_no"];
     _name = dic[@"real_name"];
     _checkUrl = dic[@"bank_union_qry_url"];
     _myAssets = dic[@"my_assets"];
     _canExtractAmount = dic[@"extract_amount"];
+    
+    
+    if ([_checkStatus isEqualToString:@"0"]) {
+        _checkDetailString = @"未认证";
+    }
+    else if([_checkStatus isEqualToString:@"1"]){
+        
+        _checkDetailString = @"审核通过";
+    }
+    else if([_checkStatus isEqualToString:@"2"]){
+        
+        _checkDetailString = @"驳回";
+    }
+    
+    _cannotExtractAmount = @0;
 
 }
 @end

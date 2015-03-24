@@ -7,7 +7,7 @@
 //
 
 #import "POSAccountTopCell.h"
-
+#import "UserInfo.h"
 @implementation POSAccountTopCell
 
 - (void)awakeFromNib {
@@ -20,4 +20,27 @@
     // Configure the view for the selected state
 }
 
+
+-(void)setupCell{
+    
+    if ([UserInfo sharedUserinfo].hasDetailInfo) {
+        
+        _nameLabel.text = [UserInfo sharedUserinfo].name;
+        
+        _phoneLabel.text = [UserInfo sharedUserinfo].phoneNum;
+        
+        _balanceLabel.text = [[UserInfo sharedUserinfo].myAssets stringValue];
+        
+    }
+    
+    else{
+        
+        _nameLabel.text=@"name";
+        _phoneLabel.text=@"123456789";
+        _balanceLabel.text=@"30000";
+        
+    }
+
+    
+}
 @end

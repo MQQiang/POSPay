@@ -10,7 +10,7 @@
 #import "addBankCardTableViewCell.h"
 #import "bankCardInfo.h"
 #import "addBankCardViewController.h"
-
+#import "UserInfo.h"
 @interface existedBankCardTableViewController ()<addViewControllerDelegate>
 @property (nonatomic,strong) NSMutableArray *bankCardArray;
 @end
@@ -81,13 +81,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     addBankCardTableViewCell *cell = [addBankCardTableViewCell cellWithTableView:tableView];
     bankCardInfo *info = self.bankCardArray[indexPath.row];
     cell.name.text = info.bankName;
     cell.cardType.text = info.bankCardType;
     cell.cardNumber.text = info.bankNumber;
     
-    
+
     // Configure the cell...
     
     return cell;
@@ -120,6 +121,68 @@
     //  完成当前view的数据添加
     [self.bankCardArray addObject:bankcard];
     [self.tableView reloadData];
+}
+
+-(void)requestReceiverAcount{
+    // 处理settles字段 ToDo
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/json",@"application/json",@"text/javascript",nil];
+    
+    NSMutableArray *stringArray = [NSMutableArray arrayWithObjects:[Util appKey], [Util appVersion],@"phonepay.scl.pos.bankcard.qry",[UserInfo sharedUserinfo].phoneNum,[UserInfo sharedUserinfo].randomCode,nil];
+    
+    
+    NSString *checkCode = [Util MD5WithStringArray:stringArray];
+    
+    
+    
+    NSDictionary *parameters = @{@"app_key":[Util appKey],@"version":[Util appVersion],@"service_type":@"phonepay.scl.pos.bankcard.qry",@"mobile":[UserInfo sharedUserinfo].phoneNum,@"sign":checkCode};
+    
+    [manager POST:[Util baseServerUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        if([dic[@"rsp_code"] isEqualToString:@"0000"]){
+            
+            //            [[UserInfo sharedUserinfo] setUserInfoWithDic:dic];
+            
+            //            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            
+            _bankCardArray = dic[@"settle"];
+            
+            
+            
+        }
+        else{
+            
+            
+            [[[UIAlertView  alloc] initWithTitle:@"查询银行卡信息失败" message:@"" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show ];
+            
+            
+        }
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+        
+        NSLog(@"operation: %@", operation.responseString);
+        
+        [Util alertNetworkError:self.view];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    
+    
+    
+    
 }
 
 /*
