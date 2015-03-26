@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -359,20 +359,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="6d6-YD-ud7" userLabel="logo View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sSC-iG-8zo" userLabel="advertise View">
+                                <rect key="frame" x="0.0" y="64" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="便利宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fjy-3m-b1P">
-                                        <rect key="frame" x="132" y="35" width="57" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.26666666666666666" green="0.70980392156862748" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            </scrollView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="j1o-Yc-2dt">
                                 <rect key="frame" x="0.0" y="164" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -389,61 +379,30 @@
                                 <rect key="frame" x="0.0" y="200" width="320" height="327"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vi1-xI-6AA">
-                                        <rect key="frame" x="158" y="33" width="150" height="100"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oSc-ja-aKd">
+                                        <rect key="frame" x="0.0" y="8" width="320" height="310"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="按钮2">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                         <connections>
-                                            <action selector="pushNoCardPayment:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L14-Jw-hOY"/>
+                                            <outlet property="delegate" destination="9pv-A4-QxB" id="rmI-NE-F0z"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GNQ-6A-iLY">
-                                        <rect key="frame" x="8" y="141" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="按钮8">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9yp-pq-XDW">
-                                        <rect key="frame" x="212" y="141" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="按钮10">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="主页按钮" id="gLJ-em-FnZ">
-                                        <rect key="frame" x="8" y="249" width="300" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PWF-zA-xhf">
-                                        <rect key="frame" x="8" y="33" width="150" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="按钮1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pushCardPayment:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MbK-iD-08j"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vn2-dU-TTb">
-                                        <rect key="frame" x="110" y="141" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="按钮9">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="scanPayment:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ta6-IJ-h1C"/>
-                                        </connections>
-                                    </button>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sSC-iG-8zo" userLabel="advertise View">
-                                <rect key="frame" x="0.0" y="64" width="320" height="100"/>
+                            <view contentMode="scaleToFill" id="6d6-YD-ud7" userLabel="logo View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="便利宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fjy-3m-b1P">
+                                        <rect key="frame" x="132" y="35" width="57" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.26666666666666666" green="0.70980392156862748" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -465,6 +424,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adView" destination="sSC-iG-8zo" id="tIW-Jp-kKu"/>
+                        <outlet property="applicationScrollView" destination="oSc-ja-aKd" id="y7a-et-w75"/>
                         <outlet property="tabBar" destination="j1o-Yc-2dt" id="Ay9-G3-DcH"/>
                     </connections>
                 </viewController>
@@ -1498,13 +1458,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
-        <image name="主页按钮" width="1080" height="200"/>
-        <image name="按钮1" width="510" height="340"/>
-        <image name="按钮10" width="340" height="340"/>
-        <image name="按钮2" width="510" height="340"/>
         <image name="按钮4" width="510" height="340"/>
-        <image name="按钮8" width="340" height="340"/>
-        <image name="按钮9" width="340" height="340"/>
         <image name="更多" width="64" height="64"/>
         <image name="添加照片" width="272" height="272"/>
         <image name="选项卡（小）1" width="180" height="88"/>
