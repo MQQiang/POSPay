@@ -11,8 +11,10 @@
 #import "bankCardInfo.h"
 #import "addBankCardViewController.h"
 #import "UserInfo.h"
-@interface existedBankCardTableViewController ()<addViewControllerDelegate>
+#import "cardDetialViewController.h"
+@interface existedBankCardTableViewController ()<addViewControllerDelegate,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray *bankCardArray;
+@property (nonatomic,assign) NSInteger *seletedRow;
 @end
 
 @implementation existedBankCardTableViewController
@@ -43,9 +45,15 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.destinationViewController isKindOfClass:[addBankCardViewController class]]) {
+        addBankCardViewController *addVc = segue.destinationViewController;
+        addVc.delegate = self;
+    }
+    else if ([segue.destinationViewController isKindOfClass:[cardDetialViewController class]]){
+        cardDetialViewController *cardDetialVc = segue.destinationViewController;
+        cardDetialVc.seletedCardInfo = [self.bankCardArray objectAtIndex:self.seletedRow];
+    }
     
-    addBankCardViewController *addVc = segue.destinationViewController;
-    addVc.delegate = self;
 }
 - (void)addRightBtn{
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(addButtonClick)];
@@ -116,6 +124,13 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
+#pragma mark - tabelView delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.seletedRow = indexPath.row;
+    
+    [self performSegueWithIdentifier:@"existed2detial" sender:nil];
+}
+
 #pragma mark - addVcDelegate
 - (void)addViewController:(addBankCardViewController *)addVc didAddBankCard:(bankCardInfo *)bankcard{
     //  完成当前view的数据添加
