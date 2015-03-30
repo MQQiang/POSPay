@@ -116,7 +116,7 @@
 }
 - (void)addAppViewBtn{
     self.applicationScrollView.pagingEnabled = YES;
-    self.applicationScrollView.contentSize = CGSizeMake(1280, 210);
+    self.applicationScrollView.contentSize = CGSizeMake(1280, 0);
     self.applicationScrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 300, 0);
     //第1页
     //刷卡支付
@@ -162,9 +162,17 @@
     [self.applicationScrollView addSubview: shuidianBtn];
     //点卡
     UIButton *diankaBtn = [[UIButton alloc]initWithFrame:CGRectMake(535, 5, 100, 100)];
+<<<<<<< HEAD
+    [diankaBtn setBackgroundImage:[UIImage imageNamed:@"按钮12"] forState:UIControlStateNormal];
+    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+=======
     [diankaBtn setTitle:@"游戏点卡" forState:UIControlStateNormal];
     //[diankaBtn setBackgroundImage:[UIImage imageNamed:@"按钮1"] forState:UIControlStateNormal];
     [diankaBtn addTarget:self action:@selector(pushGameFee:) forControlEvents:UIControlEventTouchUpInside];
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
     [self.applicationScrollView addSubview: diankaBtn];
     //交通罚款
     UIButton *jiaotongBtn = [[UIButton alloc]initWithFrame:CGRectMake(325, 110, 100, 100)];
