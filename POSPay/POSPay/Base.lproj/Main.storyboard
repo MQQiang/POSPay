@@ -869,17 +869,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Ua-Rg-KhC">
-                                <rect key="frame" x="16" y="136" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Ua-Rg-KhC">
+                                <rect key="frame" x="21" y="138" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fja-px-gbK">
-                                <rect key="frame" x="16" y="174" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="0">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -903,6 +896,9 @@
                                 <state key="normal" title="确认提款">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmBtnClick:" destination="lIR-1P-f0Q" eventType="touchUpInside" id="UZL-Vk-IBU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="48a-db-68R">
                                 <rect key="frame" x="222" y="178" width="82" height="21"/>
@@ -911,18 +907,56 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fja-px-gbK">
+                                <rect key="frame" x="21" y="176" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="提款到我的银行卡" id="xGj-a7-Sim"/>
                     <connections>
+                        <outlet property="fastBtn" destination="fja-px-gbK" id="8ty-gK-tja"/>
                         <outlet property="moneyAmount" destination="pxc-dg-Itr" id="MTg-9j-Z8l"/>
+                        <outlet property="normalBtn" destination="7Ua-Rg-KhC" id="Uey-gC-t7p"/>
                         <outlet property="shoukuanAccountNmuber" destination="KBX-Xx-UYV" id="Qvl-ig-ngR"/>
+                        <outlet property="shouxufeiLable" destination="48a-db-68R" id="kvV-xA-9D7"/>
+                        <segue destination="Pvq-cD-o3q" kind="push" identifier="confirm2succeed" id="uVC-r6-mQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svg-zK-dbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1017" y="2998"/>
+        </scene>
+        <!--结果详情-->
+        <scene sceneID="4Ee-RP-BTf">
+            <objects>
+                <viewController id="Pvq-cD-o3q" customClass="detialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="giJ-9J-rKX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IWc-Aq-v5q">
+                                <rect key="frame" x="137" y="191" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downBtnClick:" destination="Pvq-cD-o3q" eventType="touchUpInside" id="b7o-2C-pwJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="结果详情" id="qwy-TO-FL1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSq-nm-YdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421" y="3003"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cgz-h3-eFN">

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface tixianViewController2 : UIViewController
-
+@property (nonatomic,assign) NSInteger *tixianNumber;
+@property (copy, nonatomic) NSString *bankAccountNumber;
 @end

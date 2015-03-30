@@ -7,7 +7,7 @@
 //
 
 #import "tixianViewController1.h"
-
+#import "tixianViewController2.h"
 
 @interface tixianViewController1 ()
 
@@ -34,7 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    tixianViewController2 *Vc2 = segue.destinationViewController;
+    Vc2.bankAccountNumber = self.bankNumber.text;
+    Vc2.tixianNumber = [self.tixianNumberField.text integerValue];
+}
 /*
 #pragma mark - Navigation
 
