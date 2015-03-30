@@ -7,6 +7,8 @@
 //
 
 #import "BaseTest.h"
+#import "POSCardPaymentOrderViewController.h"
+
 
 typedef enum {
     EmvCaseSetTrmnlParams,
@@ -18,4 +20,7 @@ typedef enum {
 
 @interface PBOCTest : BaseTest
 - (void)testEmv:(NSString*)rowTitle;
+
+
+@property(nonatomic,weak)POSCardPaymentOrderViewController *vc;
 @end

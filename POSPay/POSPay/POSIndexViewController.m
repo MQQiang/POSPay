@@ -5,12 +5,18 @@
 //  Created by mq on 15/1/2.
 //  Copyright (c) 2015年 mqq.com. All rights reserved.
 //
-
+#import "FinanceIndexViewController.h"
 #import "POSIndexViewController.h"
 #import "appCell.h"
 #import "POSCardPaymentController.h"
 #import "POSNoCardPaymentController.h"
 #import "POSScanPaymentViewController.h"
+#import "GameFeeViewController.h"
+#import "LifeNormalFeeViewController.h"
+#import "PhoneFeeViewController.h"
+#import "AliPayViewController.h"
+#import "QQFeeViewController.h"
+
 @interface POSIndexViewController ()<UIScrollViewDelegate>
 //图片轮播器
 @property (weak, nonatomic) IBOutlet UIScrollView *adView;
@@ -141,24 +147,24 @@
     //广告（主页按钮）
     UIButton *adBtn = [[UIButton alloc]initWithFrame:CGRectMake(5, 215, 310, 70)];
     [adBtn setBackgroundImage:[UIImage imageNamed:@"主页按钮"] forState:UIControlStateNormal];
-    //[adBtn addTarget:self action:<#(SEL)#> forControlEvents:UIControlEventTouchUpInside]
+    [adBtn addTarget:self action:@selector(pushFinace:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview:adBtn];
     //第2页
     //话费
     UIButton *huafeiBtn = [[UIButton alloc]initWithFrame:CGRectMake(325, 5, 100, 100)];
     [huafeiBtn setBackgroundImage:[UIImage imageNamed:@"按钮11"] forState:UIControlStateNormal];
-    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+    [huafeiBtn addTarget:self action:@selector(pushPhoneFee:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview: huafeiBtn];
     //水电
     UIButton *shuidianBtn = [[UIButton alloc]initWithFrame:CGRectMake(430, 5, 100, 100)];
     [shuidianBtn setBackgroundImage:[UIImage imageNamed:@"按钮12"] forState:UIControlStateNormal];
-    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+    [shuidianBtn addTarget:self action:@selector(pushLifeNormal:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview: shuidianBtn];
     //点卡
     UIButton *diankaBtn = [[UIButton alloc]initWithFrame:CGRectMake(535, 5, 100, 100)];
     [diankaBtn setTitle:@"游戏点卡" forState:UIControlStateNormal];
     //[diankaBtn setBackgroundImage:[UIImage imageNamed:@"按钮1"] forState:UIControlStateNormal];
-    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+    [diankaBtn addTarget:self action:@selector(pushGameFee:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview: diankaBtn];
     //交通罚款
     UIButton *jiaotongBtn = [[UIButton alloc]initWithFrame:CGRectMake(325, 110, 100, 100)];
@@ -168,7 +174,7 @@
     //QB充值
     UIButton *QBBtn = [[UIButton alloc]initWithFrame:CGRectMake(430, 110, 100, 100)];
     [QBBtn setBackgroundImage:[UIImage imageNamed:@"按钮13"] forState:UIControlStateNormal];
-    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+    [QBBtn addTarget:self action:@selector(pushQQFee:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview: QBBtn];
     //彩票
     UIButton *caipiaoBtn = [[UIButton alloc]initWithFrame:CGRectMake(535, 110, 100, 100)];
@@ -188,7 +194,7 @@
     //支付宝充值
     UIButton *zhifubaoBtn = [[UIButton alloc]initWithFrame:CGRectMake(535, 215, 100, 100)];
     [zhifubaoBtn setBackgroundImage:[UIImage imageNamed:@"14"] forState:UIControlStateNormal];
-    //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
+    [zhifubaoBtn addTarget:self action:@selector(pushAlipay:) forControlEvents:UIControlEventTouchUpInside];
     [self.applicationScrollView addSubview: zhifubaoBtn];
     //第3页
     //酒店预订
@@ -229,6 +235,61 @@
     pushedView.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:pushedView animated:YES];
     
+    
+}
+-(void)pushPhoneFee:(id)sender{
+    
+    PhoneFeeViewController *vc = [[PhoneFeeViewController    alloc] init];
+    
+    vc.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+-(void)pushFinace:(id)sender
+{
+    FinanceIndexViewController *vc = [[FinanceIndexViewController alloc] init];
+    vc.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+-(void)pushLifeNormal:(id)sender{
+    
+    LifeNormalFeeViewController * vc = [[LifeNormalFeeViewController alloc] init];
+    
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+-(void)pushQQFee:(id)sender{
+    
+     QQFeeViewController* vc = [[QQFeeViewController alloc] init];
+    
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+-(void)pushGameFee:(id)sender{
+    
+    GameFeeViewController * vc = [[GameFeeViewController alloc] init];
+    
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+
+-(void)pushAlipay:(id)sender{
+    
+    AliPayViewController * vc = [[AliPayViewController alloc] init];
+    
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

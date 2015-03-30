@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0041D5F340DEBB9CEEA3C73B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25735EE90FBB0B03B308AC42 /* libPods.a */; };
+		0E1A27B11AC96F360016E470 /* GameFeeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A27AC1AC96F360016E470 /* GameFeeDetailViewController.m */; };
+		0E1A27B21AC96F360016E470 /* GameFeeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A27AD1AC96F360016E470 /* GameFeeDetailViewController.xib */; };
+		0E1A27B31AC96F360016E470 /* QQFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A27AF1AC96F360016E470 /* QQFeeViewController.m */; };
+		0E1A27B41AC96F360016E470 /* QQFeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A27B01AC96F360016E470 /* QQFeeViewController.xib */; };
 		0E224A301A87CFE600C578CB /* BaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A1C1A87CFE600C578CB /* BaseTest.m */; };
 		0E224A311A87CFE600C578CB /* CalcMacTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A1E1A87CFE600C578CB /* CalcMacTest.m */; };
 		0E224A321A87CFE600C578CB /* ConsumeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E224A201A87CFE600C578CB /* ConsumeTest.m */; };
@@ -139,6 +143,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1A27AB1AC96F360016E470 /* GameFeeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameFeeDetailViewController.h; sourceTree = "<group>"; };
+		0E1A27AC1AC96F360016E470 /* GameFeeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameFeeDetailViewController.m; sourceTree = "<group>"; };
+		0E1A27AD1AC96F360016E470 /* GameFeeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameFeeDetailViewController.xib; sourceTree = "<group>"; };
+		0E1A27AE1AC96F360016E470 /* QQFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQFeeViewController.h; sourceTree = "<group>"; };
+		0E1A27AF1AC96F360016E470 /* QQFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQFeeViewController.m; sourceTree = "<group>"; };
+		0E1A27B01AC96F360016E470 /* QQFeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQFeeViewController.xib; sourceTree = "<group>"; };
 		0E224A1B1A87CFE600C578CB /* BaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTest.h; path = ME11Test/BaseTest.h; sourceTree = "<group>"; };
 		0E224A1C1A87CFE600C578CB /* BaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTest.m; path = ME11Test/BaseTest.m; sourceTree = "<group>"; };
 		0E224A1D1A87CFE600C578CB /* CalcMacTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalcMacTest.h; path = ME11Test/CalcMacTest.h; sourceTree = "<group>"; };
@@ -446,6 +456,12 @@
 		0E38D0C41AB9680900DAF1A9 /* Fee */ = {
 			isa = PBXGroup;
 			children = (
+				0E1A27AB1AC96F360016E470 /* GameFeeDetailViewController.h */,
+				0E1A27AC1AC96F360016E470 /* GameFeeDetailViewController.m */,
+				0E1A27AD1AC96F360016E470 /* GameFeeDetailViewController.xib */,
+				0E1A27AE1AC96F360016E470 /* QQFeeViewController.h */,
+				0E1A27AF1AC96F360016E470 /* QQFeeViewController.m */,
+				0E1A27B01AC96F360016E470 /* QQFeeViewController.xib */,
 				0E38D0A01AB967DF00DAF1A9 /* GameFeeViewController.h */,
 				0E38D0A11AB967DF00DAF1A9 /* GameFeeViewController.m */,
 				0E38D0A21AB967DF00DAF1A9 /* GameFeeViewController.xib */,
@@ -934,6 +950,7 @@
 				0E224A351A87CFE600C578CB /* PageViewController.xib in Resources */,
 				351FC0CA1A867138000C52C1 /* sixNumberPasswordView.xib in Resources */,
 				F243AFE21A75563C00324F95 /* POSPickerView.xib in Resources */,
+				0E1A27B21AC96F360016E470 /* GameFeeDetailViewController.xib in Resources */,
 				F2C3C8E61A5AFCED0021236C /* POSAccountViewController.xib in Resources */,
 				F28200041A5C71F400074ADA /* POSAboutProductController.xib in Resources */,
 				E24DD7CE1A82E62900E75206 /* POSPasswordView.xib in Resources */,
@@ -949,6 +966,7 @@
 				357030BB1A64222A003287BD /* messageCell.xib in Resources */,
 				0E38D05A1AB6CFB500DAF1A9 /* POSTradingRecordViewController.xib in Resources */,
 				F22DD4A71AB483F900949F42 /* POSScanPaymentViewController.xib in Resources */,
+				0E1A27B41AC96F360016E470 /* QQFeeViewController.xib in Resources */,
 				353D98151AB5DDA500BE0CE0 /* addBankCardTableViewCell.xib in Resources */,
 				0E38D0B21AB967DF00DAF1A9 /* FinaceDetailViewController.xib in Resources */,
 				0E38D0561AB6CFB500DAF1A9 /* POSDatePickerView.xib in Resources */,
@@ -1017,6 +1035,7 @@
 				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
 				F282000E1A5DABB700074ADA /* POSNoCardPaymentController.m in Sources */,
 				0EC58DF61A55EBBA00F2B391 /* POSMessageViewController.m in Sources */,
+				0E1A27B11AC96F360016E470 /* GameFeeDetailViewController.m in Sources */,
 				35F063C31A86143B00964E78 /* changeTixianPasswordViewController.m in Sources */,
 				357030C81A68EF71003287BD /* LoginViewController.m in Sources */,
 				F243AFE01A75562600324F95 /* POSPickerView.m in Sources */,
@@ -1047,6 +1066,7 @@
 				35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */,
 				0EC58DED1A55EBBA00F2B391 /* main.m in Sources */,
 				F22DD4A61AB483F900949F42 /* POSScanPaymentViewController.m in Sources */,
+				0E1A27B31AC96F360016E470 /* QQFeeViewController.m in Sources */,
 				0E38D0C11AB967DF00DAF1A9 /* TrainTravelViewController.m in Sources */,
 				0E38D0AF1AB967DF00DAF1A9 /* AliPayViewController.m in Sources */,
 				35F063BD1A86083800964E78 /* changePasswordController.m in Sources */,
