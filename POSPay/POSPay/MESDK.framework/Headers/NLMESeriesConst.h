@@ -105,6 +105,18 @@
  * M10
  */
 + (NSString*)BY_M10_MODEL;
+/**
+ * 环讯
+ */
++ (NSString*)BY_HUANXUN_MODEL;
+/**
+ * 安子
+ */
++ (NSString*)BY_ANZI_MODEL;
+/**
+ * ME11明文
+ */
++ (NSString*)BY_M11_PLAIN_MODEL;
 
 @end
 

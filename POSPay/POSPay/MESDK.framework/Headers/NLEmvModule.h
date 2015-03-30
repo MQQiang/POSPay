@@ -95,13 +95,6 @@
 - (BOOL)setTrmnlParams:(NLTerminalConfig*)trmnlConfig;
 
 /**
- * 联机pin参数设置<p>
- *
- * @param onlinePinConfig 联机pin参数
- */
-- (void)setOnlinePinConfig:(NLOnlinePinConfig*)onlinePinConfig;
-
-/**
  * 获得一个emv流程下的账户信息
  *
  * @param tags 可以根据需求获取在EMV标准流程中相关的交易数据信息.该<tt>tags</ttt>表示这样的一个集合.
@@ -110,6 +103,8 @@
  */
 - (NLEmvCardInfo*)accountInfoWithTags:(NSArray*)tags;
 
+-(void)setOnlinePinConfig:(NLOnlinePinConfig *)cofig;
+-(NLOnlinePinConfig *)getOnlinePinConfig;
 
 /**
  * 获得一个EMV交易控制器<p>

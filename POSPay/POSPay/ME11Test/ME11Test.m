@@ -39,7 +39,7 @@ static NSArray *L_55TAGS = nil;
     NSData* time = [NLISOUtils hexStr2Data:[ft stringFromDate:[NSDate date]]]; //
     //            NSData* random = [NLISOUtils hexStr2Data:@""]; // 流水号
     //            NSData* appendData = [NLISOUtils hexStr2Data:@""]; // 订单号
-    NLME11SwipeResult *rslt = [cardReader openCardReader:@[@(NLModuleTypeCommonSwiper), @(NLModuleTypeCommonICCard)] readModel:@[@(NLSwiperReadModelReadSecondTrack), @(NLSwiperReadModelReadThirdTrack)] panType:0x64 encryptAlgorithm:[NLTrackEncryptAlgorithm BY_M10_MODEL] wk:[[NLWorkingKey alloc] initWithIndex:0x04] time:time random:nil appendData:nil timeout:timeout];
+    NLME11SwipeResult *rslt = [cardReader openCardReader:@[@(NLModuleTypeCommonSwiper), @(NLModuleTypeCommonICCard)] readModel:@[@(NLSwiperReadModelReadSecondTrack), @(NLSwiperReadModelReadThirdTrack)] panType:0x64 encryptAlgorithm:[NLTrackEncryptAlgorithm BY_M11_PLAIN_MODEL] wk:[[NLWorkingKey alloc] initWithIndex:0x04] time:time random:nil appendData:nil timeout:timeout];
     if (!rslt) {
         [self showMsgOnMainThread:CString(@"读卡POS响应失败")];
         return ;
@@ -52,6 +52,8 @@ static NSArray *L_55TAGS = nil;
     NLModuleType moduleType = [rslt.moduleTypes[0] intValue];
     if (NLModuleTypeCommonICCard == moduleType) {
         // ME11 pboc
+        
+        _targetVC.swipeCardResult = SwipeCardTypeICCard;
         [self showMsgOnMainThread:@"正在读取IC卡......"];
         id<NLEmvModule> emvModule = (id<NLEmvModule>)[self.device standardModuleWithModuleType:NLModuleTypeCommonEMV];
         id<NLEmvTransController> emvController = [emvModule emvTransControllerWithListener:self];
@@ -67,7 +69,20 @@ static NSArray *L_55TAGS = nil;
                                           rslt.serviceCode,
                                           rslt.ksn,
                                           rslt.extInfo)];
+        
+        
+        if (_targetVC) {
+            
+            _targetVC.swipeCardResult = SwipeCardTypeCiCard;
+            _targetVC.secondTrackString = [[NSString alloc] initWithData:rslt.secondTrackData encoding:NSASCIIStringEncoding];
+            
+        }
+        
     } else {
+        
+        if (_targetVC) {
+            _targetVC.swipeCardResult = SwipeCardTypeFailed;
+        }
         [self showMsgOnMainThread:@"该读卡模式不支持"];
     }
 }

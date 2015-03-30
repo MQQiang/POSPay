@@ -177,6 +177,7 @@
 + (BOOL)isBitSet:(Byte)val bitPos:(int)bitPos;
 + (NSString*)integerToHexString:(int)i;
 + (NSString*)integer2UnsignedString:(int)i shift:(int)shift;
++ (NSUInteger)intValueWithHexString:(NSString *)hexStr;
 @end
 
 

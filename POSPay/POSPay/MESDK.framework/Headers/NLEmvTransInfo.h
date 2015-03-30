@@ -118,8 +118,16 @@
 @property (nonatomic, strong) NSString *application_label;
 #pragma mark - ME11
 /**
- * 即付宝(DF78)加密的55域及相关信息
+ * DF78 加密的55域及相关信息
  */
 @property (nonatomic, strong) NSData *encrypt_data;
+/**
+ *  df79 ksn
+ */
+@property (nonatomic, strong) NSData *ksn;
+/**
+ *  df77
+ */
+@property (nonatomic, strong) NSData * e_cash_details;
 - (int)appVersionNumberTerminal;
 @end

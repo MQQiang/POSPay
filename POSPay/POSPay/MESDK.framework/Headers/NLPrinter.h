@@ -96,6 +96,24 @@ typedef enum {
     NLPrinterStatusBusy
 } NLPrinterStatus;
 
+
+typedef enum {
+    NLPrintResult_Succeed,              //“00” 打印成功
+    NLPrintResult_DataError,            //”01“ 打印数据解析错误
+    NLPrintResult_Error,                //“02” 通用错误
+    NLPrintResult_OutOfPaper,           //“04” 缺纸
+    NLPrintResult_HeatLimited,          //“08” 超温
+    NLPrintResult_FlashReadWriteError,  //“40” Flash 读写错误
+    NLPrintResult_Busy,                 //“80” 打印头忙
+    NLPrintResult_CheckMacError,        //“41” MAC 校验错误
+    NLPrintResult_AlgorithmError,       //“42” 错误算法标识
+    NLPrintResult_KeyIndexError,        //“43” 错误密钥 ID
+    NLPrintResult_WorkingKeyLenError,    //“45” 错误工作密钥长度
+    NLPrintResult_CmdTimeOut,
+    NLPrintResult_CmdCancel,
+    NLPrintResult_RespUnknown
+}NLPrintResult;
+
 @class NLPrintContext;
 @class UIImage;
 /*!

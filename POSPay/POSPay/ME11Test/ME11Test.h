@@ -7,8 +7,9 @@
 //
 
 #import "BaseTest.h"
-
+#import "POSCardPaymentOrderViewController.h"
 @interface ME11Test : BaseTest
+@property (nonatomic,weak) POSCardPaymentOrderViewController *targetVC;
 - (void)deviceInfo;
 - (void)startReadCard;
 @end

@@ -69,6 +69,7 @@
  @return NSArray(NLModuleType)
  */
 - (NSArray*)openCardReaderWithCardReaderModuleTypes:(NSArray*)cardReaderModuleTypes screenShow:(NSString*)screenShow timeout:(int)timeout;
+
 /*!
  @version 1.0.3
  @method 打开一个读卡器.

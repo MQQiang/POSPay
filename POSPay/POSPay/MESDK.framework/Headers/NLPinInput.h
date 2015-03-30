@@ -11,6 +11,7 @@
 #import "NLPinInputConstants.h"
 #import "NLWorkingKey.h"
 #import "NLPinInputFinishedEvent.h"
+#import "NLPinEncryptResult.h"
 #import "NLDeviceEventListener.h"
 #import "NLMacResult.h"
 
@@ -74,6 +75,43 @@
                      isEnterEnabled:(BOOL)isEnterEnabled
                      displayContent:(NSString*)displayContent
                             timeout:(NSInteger)timeout;
+/*!
+ @version 1.1.4
+ @deprecated
+ @method
+ @abstract 无键盘输入密码
+ @param wk 工作密钥 (index 及wkBody必须传)
+ @param pinManageType 密钥的管理类型
+ @param acctInputType 关联账号输入方式
+ @param acctSymbol 关联账号标识
+ @param inputMaxLen 输入的最大长度
+ @param pinPadding 加密算法中后补数据填充
+ @param pin 密码明文
+ @return
+ */
+- (NLPinEncryptResult*)startPinInputWithoutKeyboard:(NLWorkingKey*)wk
+                                    pinManageType:(NLPinManageType)pinManageType
+                                    acctInputType:(NLAccountInputType)acctInputType
+                                       acctSymbol:(NSString*)acctSymbol
+                                      inputMaxLen:(NSInteger)inputMaxLen
+                                       pinPadding:(NSData*)pinPadding
+                                              pin:(NSData*)plainPin NL_DEPRECATED_API;
+/*!
+ @version 1.1.7
+ @method
+ @abstract 无键盘输入密码
+ @param wk 工作密钥 (index 及wkBody必须传)
+ @param pinManageType 密钥的管理类型
+ @param acctInputType 关联账号输入方式
+ @param acctSymbol 关联账号标识
+ @param pin 密码明文
+ @return
+ */
+- (NLPinEncryptResult*)startPinInputWithoutKeyboard:(NLWorkingKey*)wk
+                                      pinManageType:(NLPinManageType)pinManageType
+                                      acctInputType:(NLAccountInputType)acctInputType
+                                         acctSymbol:(NSString*)acctSymbol
+                                                pin:(NSData*)plainPin;
 /*!
  @method 撤消密码输入
  @abstract
@@ -140,8 +178,6 @@
  @param input 输入数据
  @param macAlgorithm MAC算法
  @param pinManageType 密钥类型
- @throws PinFailedException 若失败，且带具体的应答，抛出该异常。
- TODO
  @return
  */
 - (NSData*)calcMac:(NLWorkingKey*)wk input:(NSData*)input macAlgorithm:(NLMacAlgorithm)macAlgorithm pinManageType:(NLPinManageType)pinManageType;
@@ -162,6 +198,21 @@
       macAlgorithm:(NLMacAlgorithm)macAlgorithm
      pinManageType:(NLPinManageType)pinManageType;
 /*!
+ @version 1.1.4
+ @method
+ @abstract 大数据mac计算
+ @discussion
+ <p>
+ 例如：DUKPT的ksn号，以及部分用于分散出工作密钥的算法，要求返回参与运算的随机数
+ <p>
+ @param wk 使用工作密钥
+ @param input 输入数据
+ @param macAlgorithm MAC算法
+ @param pinManageType 密钥类型
+ @return
+ */
+- (NLMacResult*)calcMacWithBigData:(NLWorkingKey*)wk input:(NSData*)input macAlgorithm:(NLMacAlgorithm)macAlgorithm pinManageType:(NLPinManageType)pinManageType;
+/*!
  @method 装载一个工作密钥
  @abstract
  @param type 工作密钥类型
@@ -175,6 +226,24 @@
                                mainKeyIndex:(int)mainKeyIndex
                             workingKeyIndex:(int)workingKeyIndex
                                        data:(NSData*)data
+                                      error:(NSError**)err;
+/*!
+ @version 1.1.5
+ @method 装载工作密钥（支持pos校验kcv）
+ @abstract
+ @param type 工作密钥类型
+ @param mainKeyIndex 关联的主密钥索引
+ @param workingKeyIndex 装入的工作密钥索引
+ @param data 密钥数据
+ @param checkValue 校验值
+ @error throws 若失败，且带具体的应答，抛出该异常。
+ @return kcv,当输入参数传入checkValue时返回全0数据，反之则返回kcv用于外部自行校验
+ */
+- (NSData*)loadWorkingKeyWithWorkingKeyType:(NLWorkingKeyType)type
+                               mainKeyIndex:(int)mainKeyIndex
+                            workingKeyIndex:(int)workingKeyIndex
+                                       data:(NSData*)data
+                                 checkValue:(NSData*)checkValue
                                       error:(NSError**)err;
 /*!
  @method 装载一个主密钥
@@ -216,6 +285,21 @@
                              mainIndex:(NSInteger)mainIndex
                      transportKeyIndex:(NSInteger)transportKeyIndex
                                   data:(NSData*)data error:(NSError**)err;
-
-
+/*!
+ @version 1.1.5
+ @method 装载主密钥（支持pos校验kcv）
+ @abstract
+ @param keyUsingType kekUsingType 主密钥装载方式
+ @param mainIndex mainIndex 主密钥索引
+ @param transportKeyIndex 传输密钥索引（该字段只在kekUsingType为PRIVATE_KEY时设置，其他情况下置为-1即可）
+ @param data 待加载的主密钥数据
+ @param checkValue 主密钥校验值
+ @return kcv 当输入参数传入checkValue时返回全0数据，反之则返回kcv用于外部自行校验
+ */
+- (NSData*)loadMainKeyWithKeyUsingType:(NLKekUsingType)keyUsingType
+                             mainIndex:(NSInteger)mainIndex
+                     transportKeyIndex:(NSInteger)transportKeyIndex
+                                  data:(NSData*)data
+                            checkValue:(NSData*)checkValue
+                                 error:(NSError**)err;
 @end

@@ -15,6 +15,10 @@
 #import <MESDK/NLMESeriesDevice.h>
 #import <MESDK/NLMESeriesDriver.h>
 #import <MESDK/NLBlueToothV100ConnParams.h>
+// audioport
+#import <MESDK/NLDeviceLaunchEvent.h>
+#import <MESDK/NLAudioPortV100ConnParams.h>
+#import <MESDK/NLAudioPortHelper.h>
 // 辅助工具
 #import <MESDK/NLBluetoothHelper.h>
 #import <MESDK/NLEventHolder.h>
@@ -59,4 +63,7 @@
 #import <MESDK/NLBuzzer.h>
 // pboc
 #import <MESDK/NLEmvModule.h>
+#import <MESDK/NLQPBOCModule.h>
+
+//#import <MESDK/NLICCardModule.h>
 //#endif

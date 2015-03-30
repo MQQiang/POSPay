@@ -12,6 +12,7 @@
 #import "TLVPackage.h"
 #import "TLVMsg.h"
 #import "NLDirectMessageListenerManager.h"
+#import "NLBatteryInfo.h"
 
 typedef void (^OnUpdateReturn)(int fileIndex, BOOL isFinish,NSError * err);
 @protocol NLModule;
@@ -208,4 +209,10 @@ typedef void (^OnUpdateReturn)(int fileIndex, BOOL isFinish,NSError * err);
  @return
  */
 - (id<NLDeviceInfo>)me11DeviceInfo;
+/**
+ *  获取电池状态
+ *
+ *  @return
+ */
+-(id<NLBatteryInfo>)getBatteryInfo;
 @end

@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger, SwipeCardType) {
+   
+    SwipeCardTypeCiCard,
+    SwipeCardTypeICCard,
+    SwipeCardTypeFailed
+    
+};
+
 
 @interface POSCardPaymentOrderViewController : UIViewController
 @property (assign, nonatomic) IBOutlet UITextView *textView;
+
+
+@property(nonatomic,strong)NSString *secondTrackString;
+@property(nonatomic,strong)NSString *deviceId;
+@property(nonatomic,assign)SwipeCardType swipeCardResult;
 
 
 - (IBAction)disConnect:(id)sender;

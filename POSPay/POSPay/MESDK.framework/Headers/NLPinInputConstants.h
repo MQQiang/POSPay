@@ -16,11 +16,13 @@
  @constant NLAccountInputTypeUserAccount 输入的是账户
  @constant NLAccountInputTypeUserAcctHash 输入的是账户hash值
  @constant NLAccountInputTypeUnuseAcct 无账户模式
+ @constant NLAccountInputTypePinBlock pin block,直接计算
  */
 typedef enum {
     NLAccountInputTypeUserAccount,
     NLAccountInputTypeUserAcctHash,
-    NLAccountInputTypeUnuseAcct
+    NLAccountInputTypeUnuseAcct,
+    NLAccountInputTypePinBlock,
 }NLAccountInputType;
 
 /*!

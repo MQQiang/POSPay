@@ -21,6 +21,7 @@
  */
 - (NSDictionary*)supportTagMapping;
 - (NSData*)pack:(NLAbstractEmvPackage*)pckg;
+- (NSData*)pack:(NLAbstractEmvPackage*)pckg fields:(NSArray*)fields;
 - (NLAbstractEmvPackage*)unpack:(NSData*)payload contentClass:(Class)content;
 - (NLAbstractEmvPackage*)unpack:(NSData*)payload content:(id)content;
 

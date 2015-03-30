@@ -38,6 +38,10 @@
 @property (nonatomic, strong) NSString *uuid;
 
 
+
+
+
+
 @end
 
 @implementation POSCardPaymentOrderViewController
@@ -50,6 +54,8 @@
     self.title = [NSString stringWithFormat:@"[%@]", app.driver];
     _operationSelectorSheet = [[UIActionSheet alloc] initWithTitle:@"操作" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"ME11设备信息", @"ME11读卡", nil];
     _devicesArray = [NSArray array];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -113,7 +119,7 @@
     
 }
 -(void)passwordViewRightPassword{
-    POSCardPaymentOrderViewController* pushView=[[POSPaymentResultController alloc] init];
+    POSPaymentResultController* pushView=[[POSPaymentResultController alloc] init];
     [self.navigationController pushViewController:pushView animated:YES];
 
 
@@ -389,6 +395,8 @@
 #warning ReadDeviceInfo
             [me11Test deviceInfo];
         } else if ([rowTitle isEqualToString:@"ME11读卡"]) {
+            
+            me11Test.targetVC = self;
             [NSThread detachNewThreadSelector:@selector(startReadCard) toTarget:me11Test withObject:nil];
         }
     } else {

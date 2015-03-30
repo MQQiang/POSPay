@@ -21,9 +21,10 @@
  @constant NLModuleTypeCommonEMV 通用EMV流程处理模块
  @constant NLModuleTypeCommonQPBOC QPBOC流程处理模块
  @constant NLModuleTypeCommonScanner 扫描仪（ME不支持）
- @constant NLModuleTypeCommonBuzzer 蜂鸣器（暂不支持）
+ @constant NLModuleTypeCommonBuzzer 蜂鸣器（ME11不支持）
  @constant NLModuleTypeCommonIndicatorLight 指示灯（暂不支持）
  @constant NLModuleTypeCommonCardReader 读卡模块
+ @constant NLModuleTypeCommonStore 存储类
  */
 typedef enum {
     NLModuleTypeCommonLCD,
@@ -40,7 +41,8 @@ typedef enum {
     NLModuleTypeCommonScanner,
     NLModuleTypeCommonBuzzer,
     NLModuleTypeCommonIndicatorLight,
-    NLModuleTypeCommonCardReader
+    NLModuleTypeCommonCardReader,
+    NLModuleTypeCommonStore
 } NLModuleType;
 
 /*!
