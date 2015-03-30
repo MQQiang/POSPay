@@ -378,24 +378,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oSc-ja-aKd">
-                                <rect key="frame" x="0.0" y="207" width="320" height="310"/>
+                                <rect key="frame" x="0.0" y="216" width="320" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="rmI-NE-F0z"/>
                                 </connections>
                             </scrollView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="j1o-Yc-2dt">
-                                <rect key="frame" x="0.0" y="165" width="320" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
-                                <segments>
-                                    <segment title="" image="选项卡（小）1"/>
-                                    <segment title="" image="选项卡（小）2"/>
-                                    <segment title="" image="选项卡（小）3"/>
-                                    <segment title="" image="选项卡（小）4"/>
-                                </segments>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -418,7 +406,6 @@
                     <connections>
                         <outlet property="adView" destination="sSC-iG-8zo" id="tIW-Jp-kKu"/>
                         <outlet property="applicationScrollView" destination="oSc-ja-aKd" id="y7a-et-w75"/>
-                        <outlet property="tabBar" destination="j1o-Yc-2dt" id="Ay9-G3-DcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -1576,10 +1563,6 @@
         <image name="按钮4" width="510" height="340"/>
         <image name="更多" width="64" height="64"/>
         <image name="添加照片" width="272" height="272"/>
-        <image name="选项卡（小）1" width="180" height="88"/>
-        <image name="选项卡（小）2" width="192" height="88"/>
-        <image name="选项卡（小）3" width="192" height="88"/>
-        <image name="选项卡（小）4" width="192" height="88"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

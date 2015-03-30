@@ -8,6 +8,7 @@
 #import "FinanceIndexViewController.h"
 #import "POSIndexViewController.h"
 #import "appCell.h"
+#import "HYSegmentedControl.h"
 #import "POSCardPaymentController.h"
 #import "POSNoCardPaymentController.h"
 #import "POSScanPaymentViewController.h"
@@ -17,9 +18,10 @@
 #import "AliPayViewController.h"
 #import "QQFeeViewController.h"
 
-@interface POSIndexViewController ()<UIScrollViewDelegate>
+@interface POSIndexViewController ()<UIScrollViewDelegate,HYSegmentedControlDelegate>
 //图片轮播器
 @property (weak, nonatomic) IBOutlet UIScrollView *adView;
+@property (weak, nonatomic) HYSegmentedControl *segmentControl;
 //应用格子
 @property (weak, nonatomic) IBOutlet UIScrollView *applicationScrollView;
 
@@ -36,7 +38,7 @@
     [self addAdView];
     
     [self addAppViewBtn];
-    
+    [self addSegmentControl];
     
 }
 
@@ -113,11 +115,26 @@
     if (scrollView == self.adView) {
     [self addTimer];
     }
+    
+    
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if (scrollView == self.applicationScrollView) {
+        int x = scrollView.contentOffset.x;
+        int index = (x+160) / 320;
+        [self.segmentControl changeSegmentedControlWithIndex:index];
+    }
+}
+- (void)addSegmentControl{
+    HYSegmentedControl *segmentControl = [[HYSegmentedControl alloc]initWithOriginY:167 Number:4 delegate:self];
+    [self.view addSubview:segmentControl];
+    self.segmentControl = segmentControl;
 }
 - (void)addAppViewBtn{
     self.applicationScrollView.pagingEnabled = YES;
     self.applicationScrollView.contentSize = CGSizeMake(1280, 0);
-    self.applicationScrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 300, 0);
+    self.applicationScrollView.showsHorizontalScrollIndicator = NO;
+    self.applicationScrollView.delegate = self;
     //第1页
     //刷卡支付
     UIButton *pushCardPayBtn = [[UIButton alloc]initWithFrame:CGRectMake(5, 5, 150, 100)];
@@ -162,17 +179,16 @@
     [self.applicationScrollView addSubview: shuidianBtn];
     //点卡
     UIButton *diankaBtn = [[UIButton alloc]initWithFrame:CGRectMake(535, 5, 100, 100)];
-<<<<<<< HEAD
+
     [diankaBtn setBackgroundImage:[UIImage imageNamed:@"按钮12"] forState:UIControlStateNormal];
     //[huafeiBtn addTarget:self action:@selector(pushCardPayment:) forControlEvents:UIControlEventTouchUpInside];
-=======
+
     [diankaBtn setTitle:@"游戏点卡" forState:UIControlStateNormal];
     //[diankaBtn setBackgroundImage:[UIImage imageNamed:@"按钮1"] forState:UIControlStateNormal];
     [diankaBtn addTarget:self action:@selector(pushGameFee:) forControlEvents:UIControlEventTouchUpInside];
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
+
+
+
     [self.applicationScrollView addSubview: diankaBtn];
     //交通罚款
     UIButton *jiaotongBtn = [[UIButton alloc]initWithFrame:CGRectMake(325, 110, 100, 100)];
@@ -315,6 +331,26 @@
     
     
 }
+#pragma mark - HYsegmentControl delegate
+- (void)hySegmentedControlSelectAtIndex:(NSInteger)index{
+    switch (index) {
+        case 0:
+            [self.applicationScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+            break;
+        case 1:
+            [self.applicationScrollView setContentOffset:CGPointMake(320, 0) animated:YES];
+            break;
+        case 2:
+            [self.applicationScrollView setContentOffset:CGPointMake(640, 0) animated:YES];
+            break;
+        case 3:
+            [self.applicationScrollView setContentOffset:CGPointMake(960, 0) animated:YES];
+            break;
+        default:
+            break;
+    }
+}
+
 @end
 
 

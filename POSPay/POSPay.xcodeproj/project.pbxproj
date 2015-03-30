@@ -87,6 +87,7 @@
 		357030CE1A68EFE9003287BD /* findPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030CD1A68EFE9003287BD /* findPwdViewController.m */; };
 		357030D11A68F016003287BD /* newPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357030D01A68F016003287BD /* newPwdViewController.m */; };
 		357BDE891AC9542D00623063 /* detialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 357BDE881AC9542D00623063 /* detialViewController.m */; };
+		357BDE8D1AC98B3A00623063 /* HYSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 357BDE8C1AC98B3A00623063 /* HYSegmentedControl.m */; };
 		35B03E031A84E203001752A1 /* authenticationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B03E021A84E203001752A1 /* authenticationInfo.m */; };
 		35C8178A1A7FB7010066C52B /* nameAndIDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C817891A7FB7010066C52B /* nameAndIDController.m */; };
 		35C8178D1A7FB7150066C52B /* passwordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8178C1A7FB7150066C52B /* passwordController.m */; };
@@ -283,6 +284,8 @@
 		357030D01A68F016003287BD /* newPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newPwdViewController.m; sourceTree = "<group>"; };
 		357BDE871AC9542D00623063 /* detialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detialViewController.h; sourceTree = "<group>"; };
 		357BDE881AC9542D00623063 /* detialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detialViewController.m; sourceTree = "<group>"; };
+		357BDE8B1AC98B3A00623063 /* HYSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSegmentedControl.h; sourceTree = "<group>"; };
+		357BDE8C1AC98B3A00623063 /* HYSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSegmentedControl.m; sourceTree = "<group>"; };
 		35B03E011A84E202001752A1 /* authenticationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authenticationInfo.h; sourceTree = "<group>"; };
 		35B03E021A84E203001752A1 /* authenticationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authenticationInfo.m; sourceTree = "<group>"; };
 		35C817881A7FB7010066C52B /* nameAndIDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nameAndIDController.h; sourceTree = "<group>"; };
@@ -527,6 +530,7 @@
 		0EB465951A58514D002B240E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				357BDE8A1AC98AFB00623063 /* segmentedControl */,
 				0EC58DF11A55EBBA00F2B391 /* POSIndexViewController.h */,
 				0EC58DF21A55EBBA00F2B391 /* POSIndexViewController.m */,
 			);
@@ -698,6 +702,15 @@
 				357BDE881AC9542D00623063 /* detialViewController.m */,
 			);
 			name = tixian;
+			sourceTree = "<group>";
+		};
+		357BDE8A1AC98AFB00623063 /* segmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				357BDE8B1AC98B3A00623063 /* HYSegmentedControl.h */,
+				357BDE8C1AC98B3A00623063 /* HYSegmentedControl.m */,
+			);
+			name = segmentedControl;
 			sourceTree = "<group>";
 		};
 		35C8177B1A7FB5D90066C52B /* Authentication */ = {
@@ -1030,6 +1043,7 @@
 				0E224A391A87CFE600C578CB /* SwipeTest.m in Sources */,
 				353D981F1AB7118500BE0CE0 /* tixianViewController1.m in Sources */,
 				35F063C01A86140D00964E78 /* chageLoginPasswordViewController.m in Sources */,
+				357BDE8D1AC98B3A00623063 /* HYSegmentedControl.m in Sources */,
 				353D98251AC5222700BE0CE0 /* cardDetialViewController.m in Sources */,
 				0E224A371A87CFE600C578CB /* PinInputTest.m in Sources */,
 				E24DD7CC1A82E61A00E75206 /* POSPasswordView.m in Sources */,
